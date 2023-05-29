@@ -25,9 +25,9 @@ export const Token = () => {
               return (
                 <div
                   key={i}
-                  className={`p-5 ${
-                    item.bk ? "bg-[#1C1C1C]" : ""
-                  } rounded-2xl space-y-2 mt-2`}
+                  className="p-5 
+                  hover:bg-[#1C1C1C] 
+                   rounded-2xl space-y-2 mt-2"
                 >
                   <p>{item.persantage} %</p>
                   <div className=" flex justify-between items-center">
@@ -53,7 +53,10 @@ export const Token = () => {
           <div className=" w-full md:w-[25%]">
             {array2.map((item, i) => {
               return (
-                <div key={i} className="p-5  rounded-2xl space-y-2 mt-2">
+                <div
+                  key={i}
+                  className="p-5  rounded-2xl space-y-2 mt-2  hover:bg-[#1C1C1C] "
+                >
                   <p>{item.persantage} %s</p>
                   <div className=" flex justify-between items-center">
                     <p>{item.name}</p>

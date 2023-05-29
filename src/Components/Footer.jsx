@@ -3,12 +3,13 @@ import { logo } from "../images";
 import { FaFacebookF } from "react-icons/fa";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { AiOutlineYoutube } from "react-icons/ai";
+import { FiArrowUpRight } from "react-icons/fi";
 
 export const Footer = () => {
   return (
     <>
-      <div className="h-[600px] md:h-[450px] w-full  py-20 ">
-        <div className="w-[80%] mx-0 md:mx-auto flex flex-col md:flex-row md:justify-between items-start">
+      <div className="h-[600px] md:h-[450px] w-full px-5 py-20  ">
+        <div className="w-full md:w-[80%] mx-0 md:mx-auto flex flex-col md:flex-row md:justify-between items-start">
           <div className="w-full md:w-[50%]">
             <div className=" flex space-x-8  md:justify-between">
               <ul className="space-y-5">
@@ -20,11 +21,14 @@ export const Footer = () => {
                 <li>Contact</li>
               </ul>
               <div className="w-[55%] space-y-10">
-                <p>
+                <p className="text-[#B2B2B2]">
                   We are always looking for dedicated people to join our
                   interdisciplinary team.
                 </p>
-                <button>Send your CV</button>
+                <button className="flex space-x-3 items-center">
+                  <p>Send your CV </p>
+                  <FiArrowUpRight className="text-[#493da5] p-2 text-4xl border rounded-full" />
+                </button>
               </div>
             </div>
           </div>
@@ -41,7 +45,7 @@ export const Footer = () => {
                 }}
               />
             </div>
-            <p className="text-center md:text-left">
+            <p className="text-center md:text-left text-[#B2B2B2]">
               700 Main St Cambridge, MA 02139United States
             </p>
             <div className=" flex justify-center space-x-5">

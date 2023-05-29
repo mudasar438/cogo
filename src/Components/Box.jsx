@@ -1,5 +1,6 @@
 import React from "react";
 import BasicButton from "./SmallComponent/Basicbutton";
+import { FiArrowDownRight, FiArrowUpRight } from "react-icons/fi";
 
 export const Box = () => {
   return (
@@ -17,7 +18,9 @@ export const Box = () => {
             and overwhelming, but with blockGPT,
           </p>
           <div className=" flex flex-col sm:flex-row gap-3  justify-center md:justify-start">
-            <BasicButton text="BUY $CGW" />
+            <button className="flex space-x-5 items-center text-[#fff] text-lg bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px]   px-6 py-2 rounded-3xl font-medium text-center">
+              <p> BUY $CGW</p> <FiArrowUpRight className=" font-semibold" />
+            </button>
             <button className="bg-[#000] px-5 py-2 border-2 rounded-3xl border-[#545454] font-semibold">
               HOW TO BUY ?
             </button>

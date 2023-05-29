@@ -9,6 +9,8 @@ import { Round2 } from "../Components/Round2";
 import { Baner2 } from "../Components/Baner2";
 import { Box } from "../Components/Box";
 import { Footer } from "../Components/Footer";
+import MyModal from "../Components/DilogEth";
+import DilogCogo from "../Components/CogoModal";
 const array = [{ img: m1 }, { img: m2 }, { img: m3 }];
 const array2 = [{ img: yahoo }, { img: ben }, { img: market }, { img: market }];
 export const LandingPage = () => {
@@ -82,8 +84,9 @@ export const LandingPage = () => {
                 </div>
               </div>
               <div className="flex flex-col  w-full md:flex-row items-center justify-center md:justify-start lg:justify-center space-y-12 md:space-y-0 md:space-x-10">
-                <BasicButton text="BUY WITH ETH" />
-                <BasicButton text="BUY WITH USDT" />
+                {/* <BasicButton text="BUY WITH ETH" /> */}
+                <MyModal />
+                <DilogCogo />
               </div>
               <div className=" flex flex-col sm:flex-row space-y-8 sm:space-y-0  justify-center sm:justify-between items-center">
                 <div className="flex justify-center sm:justify-start space-x-3">

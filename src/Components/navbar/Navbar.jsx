@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { logo } from "../../images";
 import BasicButton from "../SmallComponent/Basicbutton";
 import { FaTelegramPlane } from "react-icons/fa";
+import { FiArrowDownRight } from "react-icons/fi";
 
 export const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
@@ -59,10 +60,22 @@ export const Navbar = () => {
               }`}
             >
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                <li>SOLUTIONS</li>
-                <li>PRESALE</li>
+                <li className="flex space-x-2 items-center">
+                  <p>SOLUTIONS</p>{" "}
+                  <FiArrowDownRight className="text-[#8d7b7b] font-semibold" />
+                </li>
+                <li>
+                  PRESALE{" "}
+                  <button className="bg-[#39E3BA] border border-[#39E3BA] px-3  rounded-2xl text-[#000] text-[12px] ml-1 font-semibold">
+                    LIVE
+                  </button>
+                </li>
                 <li>TEAM</li>
-                <li>CMMUNITY</li>
+                <li className="flex space-x-2 items-center">
+                  {" "}
+                  <p>CMMUNITY</p>{" "}
+                  <FiArrowDownRight className="text-[#4240a6] font-semibold" />
+                </li>
                 <li>CONTACT</li>{" "}
               </ul>
             </div>
