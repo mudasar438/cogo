@@ -16,8 +16,8 @@ const array2 = [{ img: yahoo }, { img: ben }, { img: market }, { img: market }];
 export const LandingPage = () => {
   return (
     <>
-      <div className="px-4 md:px-8 ">
-        <div className=" w-full space-y-10 flex flex-col lg:flex-row justify-between py-10 items-start ">
+      <div className="px-4 md:px-12 ">
+        <div className=" w-full lg:w-[100%] lg:justify-center space-y-10 flex flex-col lg:flex-row justify-between py-10  ">
           <div className=" w-full lg:w-[35%]  flex gap-7 flex-col md:p-3">
             <ul>
               <li>
@@ -52,8 +52,8 @@ export const LandingPage = () => {
               })}
             </div>
           </div>
-          <div className=" w-full lg:w-[50%] ">
-            <div className="w-full lg:w-[70%] mx-auto p-5 rounded-xl flex flex-col gap-8 border border-[#303030]">
+          <div className=" w-full lg:w-[50%] flex justify-end">
+            <div className="w-full lg:w-[70%]  p-5 rounded-xl flex flex-col gap-8 border border-[#303030]">
               <p className="bg-[#232323] rounded-2xl p-3  w-[180px]  flex self-center md:self-start">
                 ROUND 1 [ $0.045 ]
               </p>
@@ -105,7 +105,7 @@ export const LandingPage = () => {
         <Banner />
       </div>
       <Deepdiv />
-      <div className="px-4 md:px-8 mt-[100px] ">
+      <div className="px-4 md:px-12 mt-[100px] ">
         <p className="text-3xl md:text-4xl lg:text-6xl w-full md:w-[48%] text-center md:text-left ">
           Token lockup schedule
         </p>
