@@ -1,7 +1,6 @@
 import React from "react";
 import { cwg, g1 } from "../images";
 import { FiCopy } from "react-icons/fi";
-
 export const Banner = () => {
   return (
     <>
@@ -14,17 +13,17 @@ export const Banner = () => {
             style={{ width: "50px", height: "50px" }}
           />
           <div className=" flex flex-col justify-center items-center lg:items-start ">
-            <p className="text-[#5C5C5C] font-Barlow">CONTRACT ADDRESS</p>
+            <p className="text-[#5C5C5C] Barlow">CONTRACT ADDRESS</p>
             <p className=" ">0x021D4f55AF40A1Ce428A</p>
           </div>
         </div>
-        <div className=" ">
-          <p className="text-[#5C5C5C] font-Barlow">NETWORK</p>
+        <div className="Barlow ">
+          <p className="text-[#5C5C5C] ">NETWORK</p>
           <p className="text-xl">Ethereum ERC-20</p>
         </div>
         <div className="flex space-x-5 items-center justify-end">
           <img src={g1} alt="" srcSet="" />
-          <div className=" border-2 border-[#5C5C5C] rounded-3xl px-3 py-2 flex space-x-4 items-center">
+          <div className="Rubik border-2 border-[#5C5C5C] rounded-3xl px-3 py-2 flex space-x-4 items-center">
             <p> COPY ADDR</p>
             <FiCopy />
           </div>

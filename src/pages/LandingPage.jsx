@@ -16,9 +16,9 @@ const array2 = [{ img: yahoo }, { img: ben }, { img: market }, { img: market }];
 export const LandingPage = () => {
   return (
     <>
-      <div className="px-4 md:px-12 ">
+      <div className="px-4 md:px-12 font-Barlow">
         <div className=" w-full lg:w-[100%] lg:justify-center space-y-10 flex flex-col lg:flex-row justify-between py-10  ">
-          <div className=" w-full lg:w-[35%]  flex gap-7 flex-col md:p-3">
+          <div className=" w-full lg:w-[35%]  flex gap-10 flex-col md:p-3">
             <ul>
               <li>
                 <p className="text-sm text-[#858585] font-Barlow text-center md:text-left">
@@ -26,17 +26,19 @@ export const LandingPage = () => {
                 </p>
               </li>
             </ul>
-            <p className=" text-3xl md:text-6xl font-normal text-center md:text-left font-Rubik w-full md:w-[80%]">
+            <p className=" text-3xl md:text-6xl font-normal text-center md:text-left font-Rubik w-full md:w-[80%] font-Violet Sans">
               Become a early investor
             </p>
-            <p className=" font-Barlow text-[#858585] text-center md:text-left">
+            <p className=" Barlow text-[#858585] text-center md:text-left font-semibold">
               We understand that the world of crypto & blockchain can be
               confusing and overwhelming, but with Cogwise, you can trust that
               you are getting the best info and insights.
             </p>
             <div className=" flex flex-col sm:flex-row gap-3  justify-center md:justify-start">
               <BasicButton text="connect wallet" />
-              <button className="bg-[#000] px-5">Explore Token</button>
+              <button className=" Rubik bg-[#000] hover:bg-[#231414] rounded-3xl px-7 font-Rubik font-normal">
+                Explore Token
+              </button>
             </div>
             <div className="flex flex-col sm:flex-row item-center sm:items-start  justify-center mx-auto sm:mx-0 space-y-8 sm:space-y-0 sm:justify-between py-5 px:1 shadow-sm">
               {array.map((item, i) => {
@@ -54,7 +56,7 @@ export const LandingPage = () => {
           </div>
           <div className=" w-full lg:w-[50%] flex justify-end">
             <div className="w-full lg:w-[70%]  p-5 rounded-xl flex flex-col gap-8 border border-[#303030]">
-              <p className="bg-[#232323] rounded-2xl p-3  w-[180px]  flex self-center md:self-start">
+              <p className="bg-[#232323] rounded-2xl p-3  w-[160px]  flex self-center md:self-start Barlow">
                 ROUND 1 [ $0.045 ]
               </p>
               <p className="text-4xl font-normal  text-center md:text-left font-Rubik w-full md:w-[80%]">
@@ -63,7 +65,7 @@ export const LandingPage = () => {
 
               <div className="w-full bg-gray-200 rounded-full dark:bg-[#232323]">
                 <div
-                  className=" bg-gradient-to-r from-[#292D2C] to-[#328D77] text-xl font-medium text-[#000] text-center p-0.5 leading-none rounded-full"
+                  className="Barlow bg-gradient-to-r from-[#292D2C] to-[#328D77] text-xl font-medium text-[#000] text-center p-0.5 leading-none rounded-full"
                   style={{ width: "64.23%" }}
                 >
                   {" "}
@@ -109,7 +111,7 @@ export const LandingPage = () => {
         <p className="text-3xl md:text-4xl lg:text-6xl w-full md:w-[48%] text-center md:text-left ">
           Token lockup schedule
         </p>
-        <p className="w-full md:w-[80%] text-[#858585] text-center md:text-left my-12">
+        <p className="Barlow w-full md:w-[80%] text-[#858585] text-center md:text-left my-12">
           Early supporters purchased the right to support the network via an
           agreement for future tokens upon network launch. Prices vary based on
           time of investment. Lower prices are balanced with longer lock-periods

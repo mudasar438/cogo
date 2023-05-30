@@ -8,7 +8,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 export const Footer = () => {
   return (
     <>
-      <div className="h-[600px] md:h-[450px] w-full px-5 py-20  ">
+      <div className="h-[700px] md:h-[600px] w-full px-5 py-20  ">
         <div className="w-full md:w-[80%] mx-0 md:mx-auto flex flex-col md:flex-row md:justify-between items-start">
           <div className="w-full md:w-[50%]">
             <div className=" flex space-x-8  md:justify-between">
@@ -21,7 +21,7 @@ export const Footer = () => {
                 <li>Contact</li>
               </ul>
               <div className="w-[55%] space-y-10">
-                <p className="text-[#B2B2B2]">
+                <p className="Barlow text-[#B2B2B2]">
                   We are always looking for dedicated people to join our
                   interdisciplinary team.
                 </p>
@@ -54,6 +54,10 @@ export const Footer = () => {
               <AiOutlineYoutube />
             </div>
           </div>
+        </div>
+        <div className="Barlow w-full md:w-[80%] mx-0 md:mx-auto mt-20 md:mt-[150px] flex flex-col md:flex-row space-y-5 md:space-x-0 justify-between items-center text-[12px] text-[#8C8C8C] ">
+          <p>©2023 ― 1910 GENETICS. ALL RIGHTS RESERVED.</p>
+          <p>©2023 ― 1910 GENETICS. ALL RIGHTS RESERVED.</p>
         </div>
       </div>
     </>
