@@ -62,7 +62,10 @@ export const Navbar = () => {
               }`}
             >
               <div className="flex-col md:flex-row items-center   justify-center space-y-4 md:flex md:space-x-6 md:space-y-0">
-                <button className="flex   space-x-2 items-center hover:bg-[#231414] px-5 p-2 rounded-3xl">
+                <button
+                  onClick={() => navigate("/")}
+                  className="flex   space-x-2 items-center hover:bg-[#231414] px-5 p-2 rounded-3xl"
+                >
                   <p> SOLUTIONS</p>{" "}
                   <FiArrowDownRight className="text-[#8d7b7b] font-semibold" />
                 </button>
