@@ -10,18 +10,19 @@ import "swiper/css/navigation";
 // import "./style1.css";
 
 // import required modules
-import { Pagination, Navigation } from "swiper";
+import { Pagination } from "swiper";
 import { Round1 } from "./Round1";
 export default function RoundSwiper() {
   return (
     <>
       <div className=" w-full h-[600px] md:h-[400px]">
         <Swiper
-          //   pagination={{
-          //     type: "progressbar",
-          //   }}
+          spaceBetween={30}
+          pagination={{
+            clickable: true,
+          }}
           navigation={true}
-          modules={[Pagination, Navigation]}
+          modules={[Pagination]}
           className="mySwiper"
         >
           <SwiperSlide>
