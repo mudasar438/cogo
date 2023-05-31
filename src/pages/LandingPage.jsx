@@ -11,6 +11,7 @@ import { Box } from "../Components/Box";
 import { Footer } from "../Components/Footer";
 import MyModal from "../Components/DilogEth";
 import DilogCogo from "../Components/CogoModal";
+import RoundSwiper from "../Components/RoundSwiper";
 const array = [{ img: m1 }, { img: m2 }, { img: m3 }];
 const array2 = [{ img: yahoo }, { img: ben }, { img: market }, { img: market }];
 export const LandingPage = () => {
@@ -137,6 +138,7 @@ export const LandingPage = () => {
           to ensure aligned network economics.
         </p>
         <Round1 />
+        <RoundSwiper />
         <Token />
         <Round2 />
         <Baner2 />
