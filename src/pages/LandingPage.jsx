@@ -137,7 +137,7 @@ export const LandingPage = () => {
           time of investment. Lower prices are balanced with longer lock-periods
           to ensure aligned network economics.
         </p>
-        <Round1 />
+        {/* <Round1 /> */}
         <RoundSwiper />
         <Token />
         <Round2 />

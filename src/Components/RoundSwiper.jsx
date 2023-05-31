@@ -15,7 +15,7 @@ import { Round1 } from "./Round1";
 export default function RoundSwiper() {
   return (
     <>
-      <div className=" w-full h-[400px]">
+      <div className=" w-full h-[600px] md:h-[400px]">
         <Swiper
           //   pagination={{
           //     type: "progressbar",
