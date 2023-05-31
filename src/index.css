@@ -1,36 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&family=Rubik:wght@500&family=Urbanist:wght@600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200;400;500;700&family=Poppins:wght@400;500;600;800&family=Rubik:wght@500&family=Urbanist:wght@600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&family=Rubik:wght@500&family=Urbanist:wght@600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@200;400;500;700&family=Poppins:wght@400;500;600;800&family=Rubik:wght@500&family=Urbanist:wght@600;700&display=swap");
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #0b0b0b;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.deepbg{
-  background-image: url('./images/deepbg.png');
+.deepbg {
+  background-image: url("./images/deepbg.png");
   background-repeat: no-repeat;
   background-size: cover;
   height: 400px;
-
 }
-.boxbg{
-  background-image: url('./images/boxbg.png');
+.boxbg {
+  background-image: url("./images/boxbg.png");
   background-repeat: no-repeat;
   background-size: cover;
   height: 450px;
-
 }
-.rounborder{
+.rounborder {
   border-top: 2px solid #232323;
   border-bottom: 2px solid #232323;
 }
