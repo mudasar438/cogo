@@ -20,7 +20,7 @@ export default function MyModal() {
         <button
           type="button"
           onClick={openModal}
-          className="text-[#fff] text-lg bg-[#7900EE] hover:bg-[#203cc6] min-w-[130px]   px-6 py-2 rounded-3xl font-medium text-center"
+          className="Barlow text-[#fff] text-lg bg-[#7900EE] hover:bg-[#203cc6] min-w-[130px]   px-6 py-2 rounded-3xl font-medium text-center"
         >
           BUY WITH ETH
         </button>
@@ -54,8 +54,8 @@ export default function MyModal() {
                 <Dialog.Panel className="w-full max-w-[500px] text-[#fff]  rounded-2xl bg-[#0B0B0B] text-left p-5  ">
                   <div className=" w-full  ">
                     <div className="w-full  mx-auto p-5 rounded-xl flex flex-col gap-8 border border-[#303030]">
-                      <div className="flex space-x-5 items-center">
-                        <p className="bg-[#232323] rounded-2xl p-2    flex self-center md:self-start">
+                      <div className="Barlow flex space-x-5 items-center">
+                        <p className="'Barlow bg-[#232323] rounded-2xl p-2 flex self-center md:self-start">
                           ROUND 1 [ $0.045 ]
                         </p>
 
@@ -63,7 +63,10 @@ export default function MyModal() {
                           LIVE
                         </button>
                       </div>
-                      <p className="text-3xl font-normal  text-center md:text-left font-Rubik w-full ">
+                      <p
+                        style={{ fontFamily: "Regular" }}
+                        className="text-3xl font-normal  text-center md:text-left font-Rubik w-full "
+                      >
                         Buy Cogwise $CGW
                       </p>
 

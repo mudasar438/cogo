@@ -3,13 +3,15 @@ import { logo } from "../../images";
 import BasicButton from "../SmallComponent/Basicbutton";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FiArrowDownRight } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
+  const navigate = useNavigate();
   const [navbar, setNavbar] = useState(false);
   return (
     <>
       <nav className="w-full">
-        <div className="justify-between px-4 mx-auto md:items-center md:flex ">
+        <div className="justify-between px-4 mx-auto md:items-center md:flex Barlow ">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <a href="/">
@@ -59,25 +61,38 @@ export const Navbar = () => {
                 navbar ? "block" : "hidden"
               }`}
             >
-              <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                <li className="flex space-x-2 items-center">
-                  <p>SOLUTIONS</p>{" "}
+              <div className="flex-col md:flex-row items-center   justify-center space-y-4 md:flex md:space-x-6 md:space-y-0">
+                <button
+                  onClick={() => navigate("/")}
+                  className="flex   space-x-2 items-center hover:bg-[#231414] px-5 p-2 rounded-3xl"
+                >
+                  <p> SOLUTIONS</p>{" "}
                   <FiArrowDownRight className="text-[#8d7b7b] font-semibold" />
-                </li>
-                <li>
+                </button>
+                <button
+                  onClick={() => navigate("/solidout")}
+                  className="flex space-x-3 items-center hover:bg-[#231414] px-5 p-2 rounded-3xl "
+                >
                   PRESALE{" "}
-                  <button className="bg-[#39E3BA] border border-[#39E3BA] px-3  rounded-2xl text-[#000] text-[12px] ml-1 font-semibold">
+                  <p className="bg-[#39E3BA] border border-[#39E3BA] px-3  rounded-2xl text-[#000] text-[12px] ml-1 font-semibold">
                     LIVE
-                  </button>
-                </li>
-                <li>TEAM</li>
-                <li className="flex space-x-2 items-center">
+                  </p>
+                </button>
+                <button
+                  onClick={() => navigate("/dashboard")}
+                  className=" hover:bg-[#231414] px-5 p-2 rounded-3xl"
+                >
+                  TEAM
+                </button>
+                <button className="flex space-x-2 items-center  hover:bg-[#231414] px-3 p-2 rounded-3xl">
                   {" "}
-                  <p>CMMUNITY</p>{" "}
+                  <p>COMMUNITY</p>{" "}
                   <FiArrowDownRight className="text-[#4240a6] font-semibold" />
-                </li>
-                <li>CONTACT</li>{" "}
-              </ul>
+                </button>
+                <button className=" hover:bg-[#231414] px-5 p-2 rounded-3xl">
+                  CONTACT
+                </button>{" "}
+              </div>
             </div>
           </div>
           <div

@@ -16,7 +16,10 @@ export const Token = () => {
   return (
     <>
       <div className="w-full mt-[100px]">
-        <p className="text-3xl md:text-6xl text-center md:text-left">
+        <p
+          style={{ fontFamily: "Regular" }}
+          className="text-3xl md:text-6xl text-center md:text-left"
+        >
           Token distribution
         </p>
         <div className="w-full flex flex-col md:flex-row justify-between items-center py-10 ">
@@ -30,7 +33,7 @@ export const Token = () => {
                    rounded-2xl space-y-2 mt-2"
                 >
                   <p>{item.persantage} %</p>
-                  <div className=" flex justify-between items-center">
+                  <div className="Barlow flex justify-between items-center">
                     <p>{item.name}</p>
                     <p className="text-[#545454] text-sm">400,000,000 </p>
                   </div>
@@ -44,12 +47,27 @@ export const Token = () => {
               );
             })}
           </div>
-          <img
-            src={Token1}
-            alt=""
-            srcSet=""
-            style={{ width: "350px", height: "350px", objectFit: "contain" }}
-          />
+          <div className=" w-full md:w-[30%]">
+            <video
+              autoPlay
+              crossOrigin="anonymous"
+              loop
+              muted
+              playsInline
+              preload="auto"
+              role="presentation"
+              tabIndex="-1"
+              style={{
+                borderRadius: "10px",
+                height: "100%",
+                marginTop: "10px",
+                width: "100%",
+                marginX: "auto",
+              }}
+            >
+              <source src="/cwgvideo.mp4" />
+            </video>
+          </div>
           <div className=" w-full md:w-[25%]">
             {array2.map((item, i) => {
               return (

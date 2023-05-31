@@ -1,10 +1,8 @@
 import React from "react";
-import BasicButton from "./SmallComponent/Basicbutton";
-
 export const Round2 = () => {
   return (
     <>
-      <div className=" rounborder py-5   space-y-50">
+      <div className=" Barlow rounborder py-5   space-y-50">
         <p className="w-full md:w-[80%] text-[#858585] text-center md:text-left my-12">
           TOKEN LOCKUP SCHEDULE
         </p>

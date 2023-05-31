@@ -1,8 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
-import { cwg, eth, logo, t } from "../images";
+import { cwg, eth, t } from "../images";
 import { ConnectWallect } from "./SmallComponent/ConnectWallect";
-
 export default function CogoModal() {
   let [isOpen, setIsOpen] = useState(false);
 
@@ -20,7 +19,7 @@ export default function CogoModal() {
         <button
           type="button"
           onClick={openModal}
-          className="text-[#fff] text-lg bg-[#7900EE] hover:bg-[#203cc6] min-w-[130px]   px-6 py-2 rounded-3xl font-medium text-center"
+          className="Barlow text-[#fff] text-lg bg-[#7900EE] hover:bg-[#203cc6] min-w-[130px]   px-6 py-2 rounded-3xl font-medium text-center"
         >
           BUY WITH USDT
         </button>
@@ -54,7 +53,7 @@ export default function CogoModal() {
                 <Dialog.Panel className="w-full max-w-[500px] text-[#fff]  rounded-2xl bg-[#0B0B0B] text-left p-5  ">
                   <div className=" w-full  ">
                     <div className="w-full  mx-auto p-5 rounded-xl flex flex-col gap-8 border border-[#303030]">
-                      <div className="flex space-x-5 items-center">
+                      <div className=" Barlow flex space-x-5 items-center">
                         <p className="bg-[#232323] rounded-2xl p-2    flex self-center md:self-start">
                           ROUND 1 [ $0.045 ]
                         </p>
@@ -63,7 +62,10 @@ export default function CogoModal() {
                           LIVE
                         </button>
                       </div>
-                      <p className="text-3xl font-normal  text-center md:text-left font-Rubik w-full ">
+                      <p
+                        style={{ fontFamily: "Regular" }}
+                        className="text-3xl font-normal  text-center md:text-left font-Rubik w-full "
+                      >
                         Buy Cogwise $CGW
                       </p>
                       <div className="flex justify-between bg-[#141414] p-3 rounded-xl shadow-md">

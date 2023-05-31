@@ -2,6 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import { LandingPage } from "./pages/LandingPage";
 import { Parent } from "./pages/Parent";
+import { SolidOut } from "./pages/SolidOut";
+import { Dashboard } from "./pages/Dashboard";
 
 function App() {
   return (
@@ -10,9 +12,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Parent />}>
             <Route index element={<LandingPage />} />
-            {/* <Route path="token" element={<Token />} />
-            <Route path="businesses" element={<Businesses />} />
-            <Route path="pricing" element={<Pricing />} />
+            <Route path="/solidout" element={<SolidOut />} />
+            <Route path="dashboard" element={<Dashboard />} />
+            {/* <Route path="pricing" element={<Pricing />} />
             <Route path="about" element={<AboutUs />} /> */}
           </Route>
         </Routes>
