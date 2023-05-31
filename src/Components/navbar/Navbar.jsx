@@ -4,14 +4,31 @@ import BasicButton from "../SmallComponent/Basicbutton";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FiArrowDownRight } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
+import { Solution } from "./NavbarHovers/Solution";
+import { CommunityHover } from "./NavbarHovers/CommunityHover";
 
 export const Navbar = () => {
   const navigate = useNavigate();
   const [navbar, setNavbar] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+  const [community, setCommunity] = useState(false);
+  const handlecomunityHover = () => {
+    setCommunity(true);
+  };
+  const handlecommunity = () => {
+    setCommunity(false);
+  };
+
   return (
     <>
-      <nav className="w-full">
-        <div className="justify-between px-4 mx-auto md:items-center md:flex Barlow ">
+      <nav className="w-full  ">
+        <div className="  max-w-screen-2xl mx-auto justify-between px-4 md:items-center md:flex Barlow  fixed left-0 right-0 ml-auto mr-auto top-0 w-full bg-[#000]">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <a href="/">
@@ -63,11 +80,14 @@ export const Navbar = () => {
             >
               <div className="flex-col md:flex-row items-center   justify-center space-y-4 md:flex md:space-x-6 md:space-y-0">
                 <button
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
                   onClick={() => navigate("/")}
-                  className="flex   space-x-2 items-center hover:bg-[#231414] px-5 p-2 rounded-3xl"
+                  className="flex relative  space-x-2 items-center hover:bg-[#231414] px-5 p-2 rounded-3xl"
                 >
                   <p> SOLUTIONS</p>{" "}
                   <FiArrowDownRight className="text-[#8d7b7b] font-semibold" />
+                  {isHovered ? <Solution /> : ""}
                 </button>
                 <button
                   onClick={() => navigate("/solidout")}
@@ -84,10 +104,15 @@ export const Navbar = () => {
                 >
                   TEAM
                 </button>
-                <button className="flex space-x-2 items-center  hover:bg-[#231414] px-3 p-2 rounded-3xl">
+                <button
+                  onMouseEnter={handlecomunityHover}
+                  onMouseLeave={handlecommunity}
+                  className="flex space-x-2 items-center  hover:bg-[#231414] px-3 p-2 rounded-3xl"
+                >
                   {" "}
                   <p>COMMUNITY</p>{" "}
                   <FiArrowDownRight className="text-[#4240a6] font-semibold" />
+                  {community ? <CommunityHover /> : ""}
                 </button>
                 <button className=" hover:bg-[#231414] px-5 p-2 rounded-3xl">
                   CONTACT

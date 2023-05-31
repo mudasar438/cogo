@@ -46,6 +46,10 @@ code {
   background-size: cover;
   height: 450px;
 }
+
+.bshadow{
+  box-shadow: rgb(0, 0, 0) 0px 0px 35px 48px inset;
+}
 .bg-video {
   position: absolute;
   top: 0;
