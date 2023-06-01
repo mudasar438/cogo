@@ -31,7 +31,7 @@ export default function RoundSwiper() {
   };
   return (
     <>
-      <div className=" w-full px-3 h-[700px] md:h-[400px]">
+      <div className=" w-full px-3 h-[5cd00px] md:h-[400px]">
         <Swiper
           // pagination={{
           //   clickable: true,
@@ -68,7 +68,11 @@ export default function RoundSwiper() {
         </Swiper>
         <div className="mt-3 flex justify-center items-center space-x-8">
           <button className="rounded-full" onClick={prevHandler}>
-            <MdNavigateBefore className="text-[#fff] bg-[#292929] p-3 text-5xl rounded-full" />
+            <MdNavigateBefore
+              className={`${
+                swiperRef === null ? "text-[#5a4141]" : "text-[#fff]"
+              } bg-[#292929] p-3 text-5xl rounded-full`}
+            />
           </button>
           <button onClick={nextHandler} className="rounded-full">
             <MdNavigateNext className="text-[#fff] bg-[#292929] p-3 text-5xl rounded-full" />
