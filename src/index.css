@@ -70,3 +70,34 @@ code {
   border-top: 1px solid #333333;
   border-bottom: 1px solid #333333;
 }
+.swiper-button-next:after{
+  border-radius: 50%;
+  background-color: #322b2b;
+  color: white;
+  padding: 15px 17px;
+  font-size: 12px;
+}
+
+.swiper-button-prev:after{
+  border-radius: 50%;
+  background-color: #322b2b;
+  color: white;
+  padding: 15px 17px;
+  font-size: 12px;
+  
+}
+.swiper-button-next{
+  width: 10px;
+  height: 10px;
+  font-size: 12px;
+}
+.custom-button-prev {
+  font-size: 12px; /* Set the desired font size */
+  width: 20px; /* Set the desired width */
+  height: 20px; /* Set the desired height */
+  /* Other styles for the previous button */
+}
+.swiper-pagination-bullet{
+  background-color: #fff;
+  color: #ffffff;
+}

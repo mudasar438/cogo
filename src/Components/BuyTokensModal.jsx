@@ -178,14 +178,14 @@ export default function BuyTokensModal({ initProgress, init }) {
 
   return (
     <>
-      <div className="flex flex-row  w-full  items-center justify-center md:justify-start lg:justify-center space-y-12 md:space-y-0 md:space-x-10">
+      <div className="flex flex-row  w-full  items-center justify-between md:justify-start lg:justify-center  md:space-y-0 md:space-x-10">
         <button
           type="button"
           onClick={() => {
             setToken("USDT");
             openModal();
           }}
-          className="Barlow text-[#fff] text-lg bg-[#7900EE] hover:bg-[#203cc6] min-w-[130px] w-[48%] px-6 py-3 rounded-3xl font-medium text-center"
+          className="Barlow text-[#fff] text-sm md:text-lg bg-[#7900EE] hover:bg-[#203cc6] min-w-[130px] w-[48%] px-2 md:px-6 py-3 rounded-3xl font-medium text-center"
         >
           BUY WITH USDT
         </button>
@@ -195,7 +195,7 @@ export default function BuyTokensModal({ initProgress, init }) {
             setToken("ETH");
             openModal();
           }}
-          className="Barlow text-[#fff] text-lg bg-[#7900EE] hover:bg-[#203cc6] min-w-[130px] w-[48%] px-6 py-3 rounded-3xl font-medium text-center"
+          className="Barlow text-[#fff] text-sm md:text-lg bg-[#7900EE] hover:bg-[#203cc6] min-w-[130px] w-[48%] px-2 md:px-6 py-3 rounded-3xl font-medium text-center"
         >
           BUY WITH ETH
         </button>

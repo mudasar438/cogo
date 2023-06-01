@@ -242,7 +242,7 @@ export const LandingPage = () => {
                 </div>
               )}
 
-              <div className="flex flex-row  w-full  items-center justify-center md:justify-start lg:justify-center space-y-12 md:space-y-0 md:space-x-10">
+              <div className="flex flex-row  w-full items-center justify-center md:justify-start lg:justify-center space-y-12 md:space-y-0 md:space-x-10">
                 {/* <BasicButton text="BUY WITH ETH" /> */}
                 {/* <MyModal /> */}
                 {account ? (
