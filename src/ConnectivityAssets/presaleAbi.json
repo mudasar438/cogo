@@ -1,5 +1,11 @@
 [
-  { "inputs": [], "stateMutability": "nonpayable", "type": "constructor" },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "_fundReceiver", "type": "address" }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
   {
     "anonymous": false,
     "inputs": [
@@ -20,11 +26,183 @@
     "type": "event"
   },
   {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "_user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "ClaimBonus",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "_user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "ClaimToken",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_oldValue",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_newValue",
+        "type": "uint256"
+      }
+    ],
+    "name": "UpdateBonusValue",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_oldMinNative",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_newMinNative",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_oldMinUsdt",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_newMinUsdt",
+        "type": "uint256"
+      }
+    ],
+    "name": "UpdateMinPurchase",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_oldPrice",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_newPrice",
+        "type": "uint256"
+      }
+    ],
+    "name": "UpdatePrice",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_oldPercent",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_newPercent",
+        "type": "uint256"
+      }
+    ],
+    "name": "UpdateRefPercent",
+    "type": "event"
+  },
+  {
+    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "name": "Bonus",
+    "outputs": [
+      { "internalType": "uint256", "name": "token_bonus", "type": "uint256" },
+      { "internalType": "uint256", "name": "claimed_bonus", "type": "uint256" },
+      { "internalType": "uint256", "name": "level", "type": "uint256" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "bool", "name": "_state", "type": "bool" }],
+    "name": "EnableClaim",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
     "inputs": [
       { "internalType": "uint256", "name": "_amount", "type": "uint256" }
     ],
-    "name": "EthToToken",
+    "name": "NativeToToken",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "Token",
+    "outputs": [
+      { "internalType": "contract IERC20", "name": "", "type": "address" }
+    ],
     "stateMutability": "view",
     "type": "function"
   },
@@ -32,23 +210,14 @@
     "inputs": [],
     "name": "USDT",
     "outputs": [
-      { "internalType": "contract IToken", "name": "", "type": "address" }
+      { "internalType": "contract IERC20", "name": "", "type": "address" }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
-    "name": "VEPPT",
-    "outputs": [
-      { "internalType": "contract IToken", "name": "", "type": "address" }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "amountRaisedEth",
+    "name": "amountRaised",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
     "type": "function"
@@ -62,7 +231,7 @@
   },
   {
     "inputs": [],
-    "name": "buyTokenEth",
+    "name": "buyToken",
     "outputs": [],
     "stateMutability": "payable",
     "type": "function"
@@ -72,16 +241,6 @@
       { "internalType": "uint256", "name": "amount", "type": "uint256" }
     ],
     "name": "buyTokenUSDT",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      { "internalType": "uint256", "name": "_inDollar", "type": "uint256" },
-      { "internalType": "uint256", "name": "_inEth", "type": "uint256" }
-    ],
-    "name": "changeMinimumLimits",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -119,15 +278,6 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_total", "type": "uint256" }
-    ],
-    "name": "changeTotalSupply",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
       { "internalType": "address", "name": "_USDT", "type": "address" }
     ],
     "name": "changeUSDT",
@@ -137,16 +287,16 @@
   },
   {
     "inputs": [],
-    "name": "contractBalanceEth",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
+    "name": "claimBonus",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "inputs": [],
-    "name": "contractBalanceUSDT",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
+    "name": "claimTokens",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -158,44 +308,44 @@
   },
   {
     "inputs": [],
-    "name": "getContractTokenApproval",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "name": "enableClaim",
+    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
-    "name": "getCurrentTime",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "getLatestPriceEth",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "getProgress",
+    "name": "fundReceiver",
     "outputs": [
-      { "internalType": "uint256", "name": "_percent", "type": "uint256" }
+      { "internalType": "address payable", "name": "", "type": "address" }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
-    "name": "minimumDollar",
+    "name": "getLatestPrice",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
-    "name": "minimumETH",
+    "name": "maximumBuy",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "minimumBuyInEth",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "minimumBuyInUsdt",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
     "type": "function"
@@ -211,13 +361,6 @@
   },
   {
     "inputs": [],
-    "name": "preSaleStartTime",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
     "name": "presaleStatus",
     "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
     "stateMutability": "view",
@@ -225,7 +368,7 @@
   },
   {
     "inputs": [],
-    "name": "priceFeedEth",
+    "name": "priceFeeD",
     "outputs": [
       {
         "internalType": "contract AggregatorV3Interface",
@@ -237,15 +380,6 @@
     "type": "function"
   },
   {
-    "inputs": [
-      { "internalType": "uint256", "name": "_startTime", "type": "uint256" }
-    ],
-    "name": "setPreSaleTime",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
     "inputs": [],
     "name": "soldToken",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
@@ -253,7 +387,7 @@
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "bool", "name": "state", "type": "bool" }],
+    "inputs": [{ "internalType": "bool", "name": "_off", "type": "bool" }],
     "name": "stopPresale",
     "outputs": [],
     "stateMutability": "nonpayable",
@@ -274,17 +408,24 @@
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "totalUsers",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       { "internalType": "uint256", "name": "_value", "type": "uint256" }
     ],
-    "name": "transferFundsEth",
+    "name": "transferFunds",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "inputs": [
-      { "internalType": "contract IToken", "name": "token", "type": "address" },
+      { "internalType": "contract IERC20", "name": "token", "type": "address" },
       { "internalType": "uint256", "name": "_value", "type": "uint256" }
     ],
     "name": "transferTokens",
@@ -305,11 +446,23 @@
     "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
     "name": "users",
     "outputs": [
-      { "internalType": "uint256", "name": "Eth_balance", "type": "uint256" },
-      { "internalType": "uint256", "name": "busd_balance", "type": "uint256" },
+      {
+        "internalType": "uint256",
+        "name": "native_balance",
+        "type": "uint256"
+      },
       { "internalType": "uint256", "name": "usdt_balance", "type": "uint256" },
-      { "internalType": "uint256", "name": "token_balance", "type": "uint256" }
+      { "internalType": "uint256", "name": "token_balance", "type": "uint256" },
+      { "internalType": "uint256", "name": "token_bonus", "type": "uint256" },
+      { "internalType": "uint256", "name": "claimed_token", "type": "uint256" }
     ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "name": "wallets",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
     "type": "function"
   },

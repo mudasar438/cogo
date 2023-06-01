@@ -13,11 +13,11 @@ const providerOptions = {
     package: WalletConnectProvider, // required
     options: {
       networkUrl:
-        "https://mainnet.infura.io/v3/36fc2665f5504bc18c3b7f9fab0e0c46",
+        "https://goerli.infura.io/v3/36fc2665f5504bc18c3b7f9fab0e0c46",
       rpc: {
-        1: "https://mainnet.infura.io/v3/36fc2665f5504bc18c3b7f9fab0e0c46",
+        5: "https://goerli.infura.io/v3/36fc2665f5504bc18c3b7f9fab0e0c46",
       },
-      chainId: 1,
+      chainId: 5,
     },
   },
 };

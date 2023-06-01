@@ -7,7 +7,7 @@ import { tokenAddress, presaleAddress, usdtAddress } from "./environment";
 import { ethers } from "ethers";
 let walletAddress = "0x8ba1f109551bD432803012645Ac136ddd64DBA72";
 export const provider = new ethers.providers.JsonRpcProvider(
-  "https://mainnet.infura.io/v3/36fc2665f5504bc18c3b7f9fab0e0c46"
+  "https://goerli.infura.io/v3/36fc2665f5504bc18c3b7f9fab0e0c46"
 );
 export const voidAccount = new ethers.VoidSigner(walletAddress, provider);
 function useContract(address, ABI, signer) {

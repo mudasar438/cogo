@@ -3,12 +3,8 @@ import { Navbar } from "../Components/navbar/Navbar";
 
 export const Parent = () => {
   return (
-    <div
-      sx={{
-        position: "relative",
-      }}
-    >
-      <div className="screen-h-100vh w-full">
+    <div className="">
+      <div className="screen-h-100vh w-full relative">
         <div>
           <Navbar />
         </div>

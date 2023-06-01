@@ -46,6 +46,10 @@ code {
   background-size: cover;
   height: 450px;
 }
+
+.bshadow{
+  box-shadow: rgb(0, 0, 0) 0px 0px 35px 48px inset;
+}
 .bg-video {
   position: absolute;
   top: 0;
@@ -57,4 +61,12 @@ code {
 .rounborder {
   border-top: 2px solid #232323;
   border-bottom: 2px solid #232323;
+}
+
+.boderTop{
+  border-top: 1px solid #333333;
+}
+.boderTopBottom{
+  border-top: 1px solid #333333;
+  border-bottom: 1px solid #333333;
 }
