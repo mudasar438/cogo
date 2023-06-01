@@ -27,7 +27,7 @@ export const Round1 = () => {
             </button>
           </div>
         </div>
-        <div className="w-[40%]  space-y-12">
+        <div className="w-full md:w-[40%]  space-y-12">
           <div className="space-y-2">
             <p className="text-center md:text-left text-xl">$0.0034</p>
             <p className="Barlow text-[#545454] text-sm text-center md:text-left ">
