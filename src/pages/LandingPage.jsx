@@ -93,9 +93,8 @@ export const LandingPage = () => {
       let sold = +formatUnits(totalSold.toString(), +dec);
       sold = parseFloat(sold).toFixed(0);
       settotalSoldTokens(toLocalFormat(sold));
-
       const supply = await presaleContract.totalSupply();
-      let tSupply = +formatUnits(totalSold.toString(), +dec);
+      let tSupply = +formatUnits(supply.toString(), +dec);
       tSupply = parseFloat(tSupply).toFixed(0);
       settotalSupply(toLocalFormat(tSupply));
 
@@ -115,6 +114,7 @@ export const LandingPage = () => {
       tRaised = parseFloat(tRaised).toFixed(0);
       settotalRaised(toLocalFormat(tRaised));
 
+      console.log(+dec, sold, tSupply, price, hardCap, tRaised);
       let prog =
         (+formatUnits(totalSold.toString(), +dec) /
           +formatUnits(supply.toString(), +dec)) *

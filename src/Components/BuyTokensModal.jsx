@@ -42,14 +42,15 @@ export default function BuyTokensModal({ initProgress, init }) {
   const usdtContract = useUSDTContract(signer);
   const voidInit = async () => {
     try {
-      let minBuyUSDT = await presaleContract.minimumDollar();
-      setminBuyUSDT(formatUnits(minBuyUSDT.toString(), 18));
-      let minBuyETH = await presaleContract.minimumETH();
-      setminBuyETH(formatUnits(minBuyETH.toString(), 18));
+      let dec = await tokenContract.decimals();
+      let minBuyUSDT = await presaleContract.minimumBuyInUsdt();
+      setminBuyUSDT(formatUnits(minBuyUSDT.toString(), +dec));
+      let minBuyETH = await presaleContract.minimumBuyInEth();
+      setminBuyETH(formatUnits(minBuyETH.toString(), +dec));
       const recUSDT = await presaleContract.usdtToToken("1000000");
-      const rec = await presaleContract.EthToToken("1000000000000000000");
-      setusdtToTokens(formatUnits(recUSDT.toString(), 18));
-      setethToTokens(formatUnits(rec.toString(), 18));
+      const rec = await presaleContract.NativeToToken("1000000000000000000");
+      setusdtToTokens(formatUnits(recUSDT.toString(), +dec));
+      setethToTokens(formatUnits(rec.toString(), +dec));
       if (account) {
         let usdtBal = await usdtContract.balanceOf(account);
         setbalanceUSDT(+formatUnits(usdtBal.toString(), 6));
@@ -69,10 +70,10 @@ export default function BuyTokensModal({ initProgress, init }) {
       try {
         if (token === "USDT") {
           const rec = +enteredAmount * +usdtToTokens;
-          setreceivedTokens(formatUnits(rec.toString(), 18));
+          setreceivedTokens(rec);
         } else {
           const rec = +enteredAmount * ethToTokens;
-          setreceivedTokens(formatUnits(rec.toString(), 18));
+          setreceivedTokens(rec);
         }
       } catch (error) {}
     };
@@ -292,7 +293,10 @@ export default function BuyTokensModal({ initProgress, init }) {
                       </div>
 
                       <div className="flex w-full justify-center ">
-                        <ConnectWallect text="BUY NOW" />
+                        <ConnectWallect
+                          onClick={() => buyHadler()}
+                          text="BUY NOW"
+                        />
                       </div>
                       <div className=" flex flex-col sm:flex-row space-y-8 sm:space-y-0  justify-center sm:justify-between items-center">
                         <div className="flex justify-center sm:justify-start space-x-3">
