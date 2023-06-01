@@ -62,7 +62,7 @@ export const LandingPage = () => {
   const init = async () => {
     try {
       if (account) {
-        const { token_bonus, token_balance } = await tokenContract.users(
+        const { token_bonus, token_balance } = await presaleContract.users(
           account
         );
         let bonusToken = +formatUnits(token_bonus.toString(), +tokenDecimals);
@@ -201,7 +201,8 @@ export const LandingPage = () => {
                       <img width="15px" src={t} alt="" /> {userTokensToUSD}
                     </p>
                   </div>
-                  {+balanceToken > 100000 && (
+                  {console.log(+balanceToken, "+balanceToken")}
+                  {+balanceToken >= 100000 && (
                     <div className="">
                       <p className="text-[#858585] font-medium">
                         BONUS UNLOCKED:

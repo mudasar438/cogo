@@ -141,6 +141,7 @@ export default function BuyTokensModal({ initProgress, init }) {
           }
           setComplete(true);
           setEnteredAmount("");
+          setreceivedTokens("");
           initProgress();
           setloading(false);
         } catch (error) {
