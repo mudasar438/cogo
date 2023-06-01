@@ -28,13 +28,13 @@ export const Navbar = () => {
   return (
     <>
       <nav className="w-full  ">
-        <div className="  max-w-screen-2xl mx-auto justify-between px-4 md:items-center md:flex Barlow  fixed left-0 right-0 ml-auto mr-auto top-0 w-full bg-[#000]">
+        <div className="  max-w-screen-2xl mx-auto justify-between px-4 md:items-center lg:flex Barlow  fixed left-0 right-0 ml-auto mr-auto top-0 w-full bg-[#000]">
           <div>
-            <div className="flex items-center justify-between py-3 md:py-5 md:block">
+            <div className="flex items-center justify-between py-3 md:py-5 lg:block">
               <a href="/">
                 <img src={logo} alt="" srcSet="" />
               </a>
-              <div className="md:hidden">
+              <div className="lg:hidden">
                 <button
                   className="p-2 text-[#fff] rounded-md outline-none focus:border-[#fff] focus:border"
                   onClick={() => setNavbar(!navbar)}
@@ -74,7 +74,7 @@ export const Navbar = () => {
           </div>
           <div>
             <div
-              className={`flex justify-self-center md:justify-between pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+              className={`flex justify-self-center md:justify-between pb-3 mt-8 lg:block md:pb-0 md:mt-0 ${
                 navbar ? "block" : "hidden"
               }`}
             >
@@ -121,11 +121,11 @@ export const Navbar = () => {
             </div>
           </div>
           <div
-            className={`flex items-center flex-row  justify-center md:block ${
+            className={`flex items-center flex-row  justify-center lg:block ${
               navbar ? "flex" : "hidden"
             }`}
           >
-            <div className="flex gap-2 ">
+            <div className="flex gap-2 py-5 ">
               <div className="bg-[ #272727] p-2 rounded-full">
                 <FaTelegramPlane className="text-2xl" />
               </div>

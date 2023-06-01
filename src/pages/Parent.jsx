@@ -9,7 +9,7 @@ export const Parent = () => {
           <Navbar />
         </div>
 
-        <div>
+        <div className="pt-16">
           <Outlet />
         </div>
         {/* //footer */}
