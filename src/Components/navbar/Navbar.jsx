@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { logo } from "../../images";
 import BasicButton from "../SmallComponent/Basicbutton";
 import { FaTelegramPlane } from "react-icons/fa";
@@ -6,8 +6,10 @@ import { FiArrowDownRight } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import { Solution } from "./NavbarHovers/Solution";
 import { CommunityHover } from "./NavbarHovers/CommunityHover";
+import { AppContext } from "../../utils";
 
 export const Navbar = () => {
+  const { connect, account, disconnect } = useContext(AppContext);
   const navigate = useNavigate();
   const [navbar, setNavbar] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -129,8 +131,14 @@ export const Navbar = () => {
               <div className="bg-[ #272727] p-2 rounded-full">
                 <FaTelegramPlane className="text-2xl" />
               </div>
-
-              <BasicButton text="connect" />
+              {account ? (
+                <BasicButton
+                  onClick={() => disconnect()}
+                  text={`${account.slice(0, 8) + "..."}`}
+                />
+              ) : (
+                <BasicButton onClick={() => connect()} text="connect" />
+              )}
             </div>
           </div>
         </div>

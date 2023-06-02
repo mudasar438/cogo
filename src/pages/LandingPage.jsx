@@ -25,7 +25,8 @@ const array2 = [{ img: yahoo }, { img: ben }, { img: market }, { img: market }];
 
 export const LandingPage = () => {
   const { account, connect, signer } = useContext(AppContext);
-  const [balanceToken, setbalanceToken] = useState(0);
+  const [balanceTokenToShow, setbalanceTokenToShow] = useState(0);
+  const [balanceTokenToCompaire, setbalanceTokenToCompaire] = useState(0);
   const [totalBonusTokens, settotalBonusTokens] = useState(0);
   const [userTokensToUSD, setuserTokensToUSD] = useState(0);
   const [totalSoldTokens, settotalSoldTokens] = useState(0);
@@ -34,6 +35,7 @@ export const LandingPage = () => {
   const [tokenPrice, settokenPrice] = useState(0);
   const [totalRaised, settotalRaised] = useState(0);
   const [tokenDecimals, settokenDecimals] = useState(0);
+  const [bonusLevel, setbonusLevel] = useState(0);
   const [openDialog, setOpenDialog] = useState(false);
   const [enteredAmount, setEnteredAmount] = useState("");
   const [balanceUSDT, setbalanceUSDT] = useState(0);
@@ -62,19 +64,22 @@ export const LandingPage = () => {
   const init = async () => {
     try {
       if (account) {
-        const { token_bonus, token_balance } = await presaleContract.users(
-          account
-        );
+        const { token_balance } = await presaleContract.users(account);
+        const { token_bonus, level } = await presaleContract.Bonus(account);
+        setbonusLevel(+level);
         let bonusToken = +formatUnits(token_bonus.toString(), +tokenDecimals);
         settotalBonusTokens(toLocalFormat(bonusToken));
+        setbalanceTokenToCompaire(
+          +formatUnits(token_balance.toString(), +tokenDecimals)
+        );
         let udsSeperator = +formatUnits(
           token_balance.toString(),
           +tokenDecimals
         );
         let tokenToUSD = parseFloat(udsSeperator).toFixed(0);
         udsSeperator = +udsSeperator / +tokenPrice;
-        setbalanceToken(toLocalFormat(udsSeperator));
-        setuserTokensToUSD(toLocalFormat(tokenToUSD));
+        setbalanceTokenToShow(toLocalFormat(tokenToUSD));
+        setuserTokensToUSD(toLocalFormat(udsSeperator));
       }
     } catch (error) {
       console.log(error);
@@ -192,28 +197,53 @@ export const LandingPage = () => {
                   {parseFloat(progressBar).toFixed(3)}%
                 </div>
               </div>
-              {+balanceToken > 0 ? (
-                <div className=" flex flex-col   sm:flex-row space-y-12 sm:space-y-0 sm:space-x-12 shadow-xl w-full items-center justify-center md:justify-start">
+              {+balanceTokenToCompaire > 0 ? (
+                <div className="flex flex-col sm:flex-row space-y-12 sm:space-y-0 sm:space-x-12 shadow-xl w-full items-center justify-center md:justify-start">
                   <div className="">
-                    <p className="text-[#858585] font-medium">YOUR BALANCE:</p>
-                    <p className="text-2xl py-2">{balanceToken}</p>
-                    <p className="text-[#545454] font-medium">
-                      <img width="15px" src={t} alt="" /> {userTokensToUSD}
+                    <p className="text-[#858585] text-lg font-medium">
+                      YOUR BALANCE:
+                    </p>
+                    <p
+                      className="text-4xl py-2"
+                      style={{ fontFamily: "Regular" }}
+                    >
+                      {balanceTokenToShow}
+                    </p>
+                    <p
+                      style={{ fontFamily: "Regular" }}
+                      className="text-[#545454] text-lg font-medium flex items-center"
+                    >
+                      <img
+                        style={{
+                          width: "20px",
+                          height: "20px",
+                          marginRight: "5px",
+                        }}
+                        src={t}
+                        alt=""
+                      />{" "}
+                      {userTokensToUSD}
                     </p>
                   </div>
-                  {console.log(+balanceToken, "+balanceToken")}
-                  {+balanceToken >= 100000 && (
+                  {+balanceTokenToCompaire >= 100000 && (
                     <div className="">
-                      <p className="text-[#858585] font-medium">
+                      <p className="text-[#858585] text-lg font-medium">
                         BONUS UNLOCKED:
                       </p>
-                      <p className="text-2xl py-2">{totalBonusTokens}</p>
-                      <p className="text-[#545454] font-medium">Level 1</p>
+                      <p
+                        className="text-4xl py-2"
+                        style={{ fontFamily: "Regular" }}
+                      >
+                        {totalBonusTokens}
+                      </p>
+                      <p className="text-[#545454] text-lg font-medium">
+                        Level 1
+                      </p>
                     </div>
                   )}
                 </div>
               ) : (
-                <div className=" flex flex-col   sm:flex-row space-y-12 sm:space-y-0 sm:space-x-12 shadow-xl w-full items-center justify-center md:justify-start">
+                <div className="flex flex-col sm:flex-row space-y-12 sm:space-y-0 sm:space-x-12 shadow-xl w-full items-center justify-center md:justify-start">
                   <div className="">
                     <p className="text-[#858585] font-medium">SOLD (BGPT)</p>
                     <p
