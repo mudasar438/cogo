@@ -267,7 +267,7 @@ export default function BuyTokensModal({ initProgress, init }) {
                   ) : (
                     <div className=" w-full  ">
                       <div className="relative w-full  mx-auto p-5 rounded-xl flex flex-col gap-8 border border-[#303030]">
-                        <div className="absolute right-0 top-0 flex justify-end text-[#b85353] ">
+                        <div className="absolute right-5 top-5 flex justify-end text-[#b85353] ">
                           <AiOutlineClose
                             className="text-right bg-[#2d2828] p-2 rounded-full text-4xl hover:bg-[#262020]"
                             onClick={closeModal}
