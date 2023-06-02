@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { Solution } from "./NavbarHovers/Solution";
 import { CommunityHover } from "./NavbarHovers/CommunityHover";
 import { AppContext } from "../../utils";
+import { DocsHover } from "./NavbarHovers/DocsHover";
 
 export const Navbar = () => {
   const { connect, account, disconnect } = useContext(AppContext);
@@ -25,6 +26,13 @@ export const Navbar = () => {
   };
   const handlecommunity = () => {
     setCommunity(false);
+  };
+  const [docs, setDocs] = useState(false);
+  const handleDocs = () => {
+    setDocs(true);
+  };
+  const handleDocsfalse = () => {
+    setDocs(false);
   };
 
   return (
@@ -76,11 +84,11 @@ export const Navbar = () => {
           </div>
           <div>
             <div
-              className={`flex justify-self-center md:justify-between pb-3 mt-8 lg:block md:pb-0 md:mt-0 ${
+              className={`flex justify-self-center md:justify-between pb-3 mt-8 lg:block md:pb-0 md:mt-0  ${
                 navbar ? "block" : "hidden"
               }`}
             >
-              <div className="flex-col md:flex-row items-center   justify-center space-y-4 md:flex md:space-x-6 md:space-y-0">
+              <div className="flex-col md:flex-row items-start   justify-center space-y-4 md:flex md:space-x-6 md:space-y-0">
                 <button
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
@@ -101,8 +109,17 @@ export const Navbar = () => {
                   </p>
                 </button>
                 <button
+                  onMouseEnter={handleDocs}
+                  onMouseLeave={handleDocsfalse}
                   onClick={() => navigate("/dashboard")}
-                  className=" hover:bg-[#231414] px-5 p-2 rounded-3xl"
+                  className=" hover:bg-[#231414] px-5 p-2 rounded-3xl "
+                >
+                  DOCS
+                  {docs ? <DocsHover /> : ""}
+                </button>
+                <button
+                  onClick={() => navigate("/dashboard")}
+                  className=" hover:bg-[#231414] px-5 p-2 rounded-3xl flex flex-col"
                 >
                   TEAM
                 </button>

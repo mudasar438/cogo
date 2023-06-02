@@ -12,7 +12,7 @@ export const Banner = () => {
             srcSet=""
             style={{ width: "50px", height: "50px" }}
           />
-          <div className=" flex flex-col justify-center items-center lg:items-start ">
+          <div className=" flex flex-col justify-center items-start ">
             <p className="text-[#5C5C5C] Barlow">CONTRACT ADDRESS</p>
             <p className=" ">0x021D4f55AF40A1Ce428A</p>
           </div>

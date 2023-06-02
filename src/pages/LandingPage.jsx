@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import BasicButton from "../Components/SmallComponent/Basicbutton";
-import { m2, m1, m3, eth, t, yahoo, ben, market } from "../images";
+import { m2, m1, m3, eth, t, yahoo, ben, market, bit } from "../images";
 import { Banner } from "../Components/Banner";
 import { Deepdiv } from "../Components/Deepdiv";
 import { Round1 } from "../Components/Round1";
@@ -21,7 +21,7 @@ import {
 import { formatUnits } from "@ethersproject/units";
 import { ConnectWallect } from "../Components/SmallComponent/ConnectWallect";
 const array = [{ img: m1 }, { img: m2 }, { img: m3 }];
-const array2 = [{ img: yahoo }, { img: ben }, { img: market }, { img: market }];
+const array2 = [{ img: yahoo }, { img: ben }, { img: market }, { img: bit }];
 
 export const LandingPage = () => {
   const { account, connect, signer } = useContext(AppContext);

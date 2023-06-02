@@ -3,6 +3,7 @@ import { Fragment, useContext, useEffect, useState } from "react";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { cwg, eth, t } from "../images";
 import { ConnectWallect } from "./SmallComponent/ConnectWallect";
+import { AiOutlineClose } from "react-icons/ai";
 import {
   provider,
   usePresaleContract,
@@ -203,7 +204,7 @@ export default function BuyTokensModal({ initProgress, init }) {
       </div>
 
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closeModal}>
+        <Dialog as="div" className="relative z-10" onClose={openModal}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -265,8 +266,14 @@ export default function BuyTokensModal({ initProgress, init }) {
                     </div>
                   ) : (
                     <div className=" w-full  ">
-                      <div className="w-full  mx-auto p-5 rounded-xl flex flex-col gap-8 border border-[#303030]">
-                        <div className=" Barlow flex space-x-5 items-center">
+                      <div className="relative w-full  mx-auto p-5 rounded-xl flex flex-col gap-8 border border-[#303030]">
+                        <div className="absolute right-0 top-0 flex justify-end text-[#b85353] ">
+                          <AiOutlineClose
+                            className="text-right bg-[#2d2828] p-2 rounded-full text-4xl hover:bg-[#262020]"
+                            onClick={closeModal}
+                          />
+                        </div>
+                        <div className=" Barlow flex space-x-5 items-center  ">
                           <p className="bg-[#232323] rounded-2xl p-2    flex self-center md:self-start">
                             ROUND 1 [ $0.045 ]
                           </p>

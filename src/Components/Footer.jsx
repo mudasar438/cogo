@@ -24,7 +24,10 @@ export const Footer = () => {
                 <li className="hover:text-[blue]">Contact</li>
               </ul>
               <div className="w-[100%] md:w-[55%] space-y-10  flex flex-col item-center">
-                <p className="Barlow text-[#B2B2B2] text-center md:text-left">
+                <p
+                  style={{ fontFamily: "Regular" }}
+                  className="Barlow text-[#B2B2B2] text-center md:text-left"
+                >
                   We are always looking for dedicated people to join our
                   interdisciplinary team.
                 </p>
