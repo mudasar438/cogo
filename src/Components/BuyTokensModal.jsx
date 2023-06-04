@@ -5,6 +5,7 @@ import { cwg, eth, t } from "../images";
 import { ConnectWallect } from "./SmallComponent/ConnectWallect";
 import { AiOutlineClose } from "react-icons/ai";
 import {
+  ToastNotify,
   provider,
   usePresaleContract,
   useTokenContract,
@@ -128,6 +129,7 @@ export default function BuyTokensModal({ initProgress, init }) {
               await tx.wait();
             }
           } else {
+            console.log(+minBuyETH, "+minBuyETH");
             if (+enteredAmount < +minBuyETH) {
               setAlertState({
                 open: true,
@@ -135,7 +137,7 @@ export default function BuyTokensModal({ initProgress, init }) {
                 severity: "error",
               });
             } else {
-              const tx = await presaleContract.buyTokenEth({
+              const tx = await presaleContract.buyToken({
                 value: parseUnits(enteredAmount.toString(), 18).toString(),
               });
               await tx.wait();
@@ -145,6 +147,7 @@ export default function BuyTokensModal({ initProgress, init }) {
           setEnteredAmount("");
           setreceivedTokens("");
           initProgress();
+          init();
           setloading(false);
         } catch (error) {
           setloading(false);
@@ -180,6 +183,7 @@ export default function BuyTokensModal({ initProgress, init }) {
 
   return (
     <>
+      <ToastNotify alertState={alertState} setAlertState={setAlertState} />
       <div className="flex flex-row  w-full  items-center justify-between md:justify-start lg:justify-center  md:space-y-0 md:space-x-10">
         <button
           type="button"
@@ -256,6 +260,17 @@ export default function BuyTokensModal({ initProgress, init }) {
                     </div>
                   ) : complete ? (
                     <div className="flex flex-col items-center p-3">
+                      <div className="absolute right-5 top-5 flex justify-end text-[#b85353] ">
+                        <AiOutlineClose
+                          className="text-right bg-[#2d2828] p-2 rounded-full text-4xl hover:bg-[#262020]"
+                          onClick={() => {
+                            setEnteredAmount("");
+                            setreceivedTokens(0);
+                            closeModal();
+                            setComplete(false);
+                          }}
+                        />
+                      </div>
                       <CheckCircleIcon
                         sx={{ color: "#57CA5C", fontSize: "150px" }}
                       />
@@ -270,15 +285,20 @@ export default function BuyTokensModal({ initProgress, init }) {
                         <div className="absolute right-5 top-5 flex justify-end text-[#b85353] ">
                           <AiOutlineClose
                             className="text-right bg-[#2d2828] p-2 rounded-full text-4xl hover:bg-[#262020]"
-                            onClick={closeModal}
+                            onClick={() => {
+                              setEnteredAmount("");
+                              setreceivedTokens(0);
+                              closeModal();
+                              setComplete(false);
+                            }}
                           />
                         </div>
                         <div className=" Barlow flex space-x-5 items-center  ">
-                          <p className="bg-[#232323] rounded-2xl p-2    flex self-center md:self-start">
+                          <p className="bg-[#232323] rounded-full py-2 px-4 flex self-center md:self-start">
                             ROUND 1 [ $0.045 ]
                           </p>
 
-                          <button className="bg-[#39E3BA] border border-[#39E3BA] px-4 -py-1 h-8 rounded-2xl text-[#000] text-[12px] ml-1 font-semibold">
+                          <button className="bg-[#39E3BA] border border-[#39E3BA] px-4 -py-2 h-8 rounded-2xl text-[#000] text-[12px] ml-1 font-semibold">
                             LIVE
                           </button>
                         </div>
@@ -290,9 +310,10 @@ export default function BuyTokensModal({ initProgress, init }) {
                         </p>
                         <div className="flex justify-between bg-[#141414] p-3 rounded-xl shadow-md">
                           <input
+                            style={{ fontFamily: "Regular" }}
                             type="text"
                             placeholder="Enter Amount"
-                            className=" max-w-sm min-w-[180px] bg-[#141414] p-3 focus:outline-0"
+                            className=" max-w-sm min-w-[180px] text-xl bg-[#141414] p-1 focus:outline-0"
                             value={enteredAmount}
                             onChange={(e) => setEnteredAmount(e.target.value)}
                           />
@@ -317,9 +338,10 @@ export default function BuyTokensModal({ initProgress, init }) {
                         </div>
                         <div className="flex justify-between bg-[#141414] p-3 rounded-xl shadow-md">
                           <input
+                            style={{ fontFamily: "Regular" }}
                             type="text"
                             placeholder="Recive Amount"
-                            className=" max-w-sm min-w-[180px] bg-[#141414] p-3 focus:outline-0"
+                            className=" max-w-sm min-w-[180px] text-xl bg-[#141414] p-1 focus:outline-0"
                             value={receivedTokens}
                             // onChange={(e)=>setEnteredAmount(e.target.value)}
                           />
@@ -339,7 +361,7 @@ export default function BuyTokensModal({ initProgress, init }) {
 
                         <div className="flex w-full justify-center ">
                           <ConnectWallect
-                            onClick={() => buyHadler()}
+                            onClickFun={buyHadler}
                             text="BUY NOW"
                           />
                         </div>

@@ -5,6 +5,7 @@ import presaleAbi from "./presaleAbi.json";
 import usdtAbi from "./usdtAbi.json";
 import { tokenAddress, presaleAddress, usdtAddress } from "./environment";
 import { ethers } from "ethers";
+import { Alert, Snackbar } from "@mui/material";
 let walletAddress = "0x8ba1f109551bD432803012645Ac136ddd64DBA72";
 export const provider = new ethers.providers.JsonRpcProvider(
   "https://goerli.infura.io/v3/36fc2665f5504bc18c3b7f9fab0e0c46"
@@ -27,4 +28,23 @@ export function usePresaleContract(signer) {
 }
 export function useUSDTContract(signer) {
   return useContract(usdtAddress, usdtAbi, signer);
+}
+
+export function ToastNotify({ alertState, setAlertState }) {
+  return (
+    <Snackbar
+      anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      open={alertState.open}
+      autoHideDuration={10000}
+      key={"top center"}
+      onClose={() => setAlertState({ ...alertState, open: false })}
+    >
+      <Alert
+        onClose={() => setAlertState({ ...alertState, open: false })}
+        severity={alertState.severity}
+      >
+        {alertState.message}
+      </Alert>
+    </Snackbar>
+  );
 }
