@@ -99,10 +99,7 @@ export const Navbar = () => {
                   <FiArrowDownRight className="text-[#8d7b7b] font-semibold" />
                   {isHovered ? <Solution /> : ""}
                 </button>
-                <button
-                  onClick={() => navigate("/solidout")}
-                  className="flex space-x-3 items-center hover:bg-[#231414] px-5 p-2 rounded-3xl "
-                >
+                <button className="flex space-x-3 items-center hover:bg-[#231414] px-5 p-2 rounded-3xl ">
                   PRESALE{" "}
                   <p className="bg-[#39E3BA] border border-[#39E3BA] px-3  rounded-2xl text-[#000] text-[12px] ml-1 font-semibold">
                     LIVE
@@ -111,7 +108,6 @@ export const Navbar = () => {
                 <button
                   onMouseEnter={handleDocs}
                   onMouseLeave={handleDocsfalse}
-                  onClick={() => navigate("/dashboard")}
                   className=" hover:bg-[#231414] px-5 p-2 rounded-3xl "
                 >
                   DOCS
