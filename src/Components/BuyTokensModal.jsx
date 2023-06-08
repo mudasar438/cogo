@@ -235,7 +235,7 @@ export default function BuyTokensModal({ initProgress, init }) {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-[500px] text-[#fff]  rounded-2xl bg-[#0B0B0B] text-left p-5  ">
+                <Dialog.Panel className="w-full max-w-[500px] text-[#fff]  rounded-2xl bg-[#222222] text-left p-5  ">
                   {loading ? (
                     <div className="flex flex-col items-center p-3">
                       <video
@@ -284,7 +284,7 @@ export default function BuyTokensModal({ initProgress, init }) {
                     </div>
                   ) : (
                     <div className="w-full">
-                      <div className="relative w-full  mx-auto p-5 rounded-xl flex flex-col gap-8 border border-[#303030]">
+                      <div className="relative w-full bg-[#222222] mx-auto p-5 rounded-xl flex flex-col gap-8 border border-[#303030]">
                         <div className="absolute right-5 top-5 flex justify-end text-[#b85353] ">
                           <AiOutlineClose
                             className="text-right bg-[#2d2828] p-2 rounded-full text-4xl hover:bg-[#262020]"
@@ -297,7 +297,7 @@ export default function BuyTokensModal({ initProgress, init }) {
                           />
                         </div>
                         <div className=" Barlow flex space-x-5 items-center  ">
-                          <p className="bg-[#232323] rounded-full py-2 px-4 flex self-center md:self-start">
+                          <p className="bg-[#3D3D3D] rounded-full py-2 px-4 flex self-center md:self-start">
                             ROUND 1 [ ${1 / +tokenPrice} ]
                           </p>
 

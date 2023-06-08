@@ -88,7 +88,7 @@ export const Navbar = () => {
                 navbar ? "block" : "hidden"
               }`}
             >
-              <div className="flex-col md:flex-row items-start   justify-center space-y-4 md:flex md:space-x-6 md:space-y-0">
+              <div className="flex-col md:flex-row items-start   justify-center space-y-4 md:flex md:space-x-1 md:space-y-0">
                 <button
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
@@ -101,7 +101,7 @@ export const Navbar = () => {
                 </button>
                 <button className="flex space-x-3 items-center hover:bg-[#231414] px-5 p-2 rounded-3xl ">
                   PRESALE{" "}
-                  <p className="bg-[#39E3BA] border border-[#39E3BA] px-3  rounded-2xl text-[#000] text-[12px] ml-1 font-semibold">
+                  <p className="bg-[#39E3BA] border border-[#39E3BA] px-3 rounded-2xl text-[#000] text-[12px] ml-1 font-semibold blob green">
                     LIVE
                   </p>
                 </button>

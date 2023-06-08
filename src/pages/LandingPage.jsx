@@ -262,10 +262,10 @@ export const LandingPage = () => {
           </div>
           {isClaimEnabled ? (
             <div className=" w-full lg:w-[50%] flex justify-end">
-              <div className="w-full lg:w-[75%]  p-5 rounded-xl flex flex-col item-center justify-center  gap-8 border border-[#303030]">
+              <div className="w-full lg:w-[75%] bg-[#222222] p-5 rounded-xl flex flex-col item-center justify-center  gap-8 border border-[#303030]">
                 <div className="space-y-3">
                   <div className="flex space-x-3 items-center justify-center">
-                    <p className="bg-[#232323] rounded-full px-4 py-3  flex self-center  Barlow">
+                    <p className="bg-[#3D3D3D] rounded-full px-4 py-3  flex self-center  Barlow">
                       STAGE 6 [ ${1 / tokenPrice} ]
                     </p>
                     <button className="bg-[#E33962] px-3 py-3 rounded-full text-[#000] font-normal Rubik">
@@ -504,8 +504,8 @@ export const LandingPage = () => {
             </div>
           ) : (
             <div className=" w-full lg:w-[50%] flex justify-end">
-              <div className="w-full lg:w-[75%]  p-5 rounded-xl flex flex-col gap-8 border border-[#303030]">
-                <p className="bg-[#232323] rounded-full px-5 py-3 flex self-center md:self-start Barlow">
+              <div className="w-full lg:w-[75%] bg-[#222222]  p-5 rounded-xl flex flex-col gap-8 border border-[#303030]">
+                <p className="bg-[#3D3D3D] rounded-full px-5 py-3 flex self-center md:self-start Barlow">
                   ROUND 1 [ ${1 / +tokenPrice} ]
                 </p>
                 <p
@@ -515,7 +515,7 @@ export const LandingPage = () => {
                   Buy Cogwise $CGW
                 </p>
 
-                <div className="w-full bg-gray-200 rounded-full dark:bg-[#232323]">
+                <div className="w-full bg-[#3D3D3D] rounded-full dark:bg-[#232323]">
                   <div
                     className="Barlow bg-gradient-to-r from-[#292D2C] to-[#328D77] text-xl font-medium text-[#000] text-center p-0.5 leading-none rounded-full"
                     style={{ width: `${progressBar}%` }}
@@ -525,8 +525,8 @@ export const LandingPage = () => {
                   </div>
                 </div>
                 {+balanceTokenToCompaire > 0 ? (
-                  <div className="">
-                    <div className="flex flex-col sm:flex-row space-y-5 sm:space-y-0 sm:space-x-20 shadow-xl w-full items-center justify-center md:justify-start">
+                  <div className="bg-[#3D3D3D] p-3 rounded-2xl shadow-xl">
+                    <div className="flex  flex-col sm:flex-row space-y-5 sm:space-y-0 sm:space-x-20  w-full items-center justify-center md:justify-start">
                       <div className="">
                         <p className="text-[#858585] text-lg font-medium">
                           YOUR BALANCE:
@@ -591,14 +591,17 @@ export const LandingPage = () => {
                       </div>
                     </div>
                     <div className="flex items-center justify-between mt-1">
-                      <p className="text-[#ffffff] text-sm md:text-lg font-regular underline">
-                        Purchase {remainingForNextLevel} CGW more to unlock +15%
+                      <p
+                        style={{ fontFamily: "Regular" }}
+                        className="text-[#ffffff] text-sm md:text-md font-sm"
+                      >
+                        Purchase {remainingForNextLevel} CGW more to unlock +30%
                         bonus
                       </p>
                     </div>
                   </div>
                 ) : (
-                  <div className="flex flex-col sm:flex-row space-y-12 sm:space-y-0 sm:space-x-12 shadow-xl w-full items-center justify-center md:justify-start">
+                  <div className="flex bg-[#3D3D3D] p-3 rounded-2xl flex-col sm:flex-row space-y-12 sm:space-y-0 sm:space-x-12 shadow-xl w-full items-center justify-center md:justify-start">
                     <div className="">
                       <p className="text-[#858585] font-medium">SOLD (BGPT)</p>
                       <p
