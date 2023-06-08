@@ -34,6 +34,7 @@ export default function BuyTokensModal({ initProgress, init }) {
   const [complete, setComplete] = useState(false);
   const [balanceUSDT, setbalanceUSDT] = useState(0);
   const [balanceETH, setbalanceETH] = useState();
+  const [tokenPrice, settokenPrice] = useState(0);
   const [loading, setloading] = useState(false);
   const [alertState, setAlertState] = useState({
     open: false,
@@ -54,12 +55,14 @@ export default function BuyTokensModal({ initProgress, init }) {
       const rec = await presaleContract.NativeToToken("1000000000000000000");
       setusdtToTokens(formatUnits(recUSDT.toString(), +dec));
       setethToTokens(formatUnits(rec.toString(), +dec));
-      // if (account) {
-      //   let usdtBal = await usdtContract.balanceOf(account);
-      //   setbalanceUSDT(+formatUnits(usdtBal.toString(), 6));
-      //   let walletBalance = await provider.getBalance(account);
-      //   setbalanceETH(+formatUnits(walletBalance.toString(), 18));
-      // }
+      let price = await presaleContract.tokenPerUsd();
+      settokenPrice(+formatUnits(price.toString(), +dec));
+      if (account) {
+        let usdtBal = await usdtContract.balanceOf(account);
+        setbalanceUSDT(+formatUnits(usdtBal.toString(), 6));
+        let walletBalance = await provider.getBalance(account);
+        setbalanceETH(+formatUnits(walletBalance.toString(), 18));
+      }
     } catch (error) {
       console.log(error);
     }
@@ -280,7 +283,7 @@ export default function BuyTokensModal({ initProgress, init }) {
                       </p>
                     </div>
                   ) : (
-                    <div className=" w-full  ">
+                    <div className="w-full">
                       <div className="relative w-full  mx-auto p-5 rounded-xl flex flex-col gap-8 border border-[#303030]">
                         <div className="absolute right-5 top-5 flex justify-end text-[#b85353] ">
                           <AiOutlineClose
@@ -295,7 +298,7 @@ export default function BuyTokensModal({ initProgress, init }) {
                         </div>
                         <div className=" Barlow flex space-x-5 items-center  ">
                           <p className="bg-[#232323] rounded-full py-2 px-4 flex self-center md:self-start">
-                            ROUND 1 [ $0.045 ]
+                            ROUND 1 [ ${1 / +tokenPrice} ]
                           </p>
 
                           <button className="bg-[#39E3BA] border border-[#39E3BA] px-4 -py-2 h-8 rounded-2xl text-[#000] text-[12px] ml-1 font-semibold">
@@ -308,6 +311,17 @@ export default function BuyTokensModal({ initProgress, init }) {
                         >
                           Buy Cogwise $CGW
                         </p>
+                        <div className="flex justify-end">
+                          <p
+                            style={{ fontFamily: "Regular" }}
+                            className="text-[#fdfdfd] rounded-full px-4"
+                          >
+                            Balance:{" "}
+                            {token === "USDT"
+                              ? parseFloat(balanceUSDT).toFixed(2)
+                              : parseFloat(balanceETH).toFixed(3)}
+                          </p>
+                        </div>
                         <div className="flex justify-between bg-[#141414] p-3 rounded-xl shadow-md">
                           <input
                             style={{ fontFamily: "Regular" }}
