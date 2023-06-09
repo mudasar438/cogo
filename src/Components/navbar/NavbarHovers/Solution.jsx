@@ -41,7 +41,7 @@ export const Solution = () => {
   return (
     <div
       style={{ fontFamily: "Regular" }}
-      className="absolute  bg-[#030304] py-3 px-1  h-[380px] md:h-[340px] top-10  border border-[#303030] rounded-xl w-[300px]  md:w-[700px] none flex flex-col justify-start md:flex-row md:justify-between  items-start "
+      className="absolute  bg-[#030304] py-3 px-1  top-10  border border-[#303030] rounded-xl w-[300px]  md:w-[700px] none flex flex-col justify-start md:flex-row md:justify-between  items-start "
     >
       <div className=" w-full md:w-[65%] space-y-3 text-left">
         {array.map((item, i) => {
@@ -66,6 +66,9 @@ export const Solution = () => {
                     {item.text}
                   </p>
                 </div>
+                <button className="bg-[#7E0AEF] px-2 py-[2px] rounded-3xl">
+                  SOON
+                </button>
               </div>
             </div>
           );

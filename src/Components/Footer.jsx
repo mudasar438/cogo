@@ -11,7 +11,7 @@ export const Footer = () => {
         style={{ fontFamily: "Regular" }}
         className="h-[700px] md:h-[800px] w-full px-5  py-5 "
       >
-        <div className="boderTop w-full md:w-[90%] mx-0 md:mx-auto flex flex-col md:flex-row md:justify-between items-start py-20 mt-10 ">
+        <div className="boderTop w-full md:w-[90%] mx-0 md:mx-auto flex flex-col md:flex-row md:justify-between items-start py:10 md:py-20 mt-10 ">
           <div className="w-full md:w-[60%]">
             <div className=" flex flex-col md:flex-row  items-center md:items-start space-y-5 md:space-y-0 space-x-0 md:space-x-8  md:justify-between">
               <ul
@@ -72,7 +72,7 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="boderTopBottom  w-full md:w-[80%] mx-0 md:mx-auto mt-5 md:mt-20 py-20 mb-5 flex flex-col md:flex-row space-y-5 md:space-x-0 justify-between items-center text-[12px] text-[#8C8C8C] font-semibold">
+        <div className="boderTopBottom  w-full md:w-[90%] mx-0 md:mx-auto mt-5 md:mt-20 py-10 md:py-20 mb-5 flex flex-col md:flex-row space-y-5 md:space-x-0 justify-between items-center text-[12px] text-[#8C8C8C] font-semibold">
           <p className="font-bold">
             ©2023 ― 1910 GENETICS. ALL RIGHTS RESERVED.
           </p>
