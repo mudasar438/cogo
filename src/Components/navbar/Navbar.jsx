@@ -39,8 +39,8 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full">
-        <div className="max-w-screen-2xl mx-auto justify-between px-4 md:items-center lg:flex Barlow  fixed left-0 right-0 z-10 ml-auto mr-auto top-0 w-full navbg">
+      <nav className="w-full " style={{ fontFamily: "Regular" }}>
+        <div className="max-w-screen-2xl mx-auto justify-between px-4 md:items-center lg:flex   fixed left-0 right-0 z-10 ml-auto mr-auto top-0 w-full navbg">
           <div>
             <div className="flex items-center justify-between py-3 md:py-3 lg:block">
               <a href="/">

@@ -28,7 +28,7 @@ export const Footer = () => {
               <div className="w-[100%] md:w-[55%] space-y-10  flex flex-col item-center">
                 <p
                   style={{ fontFamily: "Regular" }}
-                  className="Barlow text-[#B2B2B2] text-center md:text-left font-medium text-lg"
+                  className=" text-[#B2B2B2] text-center md:text-left font-medium text-lg"
                 >
                   We are always looking for dedicated people to join our
                   interdisciplinary team.
@@ -72,7 +72,7 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="boderTopBottom Barlow w-full md:w-[80%] mx-0 md:mx-auto mt-5 md:mt-20 py-20 mb-5 flex flex-col md:flex-row space-y-5 md:space-x-0 justify-between items-center text-[12px] text-[#8C8C8C] font-semibold">
+        <div className="boderTopBottom  w-full md:w-[80%] mx-0 md:mx-auto mt-5 md:mt-20 py-20 mb-5 flex flex-col md:flex-row space-y-5 md:space-x-0 justify-between items-center text-[12px] text-[#8C8C8C] font-semibold">
           <p className="font-bold">
             ©2023 ― 1910 GENETICS. ALL RIGHTS RESERVED.
           </p>

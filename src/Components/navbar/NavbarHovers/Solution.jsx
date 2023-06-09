@@ -39,7 +39,10 @@ export const Solution = () => {
   const [hover, setHover] = useState({});
   console.log("hover value", hover);
   return (
-    <div className="absolute Barlow bg-[#030304] py-3 px-1  h-[380px] md:h-[340px] top-10  border border-[#303030] rounded-xl w-[300px]  md:w-[700px] none flex flex-col justify-start md:flex-row md:justify-between  items-start ">
+    <div
+      style={{ fontFamily: "Regular" }}
+      className="absolute  bg-[#030304] py-3 px-1  h-[380px] md:h-[340px] top-10  border border-[#303030] rounded-xl w-[300px]  md:w-[700px] none flex flex-col justify-start md:flex-row md:justify-between  items-start "
+    >
       <div className=" w-full md:w-[65%] space-y-3 text-left">
         {array.map((item, i) => {
           return (
@@ -59,7 +62,7 @@ export const Solution = () => {
                   <p className="font-medium text-left text-[12px] md:text-lg">
                     {item.name}
                   </p>
-                  <p className="text-[#5C5C5C] Barlow text-[12px] md:text-lg ">
+                  <p className="text-[#5C5C5C]  text-[12px] md:text-lg ">
                     {item.text}
                   </p>
                 </div>

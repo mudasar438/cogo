@@ -30,7 +30,10 @@ const array = [
 export const CommunityHover = () => {
   return (
     <>
-      <div className="absolute Barlow bg-[#16161b] py-3 px-1  h-[340px] top-[150px] md:top-[57px]  border border-[#303030] rounded-xl w-[300px]  md:w-[400px] none flex flex-col md:flex-row justify-between  items-start ">
+      <div
+        style={{ fontFamily: "Regular" }}
+        className="absolute  bg-[#16161b] py-3 px-1  h-[340px] top-[150px] md:top-[57px]  border border-[#303030] rounded-xl w-[300px]  md:w-[400px] none flex flex-col md:flex-row justify-between  items-start "
+      >
         <div className=" w-full space-y-3 text-left">
           {array.map((item, i) => {
             return (
@@ -45,7 +48,7 @@ export const CommunityHover = () => {
                   </div>
                   <div className=" flex flex-col justify-center  lg:items-start ">
                     <p className="font-medium">{item.name}</p>
-                    <p className="text-[#5C5C5C] Barlow ">{item.heading}</p>
+                    <p className="text-[#5C5C5C]  ">{item.heading}</p>
                   </div>
                 </div>
               </div>
@@ -56,4 +59,4 @@ export const CommunityHover = () => {
     </>
   );
 };
-// absolute Barlow bg-[#030304] py-3 px-1  h-[340px] top-11  border border-[#303030] rounded-xl w-[450px]  md:w-[700px] none flex flex-col md:flex-row justify-between  items-start
+// absolute  bg-[#030304] py-3 px-1  h-[340px] top-11  border border-[#303030] rounded-xl w-[450px]  md:w-[700px] none flex flex-col md:flex-row justify-between  items-start

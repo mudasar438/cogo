@@ -5,11 +5,14 @@ import { ConnectWallect } from "../Components/SmallComponent/ConnectWallect";
 export const SolidOut = () => {
   return (
     <>
-      <div className=" w-full lg:w-[50%] mx-auto flex justify-center py-[50px]">
+      <div
+        style={{ fontFamily: "Regular" }}
+        className=" w-full lg:w-[50%] mx-auto flex justify-center py-[50px]"
+      >
         <div className="w-full lg:w-[70%]  p-5 rounded-xl flex flex-col item-center justify-center  gap-8 border border-[#303030]">
           <div className="space-y-3">
             <div className="flex space-x-5 items-center justify-center">
-              <p className="bg-[#232323] rounded-2xl p-3  w-[160px]  flex self-center  Barlow">
+              <p className="bg-[#232323] rounded-2xl p-3  w-[160px]  flex self-center  ">
                 STAGE 6 [ $0.060 ]
               </p>
               <button className="bg-[#E33962] px-3 p-1 h-8 rounded-2xl text-[#000] font-normal Rubik">
@@ -29,7 +32,7 @@ export const SolidOut = () => {
 
           <div className="w-full bg-gray-200 rounded-full dark:bg-[#232323]">
             <div
-              className="Barlow bg-gradient-to-r from-[#0e100f] to-[#47ac93] text-xl font-medium  text-center p-0.5 leading-none rounded-full"
+              className=" bg-gradient-to-r from-[#0e100f] to-[#47ac93] text-xl font-medium  text-center p-0.5 leading-none rounded-full"
               style={{ width: "100.00%" }}
             >
               {" "}

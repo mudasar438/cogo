@@ -27,7 +27,7 @@ export const Token = () => {
 
   return (
     <>
-      <div className="w-full mt-[100px]">
+      <div style={{ fontFamily: "Regular" }} className="w-full mt-[100px]">
         <p
           style={{ fontFamily: "Regular" }}
           className="text-3xl md:text-6xl text-center md:text-left"
@@ -45,9 +45,9 @@ export const Token = () => {
                   hover:bg-[#1C1C1C] 
                    rounded-2xl space-y-2 mt-2"
                 >
-                  <p>{item.persantage} %</p>
-                  <div className="Barlow flex justify-between items-center">
-                    <p>{item.name}</p>
+                  <p className="text-3xl">{item.persantage} %</p>
+                  <div className=" flex justify-between items-center">
+                    <p className="text-sm">{item.name}</p>
                     <p className="text-[#545454] text-sm">400,000,000 </p>
                   </div>
                   <div
@@ -93,9 +93,9 @@ export const Token = () => {
                   key={i}
                   className="p-5  rounded-2xl space-y-2 mt-2  hover:bg-[#1C1C1C] "
                 >
-                  <p>{item.persantage} %s</p>
+                  <p className="text-3xl">{item.persantage} %</p>
                   <div className=" flex justify-between items-center">
-                    <p>{item.name}</p>
+                    <p className="text-sm">{item.name}</p>
                     <p className="text-[#545454] text-sm">400,000,000 </p>
                   </div>
                   <div

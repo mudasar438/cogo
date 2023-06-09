@@ -4,7 +4,10 @@ import BasicButton from "./SmallComponent/Basicbutton";
 export const Round1 = () => {
   return (
     <>
-      <div className=" rounborder py-5 md:py-20 flex space-x-8 justify-between items-center flex-col md:flex-row space-y-10 md:space-y-0">
+      <div
+        style={{ fontFamily: "Regular" }}
+        className=" rounborder py-5 md:py-20 flex space-x-8 justify-between items-center flex-col md:flex-row space-y-10 md:space-y-0"
+      >
         <div className=" w-full md:w-[50%]  space-y-8 md:space-y-12">
           <div className="flex space-x-5  justify-center md:justify-start items-center">
             <p className="Rubik text-[#545454] font-semibold">
@@ -30,7 +33,7 @@ export const Round1 = () => {
         <div className="w-full md:w-[40%]  space-y-12">
           <div className="space-y-2">
             <p className="text-center md:text-left text-xl">$0.0034</p>
-            <p className="Barlow text-[#545454] text-sm text-center md:text-left ">
+            <p className=" text-[#545454] text-sm text-center md:text-left ">
               Purchase Price (1 BGPT)
             </p>
           </div>
@@ -38,7 +41,7 @@ export const Round1 = () => {
             <p className="text-center md:text-left text-xl">
               12 months (2% wested weekly)
             </p>
-            <p className="Barlow text-[#545454] text-sm text-center md:text-left">
+            <p className=" text-[#545454] text-sm text-center md:text-left">
               Total Lock Period (Months Post Launch)
             </p>
           </div>

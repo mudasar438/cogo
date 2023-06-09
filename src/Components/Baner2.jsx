@@ -4,7 +4,10 @@ import { join, tlegram } from "../images";
 export const Baner2 = () => {
   return (
     <>
-      <div className="bg-[#161616] rounded-2xl p-4 md:p-8  mt-[100] lg:mt-[150px] flex justify-center flex-col lg:flex-row space-y-12 lg:justify-between items-center lg:space-y-0 ">
+      <div
+        style={{ fontFamily: "Regular" }}
+        className="bg-[#161616] rounded-2xl p-4 md:p-8  mt-[100] lg:mt-[150px] flex justify-center flex-col lg:flex-row space-y-12 lg:justify-between items-center lg:space-y-0 "
+      >
         <div className="w-full flex  justify-center  items-center lg:items-start  lg:justify-start  space-x-3   lg:w-[25%] ">
           <img
             src={tlegram}
@@ -13,14 +16,12 @@ export const Baner2 = () => {
             style={{ width: "50px", height: "50px" }}
           />
           <div className=" flex flex-col justify-center items-center lg:items-start ">
-            <p className="Barlow text-[#5C5C5C] font-Barlow">
-              Official Telegram Channel
-            </p>
+            <p className="text-[#5C5C5C] ">Official Telegram Channel</p>
             <p className=" ">Cogwise (CGW) - Official</p>
           </div>
         </div>
         <div className=" ">
-          <p className="Barlow text-[#5C5C5C] ">MEMBERS</p>
+          <p className=" text-[#5C5C5C] ">MEMBERS</p>
           <p className="text-xl">4,875</p>
         </div>
         <div className="flex space-x-5 items-center justify-end">

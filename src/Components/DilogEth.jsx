@@ -16,11 +16,11 @@ export default function MyModal() {
 
   return (
     <>
-      <div className="">
+      <div className="" style={{ fontFamily: "Regular" }}>
         <button
           type="button"
           onClick={openModal}
-          className="Barlow text-[#fff] text-lg bg-[#7900EE] hover:bg-[#203cc6] min-w-[130px]   px-6 py-2 rounded-3xl font-medium text-center"
+          className=" text-[#fff] text-lg bg-[#7900EE] hover:bg-[#203cc6] min-w-[130px]   px-6 py-2 rounded-3xl font-medium text-center"
         >
           BUY WITH ETH
         </button>
@@ -52,10 +52,10 @@ export default function MyModal() {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-full max-w-[500px] text-[#fff]  rounded-2xl bg-[#0B0B0B] text-left p-5  ">
-                  <div className=" w-full  ">
+                  <div style={{ fontFamily: "Regular" }} className=" w-full  ">
                     <div className="w-full  mx-auto p-5 rounded-xl flex flex-col gap-8 border border-[#303030]">
-                      <div className="Barlow flex space-x-5 items-center">
-                        <p className="'Barlow bg-[#232323] rounded-2xl p-2 flex self-center md:self-start">
+                      <div className=" flex space-x-5 items-center">
+                        <p className=" bg-[#232323] rounded-2xl p-2 flex self-center md:self-start">
                           ROUND 1 [ $0.045 ]
                         </p>
 

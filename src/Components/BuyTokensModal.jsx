@@ -187,14 +187,17 @@ export default function BuyTokensModal({ initProgress, init }) {
   return (
     <>
       <ToastNotify alertState={alertState} setAlertState={setAlertState} />
-      <div className="flex flex-row  w-full  items-center justify-between md:justify-start lg:justify-center  md:space-y-0 md:space-x-10">
+      <div
+        style={{ fontFamily: "Regular" }}
+        className="flex flex-row  w-full  items-center justify-between md:justify-start lg:justify-center  md:space-y-0 md:space-x-10"
+      >
         <button
           type="button"
           onClick={() => {
             setToken("USDT");
             openModal();
           }}
-          className="Barlow text-[#fff] text-sm md:text-lg bg-[#7900EE] hover:bg-[#203cc6] min-w-[130px] w-[48%] px-2 md:px-6 py-3 rounded-3xl font-medium text-center"
+          className=" text-[#fff] text-sm md:text-lg bg-[#7900EE] hover:bg-[#203cc6] min-w-[130px] w-[48%] px-2 md:px-6 py-3 rounded-3xl font-medium text-center"
         >
           BUY WITH USDT
         </button>
@@ -204,7 +207,7 @@ export default function BuyTokensModal({ initProgress, init }) {
             setToken("ETH");
             openModal();
           }}
-          className="Barlow text-[#fff] text-sm md:text-lg bg-[#7900EE] hover:bg-[#203cc6] min-w-[130px] w-[48%] px-2 md:px-6 py-3 rounded-3xl font-medium text-center"
+          className=" text-[#fff] text-sm md:text-lg bg-[#7900EE] hover:bg-[#203cc6] min-w-[130px] w-[48%] px-2 md:px-6 py-3 rounded-3xl font-medium text-center"
         >
           BUY WITH ETH
         </button>
@@ -224,7 +227,10 @@ export default function BuyTokensModal({ initProgress, init }) {
             <div className="fixed inset-0 bg-black bg-opacity-25" />
           </Transition.Child>
 
-          <div className="fixed inset-0 overflow-y-auto">
+          <div
+            style={{ fontFamily: "Regular" }}
+            className="fixed inset-0 overflow-y-auto"
+          >
             <div className="flex min-h-full items-center justify-center text-center ">
               <Transition.Child
                 as={Fragment}
@@ -296,7 +302,7 @@ export default function BuyTokensModal({ initProgress, init }) {
                             }}
                           />
                         </div>
-                        <div className=" Barlow flex space-x-5 items-center  ">
+                        <div className="  flex space-x-5 items-center  ">
                           <p className="bg-[#3D3D3D] rounded-full py-2 px-4 flex self-center md:self-start">
                             ROUND 1 [ ${1 / +tokenPrice} ]
                           </p>
