@@ -8,6 +8,7 @@ import Web3 from "web3";
 import { AppContext } from "./utils";
 import { useContext, useEffect, useState } from "react";
 import { usePresaleContract } from "./ConnectivityAssets/hooks";
+import NetworkChange from "./NetworkSwitch";
 
 const web3 = new Web3(
   Web3.givenProvider
@@ -15,19 +16,19 @@ const web3 = new Web3(
     : "https://goerli.infura.io/v3/36fc2665f5504bc18c3b7f9fab0e0c46"
 );
 function App() {
-  // const [open, setOpen] = useState(false);
-  // const { account, connect, signer } = useContext(AppContext);
-  // useEffect(() => {
-  //   let chain = async () => {
-  //     const chainid = await web3.eth.getChainId();
-  //     if (chainid !== 5) {
-  //       setOpen(true);
-  //     }
-  //   };
-  //   chain();
-  // }, []);
+  const [switchNetwork, setswitchNetwork] = useState(false);
+  useEffect(() => {
+    let chain = async () => {
+      const chainid = await web3.eth.getChainId();
+      if (chainid !== 5) {
+        setswitchNetwork(true);
+      }
+    };
+    chain();
+  }, []);
   return (
     <>
+      <NetworkChange open={switchNetwork} setOpen={setswitchNetwork} />
       <div className="max-w-screen-2xl mx-auto bg-[#000000] min-h-screen text-[#fff]">
         <Routes>
           <Route path="/" element={<Parent />}>

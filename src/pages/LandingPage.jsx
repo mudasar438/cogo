@@ -515,7 +515,7 @@ export const LandingPage = () => {
                   Buy Cogwise $CGW
                 </p>
 
-                <div className="w-full bg-[#3D3D3D] rounded-full dark:bg-[#232323]">
+                <div className="w-full bg-[#3D3D3D] rounded-full dark:bg-[#3D3D3D]">
                   <div
                     className="Barlow bg-gradient-to-r from-[#292D2C] to-[#328D77] text-xl font-medium text-[#000] text-center p-0.5 leading-none rounded-full"
                     style={{ width: `${progressBar}%` }}
@@ -525,7 +525,7 @@ export const LandingPage = () => {
                   </div>
                 </div>
                 {+balanceTokenToCompaire > 0 ? (
-                  <div className="bg-[#3D3D3D] p-3 rounded-2xl shadow-xl">
+                  <div className="bg-[#3D3D3D] p-5 rounded-2xl shadow-xl">
                     <div className="flex  flex-col sm:flex-row space-y-5 sm:space-y-0 sm:space-x-20  w-full items-center justify-center md:justify-start">
                       <div className="">
                         <p className="text-[#858585] text-lg font-medium">
@@ -601,7 +601,7 @@ export const LandingPage = () => {
                     </div>
                   </div>
                 ) : (
-                  <div className="flex bg-[#3D3D3D] p-3 rounded-2xl flex-col sm:flex-row space-y-12 sm:space-y-0 sm:space-x-12 shadow-xl w-full items-center justify-center md:justify-start">
+                  <div className="flex bg-[#3D3D3D] p-5 rounded-2xl flex-col sm:flex-row space-y-12 sm:space-y-0 sm:space-x-12 shadow-xl w-full items-center justify-center md:justify-start">
                     <div className="">
                       <p className="text-[#858585] font-medium">SOLD (BGPT)</p>
                       <p
