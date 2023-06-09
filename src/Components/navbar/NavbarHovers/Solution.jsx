@@ -41,7 +41,7 @@ export const Solution = () => {
   return (
     <div
       style={{ fontFamily: "Regular" }}
-      className="absolute  bg-[#030304] py-3 px-1  top-10  border border-[#303030] rounded-xl w-[300px]  md:w-[700px] none flex flex-col justify-start md:flex-row md:justify-between  items-start "
+      className="absolute  bg-[#030304] py-3 px-1  top-10  border border-[#303030] rounded-xl w-[300px]  md:w-[800px] none flex flex-col justify-start md:flex-row md:justify-between  items-start "
     >
       <div className=" w-full md:w-[65%] space-y-3 text-left">
         {array.map((item, i) => {
@@ -66,7 +66,7 @@ export const Solution = () => {
                     {item.text}
                   </p>
                 </div>
-                <button className="bg-[#7E0AEF] px-2 py-[2px] rounded-3xl">
+                <button className="bg-[#7E0AEF] px-2 py-[2px] rounded-3xl text-sm">
                   SOON
                 </button>
               </div>
@@ -76,7 +76,7 @@ export const Solution = () => {
       </div>
       <div className="w-full mt-5 md:mt-0 md:w-[30%] space-y-2 text-left border-l-1 border-[#303030]">
         <p className="text-sm font-semibold  md:text-lg">{hover?.name}</p>
-        <p className="text-[12px] md:text-lg p-1">{hover?.description}</p>
+        <p className="text-sm  p-1">{hover?.description}</p>
       </div>
     </div>
   );
