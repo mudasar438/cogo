@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Token1 } from "../images";
 const array = [
   { persantage: 40, name: "PUBLIC SALE", value: 40000000, bk: true },
@@ -13,6 +13,18 @@ const array2 = [
   { persantage: 17, name: "REWARDS / AIRDROPS", value: 40000000 },
 ];
 export const Token = () => {
+  const [isHovered, setIsHovered] = useState(1);
+  const handleMouseEnter = (index) => {
+    console.log("index", index);
+    setIsHovered(index);
+  };
+
+  const [isHovered2, setIsHovered2] = useState(1);
+  const handleMouseEnter2 = (index) => {
+    console.log("index", index);
+    setIsHovered2(index);
+  };
+
   return (
     <>
       <div className="w-full mt-[100px]">
@@ -27,6 +39,7 @@ export const Token = () => {
             {array.map((item, i) => {
               return (
                 <div
+                  onMouseEnter={() => handleMouseEnter(i)}
                   key={i}
                   className="p-5 
                   hover:bg-[#1C1C1C] 
@@ -37,7 +50,11 @@ export const Token = () => {
                     <p>{item.name}</p>
                     <p className="text-[#545454] text-sm">400,000,000 </p>
                   </div>
-                  <div class="w-full bg-gray-200 rounded-full h-1.5 dark:bg-gray-700">
+                  <div
+                    className={`w-full ${
+                      isHovered === i ? "bg-[#000]" : "bg-[#1C1C1C]"
+                    } rounded-full h-1.5`}
+                  >
                     <div
                       class="bg-blue-600 h-1.5 rounded-full"
                       style={{ width: item.persantage }}
@@ -72,6 +89,7 @@ export const Token = () => {
             {array2.map((item, i) => {
               return (
                 <div
+                  onMouseEnter={() => handleMouseEnter2(i)}
                   key={i}
                   className="p-5  rounded-2xl space-y-2 mt-2  hover:bg-[#1C1C1C] "
                 >
@@ -80,7 +98,11 @@ export const Token = () => {
                     <p>{item.name}</p>
                     <p className="text-[#545454] text-sm">400,000,000 </p>
                   </div>
-                  <div class="w-full bg-gray-200 rounded-full h-1.5 dark:bg-gray-700">
+                  <div
+                    className={`w-full ${
+                      isHovered2 === i ? "bg-[#000]" : "bg-[#1C1C1C]"
+                    } rounded-full h-1.5`}
+                  >
                     <div
                       class="bg-blue-600 h-1.5 rounded-full"
                       style={{ width: item.persantage }}

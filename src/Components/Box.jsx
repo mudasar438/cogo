@@ -3,7 +3,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 export const Box = () => {
   return (
     <>
-      <div className="relative  mt-[100px] bshadow ">
+      <div className="relative  mt-[100px] bshadow  z-0">
         <video
           autoPlay
           crossOrigin="anonymous"
@@ -19,7 +19,7 @@ export const Box = () => {
             objectFit: "cover",
             marginTop: "10px",
             width: "100vw",
-            zIndex: "1",
+            zIndex: 0,
             boxShadow: "rgb(0, 0, 0) 0px 0px 35px 48px inset",
           }}
         >

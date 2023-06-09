@@ -504,8 +504,8 @@ export const LandingPage = () => {
             </div>
           ) : (
             <div className=" w-full lg:w-[50%] flex justify-end">
-              <div className="w-full lg:w-[75%] bg-[#222222]  p-5 rounded-xl flex flex-col gap-8 border border-[#303030]">
-                <p className="bg-[#3D3D3D] rounded-full px-5 py-3 flex self-center md:self-start Barlow">
+              <div className="w-full lg:w-[75%]  p-5 rounded-xl flex flex-col gap-8 border border-[#303030]">
+                <p className=" rounded-full px-5 py-3 flex self-center md:self-start Barlow">
                   ROUND 1 [ ${1 / +tokenPrice} ]
                 </p>
                 <p
@@ -525,7 +525,7 @@ export const LandingPage = () => {
                   </div>
                 </div>
                 {+balanceTokenToCompaire > 0 ? (
-                  <div className="bg-[#3D3D3D] p-5 rounded-2xl shadow-xl">
+                  <div className=" p-5 rounded-2xl shadow-xl">
                     <div className="flex  flex-col sm:flex-row space-y-5 sm:space-y-0 sm:space-x-20  w-full items-center justify-center md:justify-start">
                       <div className="">
                         <p className="text-[#858585] text-lg font-medium">
@@ -583,7 +583,7 @@ export const LandingPage = () => {
                     </div>
                     <div className="w-full bg-gray-200 rounded-full dark:bg-[#232323]">
                       <div
-                        className="Barlow bg-gradient-to-r from-[#292D2C] to-[#328D77] text-xl font-medium text-[#fff] text-center p-0.5 leading-none rounded-full"
+                        className="Barlow bg-gradient-to-r from-[#292D2C] to-[#328D77] text-xl font-medium text-[#fff] text-center p-2 leading-none rounded-full"
                         style={{ width: `${bonusProgressBar}%` }}
                       >
                         {" "}
@@ -601,7 +601,7 @@ export const LandingPage = () => {
                     </div>
                   </div>
                 ) : (
-                  <div className="flex bg-[#3D3D3D] p-5 rounded-2xl flex-col sm:flex-row space-y-12 sm:space-y-0 sm:space-x-12 shadow-xl w-full items-center justify-center md:justify-start">
+                  <div className="flex boderTopBottom  shadow-2xl p-5 rounded-2xl flex-col sm:flex-row space-y-12 sm:space-y-0 sm:space-x-12  w-full items-center justify-center md:justify-start">
                     <div className="">
                       <p className="text-[#858585] font-medium">SOLD (BGPT)</p>
                       <p

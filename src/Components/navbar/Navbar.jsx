@@ -1,13 +1,15 @@
 import React, { useContext, useState } from "react";
 import { logo } from "../../images";
 import BasicButton from "../SmallComponent/Basicbutton";
-import { FaTelegramPlane } from "react-icons/fa";
+// import { FaTelegramPlane } from "react-icons/fa";
 import { FiArrowDownRight } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import { Solution } from "./NavbarHovers/Solution";
 import { CommunityHover } from "./NavbarHovers/CommunityHover";
 import { AppContext } from "../../utils";
 import { DocsHover } from "./NavbarHovers/DocsHover";
+// import { GrLanguage } from "react-icons/gr";
+import { MdLanguage } from "react-icons/md";
 
 export const Navbar = () => {
   const { connect, account, disconnect } = useContext(AppContext);
@@ -37,10 +39,10 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full  ">
-        <div className="  max-w-screen-2xl mx-auto justify-between px-4 md:items-center lg:flex Barlow  fixed left-0 right-0 ml-auto mr-auto top-0 w-full bg-[#000]">
+      <nav className="w-full">
+        <div className="max-w-screen-2xl mx-auto justify-between px-4 md:items-center lg:flex Barlow  fixed left-0 right-0 z-10 ml-auto mr-auto top-0 w-full navbg">
           <div>
-            <div className="flex items-center justify-between py-3 md:py-5 lg:block">
+            <div className="flex items-center justify-between py-3 md:py-3 lg:block">
               <a href="/">
                 <img src={logo} alt="" srcSet="" />
               </a>
@@ -84,11 +86,11 @@ export const Navbar = () => {
           </div>
           <div>
             <div
-              className={`flex justify-self-center md:justify-between pb-3 mt-8 lg:block md:pb-0 md:mt-0  ${
+              className={`flex justify-self-center md:justify-between pb-1 mt-8 lg:block md:pb-0 md:mt-0  ${
                 navbar ? "block" : "hidden"
               }`}
             >
-              <div className="flex-col md:flex-row items-start   justify-center space-y-4 md:flex md:space-x-1 md:space-y-0">
+              <div className="flex-col md:flex-row items-start justify-center space-y-4 md:flex md:space-x-1 md:space-y-0 font-medium">
                 <button
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
@@ -101,7 +103,7 @@ export const Navbar = () => {
                 </button>
                 <button className="flex space-x-3 items-center hover:bg-[#231414] px-5 p-2 rounded-3xl ">
                   PRESALE{" "}
-                  <p className="bg-[#39E3BA] border border-[#39E3BA] px-3 rounded-2xl text-[#000] text-[12px] ml-1 font-semibold blob green">
+                  <p className=" border border-[#39E3BA] px-1 rounded-2xl text-[#000] text-[12px] ml-1 font-normal blob green">
                     LIVE
                   </p>
                 </button>
@@ -140,9 +142,9 @@ export const Navbar = () => {
               navbar ? "flex" : "hidden"
             }`}
           >
-            <div className="flex gap-2 py-5 ">
+            <div className="flex gap-2 py-3">
               <div className="bg-[ #272727] p-2 rounded-full">
-                <FaTelegramPlane className="text-2xl" />
+                <MdLanguage className="text-3xl" />
               </div>
               {account ? (
                 <BasicButton

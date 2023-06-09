@@ -1,6 +1,5 @@
 import React from "react";
 import { logo } from "../images";
-import { FaFacebookF } from "react-icons/fa";
 import { AiOutlineInstagram, AiOutlineTwitter } from "react-icons/ai";
 import { AiOutlineYoutube } from "react-icons/ai";
 import { FiArrowUpRight } from "react-icons/fi";
@@ -8,13 +7,16 @@ import { FiArrowUpRight } from "react-icons/fi";
 export const Footer = () => {
   return (
     <>
-      <div className="h-[700px] md:h-[800px] w-full px-5  py-5 ">
-        <div className="boderTop w-full md:w-[80%] mx-0 md:mx-auto flex flex-col md:flex-row md:justify-between items-start py-20 mt-10 ">
+      <div
+        style={{ fontFamily: "Regular" }}
+        className="h-[700px] md:h-[800px] w-full px-5  py-5 "
+      >
+        <div className="boderTop w-full md:w-[90%] mx-0 md:mx-auto flex flex-col md:flex-row md:justify-between items-start py-20 mt-10 ">
           <div className="w-full md:w-[60%]">
             <div className=" flex flex-col md:flex-row  items-center md:items-start space-y-5 md:space-y-0 space-x-0 md:space-x-8  md:justify-between">
               <ul
                 style={{ fontFamily: "Regular" }}
-                className="space-y-5 text-xl"
+                className="space-y-5 text-2xl "
               >
                 {" "}
                 <li className="hover:text-[blue]">Presale</li>
@@ -26,12 +28,12 @@ export const Footer = () => {
               <div className="w-[100%] md:w-[55%] space-y-10  flex flex-col item-center">
                 <p
                   style={{ fontFamily: "Regular" }}
-                  className="Barlow text-[#B2B2B2] text-center md:text-left"
+                  className="Barlow text-[#B2B2B2] text-center md:text-left font-medium text-lg"
                 >
                   We are always looking for dedicated people to join our
                   interdisciplinary team.
                 </p>
-                <button className="flex space-x-3 justify-center md:justify-start items-center">
+                <button className="flex space-x-3 text-2xl justify-center md:justify-start items-center">
                   <p>Send your CV </p>
                   <FiArrowUpRight className="text-[#fff] bg-[#292929] p-4 text-5xl rounded-full" />
                 </button>

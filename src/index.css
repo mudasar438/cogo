@@ -34,6 +34,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.navbg{
+  animation-delay: 1s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-name: showBorder;
+    animation-timing-function: ease-out;
+    backdrop-filter: saturate(50%) blur(4px);
+    -webkit-backdrop-filter: saturate(50%) blur(4px);
+    background-color: #0003;
+    background-image: radial-gradient(circle at center,rgba(0,0,0,.278) 0.06rem,rgba(0,0,0,.749) 0.65rem);
+    background-repeat: round;
+  
+}
 .deepbg {
   background-image: url("./images/deepbg.png");
   background-repeat: no-repeat;
@@ -101,8 +114,8 @@ code {
   color: #ffffff;
 }
 .blob.green {
-  background: rgba(51, 217, 178, 1);
-  box-shadow: 0 0 0 0 rgba(51, 217, 178, 1);
+  background: #86EFAC;
+  box-shadow: 0 0 0 0 #86EFAC;
   animation: pulse-green 3s infinite;
 }
 
