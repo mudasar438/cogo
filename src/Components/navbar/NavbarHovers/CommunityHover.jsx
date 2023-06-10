@@ -42,7 +42,7 @@ export const CommunityHover = () => {
         style={{ fontFamily: "Regular" }}
         className="absolute  bg-[#16161b] py-3 px-1  top-[150px] md:top-[57px]  border border-[#303030] rounded-xl w-[300px]  md:w-[400px] none flex flex-col md:flex-row justify-between  items-start "
       >
-        <div className=" w-full space-y-3 text-left">
+        <div className="flex flex-col items-start  w-full space-y-3 text-left">
           {array.map((item, i) => {
             return (
               <div
@@ -52,7 +52,7 @@ export const CommunityHover = () => {
               >
                 <a
                   target="_blank"
-                  href={`${item.heading}`}
+                  href={`https//:${item.heading}`}
                   rel="noreferrer"
                   className="w-full flex  justify-center  items-center lg:items-start  lg:justify-start  space-x-3    "
                 >
@@ -60,9 +60,9 @@ export const CommunityHover = () => {
                     <div className="w-[40px] h-[40px] rounded-full p-3 bg-[#553b3b]">
                       {item.icon}
                     </div>
-                    <div className="">
+                    <div className=" w-full">
                       <p className="font-medium  text-lg ">{item.name}</p>
-                      <p className="text-[#5C5C5C] text-lg font-medium">
+                      <p className="text-[#5C5C5C] text-sm md:text-lg font-medium overflow-hidden">
                         {item.heading}
                       </p>
                     </div>
