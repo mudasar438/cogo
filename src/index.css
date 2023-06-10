@@ -118,6 +118,7 @@ code {
   box-shadow: 0 0 0 0 #86EFAC;
   animation: pulse-green 3s infinite;
 }
+.waves { position: absolute; left: 0; top: 0; right: 0; bottom: 0; }
 
 @keyframes pulse-green {
   0% {

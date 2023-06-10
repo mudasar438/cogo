@@ -53,11 +53,11 @@ export const Token = () => {
                   <div
                     className={`w-full ${
                       isHovered === i ? "bg-[#000]" : "bg-[#1C1C1C]"
-                    } rounded-full h-1.5`}
+                    } rounded-full h-2`}
                   >
                     <div
-                      class="bg-blue-600 h-1.5 rounded-full"
-                      style={{ width: item.persantage }}
+                      class="bg-[#A020F0] h-2 rounded-full"
+                      style={{ width: `${item.persantage}%` }}
                     ></div>
                   </div>
                 </div>
@@ -101,11 +101,11 @@ export const Token = () => {
                   <div
                     className={`w-full ${
                       isHovered2 === i ? "bg-[#000]" : "bg-[#1C1C1C]"
-                    } rounded-full h-1.5`}
+                    } rounded-full h-2`}
                   >
                     <div
-                      class="bg-blue-600 h-1.5 rounded-full"
-                      style={{ width: item.persantage }}
+                      class="bg-[#A020F0] h-2 rounded-full"
+                      style={{ width: `${item.persantage}%` }}
                     ></div>
                   </div>
                 </div>
