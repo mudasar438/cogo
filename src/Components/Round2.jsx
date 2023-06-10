@@ -4,7 +4,7 @@ export const Round2 = () => {
     <>
       <div
         style={{ fontFamily: "Regular" }}
-        className="  rounborder py-5   space-y-50"
+        className="rounborder pt-5 pb-20 space-y-50"
       >
         <p className="w-full md:w-[80%] text-[#858585] text-center md:text-left my-12">
           TOKEN LOCKUP SCHEDULE

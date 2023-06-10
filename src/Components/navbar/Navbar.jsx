@@ -110,9 +110,11 @@ export const Navbar = () => {
                 <button
                   onMouseEnter={handleDocs}
                   onMouseLeave={handleDocsfalse}
-                  className=" hover:bg-[#231414] px-5 p-2 rounded-3xl "
+                  className="flex space-x-2 items-center hover:bg-[#231414] px-5 p-2 rounded-3xl "
                 >
-                  DOCS
+                  <p>DOCS</p>
+
+                  <FiArrowDownRight className="text-[#4240a6] font-semibold" />
                   {docs ? <DocsHover /> : ""}
                 </button>
                 <button

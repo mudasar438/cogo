@@ -27,7 +27,7 @@ export const Token = () => {
 
   return (
     <>
-      <div style={{ fontFamily: "Regular" }} className="w-full mt-[100px]">
+      <div style={{ fontFamily: "Regular" }} className="w-full mt-[200px]">
         <p
           style={{ fontFamily: "Regular" }}
           className="text-3xl md:text-6xl text-center md:text-left"
@@ -64,7 +64,7 @@ export const Token = () => {
               );
             })}
           </div>
-          <div className=" w-full md:w-[30%]">
+          <div className=" w-full md:w-[40%]">
             <video
               autoPlay
               crossOrigin="anonymous"

@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { cwg, g1 } from "../images";
 import { FiCopy } from "react-icons/fi";
+import CopyToClipboard from "react-copy-to-clipboard";
+import { ToastNotify } from "../ConnectivityAssets/hooks";
 export const Banner = () => {
+  const [alertState, setAlertState] = useState({
+    open: false,
+    message: "",
+    severity: undefined,
+  });
   return (
     <>
+      <ToastNotify alertState={alertState} setAlertState={setAlertState} />
       <div
         style={{ fontFamily: "Regular" }}
         className="bg-[#161616] rounded-2xl p-4 md:p-8  mt-[100] lg:mt-[150px] flex justify-center flex-col lg:flex-row space-y-12 lg:justify-between items-center lg:space-y-0 "
@@ -26,10 +34,21 @@ export const Banner = () => {
         </div>
         <div className="flex space-x-5 items-center justify-end">
           <img src={g1} alt="" srcSet="" />
-          <div className="Rubik border-2 border-[#5C5C5C] rounded-3xl px-3 py-2 flex space-x-4 items-center">
-            <p> COPY ADDR</p>
-            <FiCopy />
-          </div>
+          <CopyToClipboard
+            text={"0x5f647d52D948B997AEd9b0272F80D3dA394CDCdc"}
+            onCopy={() => {
+              setAlertState({
+                open: true,
+                message: `Address Copied.`,
+                severity: "success",
+              });
+            }}
+          >
+            <div className="Rubik border-2 border-[#5C5C5C] cursor-pointer rounded-3xl px-3 py-2 flex space-x-4 items-center">
+              <p> COPY ADDR</p>
+              <FiCopy />
+            </div>
+          </CopyToClipboard>
         </div>
       </div>
     </>

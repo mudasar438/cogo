@@ -3,13 +3,12 @@ import BasicButton from "../Components/SmallComponent/Basicbutton";
 import { m2, m1, m3, eth, t, yahoo, ben, market, bit } from "../images";
 import { Banner } from "../Components/Banner";
 import { Deepdiv } from "../Components/Deepdiv";
-import { Round1 } from "../Components/Round1";
+import Marquee from "react-fast-marquee";
 import { Token } from "../Components/Token";
 import { Round2 } from "../Components/Round2";
 import { Baner2 } from "../Components/Baner2";
 import { Box } from "../Components/Box";
 import { Footer } from "../Components/Footer";
-import MyModal from "../Components/DilogEth";
 import BuyTokensModal from "../Components/BuyTokensModal";
 import RoundSwiper from "../Components/RoundSwiper";
 import { AppContext } from "../utils";
@@ -21,6 +20,7 @@ import {
 } from "../ConnectivityAssets/hooks";
 import { formatUnits } from "@ethersproject/units";
 import { ConnectWallect } from "../Components/SmallComponent/ConnectWallect";
+import { Container } from "@mui/material";
 const array = [{ img: m1 }, { img: m2 }, { img: m3 }];
 const array2 = [{ img: yahoo }, { img: ben }, { img: market }, { img: bit }];
 
@@ -225,7 +225,7 @@ export const LandingPage = () => {
             <ul>
               <li>
                 <p className="text-sm text-[#858585]  text-center md:text-left">
-                  WE'RE LIVE!
+                  {/* WE'RE LIVE! */}
                 </p>
               </li>
             </ul>
@@ -241,24 +241,37 @@ export const LandingPage = () => {
               you are getting the best info and insights.
             </p>
             <div className=" flex flex-col sm:flex-row gap-3  justify-center md:justify-start">
-              <BasicButton text="connect wallet" />
+              <BasicButton text="INTRO" />
               <button className=" Rubik bg-[#000] hover:bg-[#231414] rounded-3xl px-7 font-Rubik font-normal">
                 Explore Token
               </button>
             </div>
-            <div className="flex flex-col sm:flex-row item-center sm:items-start  justify-center mx-auto sm:mx-0 space-y-8 sm:space-y-0 sm:justify-between py-5 px:1 shadow-sm">
-              {array.map((item, i) => {
-                return (
-                  <img
-                    key={i}
-                    src={item.img}
-                    alt=""
-                    srcSet=""
-                    style={{ width: "130px", objectFit: "contain" }}
-                  />
-                );
-              })}
-            </div>
+            <Marquee
+              gradient={true}
+              gradientWidth={100}
+              gradientColor={[0, 0, 0]}
+              speed={40}
+              pauseOnClick={true}
+              pauseOnHover={true}
+            >
+              <div className="flex item-center mx-auto sm:mx-0 space-y-8 sm:space-y-0 py-5 px:1 shadow-sm">
+                {array.map((item, i) => {
+                  return (
+                    <img
+                      key={i}
+                      src={item.img}
+                      alt=""
+                      srcSet=""
+                      style={{
+                        width: "170px",
+                        objectFit: "contain",
+                        marginLeft: "70px",
+                      }}
+                    />
+                  );
+                })}
+              </div>
+            </Marquee>
           </div>
           {isClaimEnabled ? (
             <div className=" w-full lg:w-[50%] flex justify-end">
@@ -680,23 +693,34 @@ export const LandingPage = () => {
         <Baner2 />
       </div>
       <Box />
-      <div className="flex flex-col justify-center w-[30%] md:w-full  item-center md:flex-row md:items-start  mx-auto space-y-12 sm:space-y-0 sm:justify-center space-x-0 md:space-x-16  px:1 shadow-sm mt-5 py-5 ">
-        {array2.map((item, i) => {
-          return (
-            <img
-              key={i}
-              src={item.img}
-              alt=""
-              srcSet=""
-              style={{
-                width: "140px",
-                objectFit: "contain",
-                marginTop: "10px",
-              }}
-            />
-          );
-        })}
-      </div>
+      <Container maxWidth="md">
+        <Marquee
+          gradient={true}
+          gradientWidth={150}
+          gradientColor={[0, 0, 0]}
+          speed={100}
+          pauseOnClick={true}
+          pauseOnHover={true}
+        >
+          <div className="flex md:w-full item-center  mx-auto space-y-12 sm:space-y-0 space-x-0 md:space-x-16 px:1 shadow-sm mt-5 py-5 ">
+            {array2.map((item, i) => {
+              return (
+                <img
+                  key={i}
+                  src={item.img}
+                  alt=""
+                  srcSet=""
+                  style={{
+                    width: "180px",
+                    objectFit: "contain",
+                    marginLeft: "100px",
+                  }}
+                />
+              );
+            })}
+          </div>
+        </Marquee>
+      </Container>
       <Footer />
     </>
   );
