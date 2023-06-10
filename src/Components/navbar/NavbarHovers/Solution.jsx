@@ -75,9 +75,13 @@ export const Solution = () => {
                     </p>
                   </div>
                 </div>
-                <button className="bg-[#7E0AEF] px-2 py-[2px] rounded-3xl text-sm">
-                  SOON
-                </button>
+                {hover.name === item.name ? (
+                  <button className="bg-[#7E0AEF] px-2 py-[2px] rounded-3xl text-sm">
+                    SOON
+                  </button>
+                ) : (
+                  ""
+                )}
               </div>
             </div>
           );
