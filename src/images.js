@@ -15,6 +15,7 @@ import bit from "./images/bit.png";
 import yahoo from "./images/yahoo.png";
 import market from "./images/market.png";
 import ben from "./images/ben.png";
+import error from "./images/error.png";
 export {
   logo,
   m1,
@@ -33,4 +34,5 @@ export {
   yahoo,
   market,
   ben,
+  error,
 };

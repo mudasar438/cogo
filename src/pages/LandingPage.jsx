@@ -220,7 +220,7 @@ export const LandingPage = () => {
     <>
       <ToastNotify alertState={alertState} setAlertState={setAlertState} />
       <div style={{ fontFamily: "Regular" }} className="px-4 md:px-12 font-">
-        <div className=" w-full lg:w-[100%] lg:justify-center space-y-10 flex flex-col lg:flex-row justify-between py-10  ">
+        <div className=" w-full lg:w-[100%] lg:justify-center space-y-10 mt-5 flex flex-col lg:flex-row justify-between py-10  ">
           <div className=" w-full lg:w-[35%]  flex gap-10 flex-col md:p-3">
             <ul>
               <li>
@@ -233,7 +233,8 @@ export const LandingPage = () => {
               style={{ fontFamily: "Regular" }}
               className=" text-3xl md:text-6xl font-normal text-center md:text-left  w-full md:w-[90%]"
             >
-              Become a early investor
+              Become an
+              <br /> early investor
             </p>
             <p className=" text-[#858585] text-center md:text-left font-semibold">
               We understand that the world of crypto & blockchain can be

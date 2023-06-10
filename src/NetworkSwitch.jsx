@@ -1,7 +1,7 @@
 import React from "react";
 import { Dialog, DialogContent, Box, Slide } from "@mui/material";
 import { withStyles } from "@mui/styles";
-import { ConnectWallect } from "./Components/SmallComponent/ConnectWallect";
+import { error } from "./images";
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -67,21 +67,39 @@ function NetworkChange({ open, setOpen }) {
               flexDirection="column"
             >
               <Box
-                borderBottom="5px solid red"
-                color="red"
-                fontSize="30px"
-                fontFamily="Regular"
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                width="40%"
               >
-                Error!
+                <img width="100%" src={error} alt="" />
               </Box>
-              <Box fontFamily="Regular" component="h3" color="#ffffff" mt={2}>
-                You are on wrong network. Please, switch your network.
+              <Box mt={2} color="#ffffff" fontSize="30px" fontFamily="Regular">
+                Wrong Network
               </Box>
-              <Box align="center" mt={2}>
-                <ConnectWallect
-                  text="Switch Network"
-                  onClickFun={networkHandler}
-                />
+              <Box
+                fontFamily="Regular"
+                fontWeight="300"
+                color="lightGray"
+                mt={1}
+              >
+                You are on wrong network.
+                <br /> Please, switch your network.
+              </Box>
+              <Box
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                mt={3}
+                width="100%"
+              >
+                <button
+                  style={{ fontFamily: "Regular" }}
+                  onClick={networkHandler}
+                  className="text-[#fff] text-lg bg-[#7900EE] hover:bg-[#3A165D] w-full  px-6 py-2 rounded-3xl  font-normal text-center"
+                >
+                  SWITCH NETWORK
+                </button>
               </Box>
             </Box>
           </DialogContent>

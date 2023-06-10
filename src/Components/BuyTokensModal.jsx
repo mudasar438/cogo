@@ -1,7 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useContext, useEffect, useState } from "react";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import { cwg, eth, t } from "../images";
+import { cwg, eth, t, Token1 } from "../images";
 import { ConnectWallect } from "./SmallComponent/ConnectWallect";
 import { AiOutlineClose } from "react-icons/ai";
 import {
@@ -14,6 +13,7 @@ import {
 import { AppContext } from "../utils";
 import { formatUnits, parseUnits } from "@ethersproject/units";
 import { presaleAddress } from "../ConnectivityAssets/environment";
+import { Box } from "@mui/material";
 export default function BuyTokensModal({ initProgress, init }) {
   let [isOpen, setIsOpen] = useState(false);
   function closeModal() {
@@ -269,24 +269,41 @@ export default function BuyTokensModal({ initProgress, init }) {
                     </div>
                   ) : complete ? (
                     <div className="flex flex-col items-center p-3">
-                      <div className="absolute right-5 top-5 flex justify-end text-[#b85353] ">
-                        <AiOutlineClose
-                          className="text-right bg-[#2d2828] p-2 rounded-full text-4xl hover:bg-[#262020]"
+                      <img width="40%" src={Token1} alt="" />
+                      <p className="text-3xl text-[#fff] text-center font-large pt-3">
+                        Successful
+                      </p>
+                      <p className="text-lg text-[#fff] text-center font-medium pt-1">
+                        Your transaction was successful,
+                        <br /> thank you for participating.
+                      </p>
+                      <Box
+                        display="flex"
+                        flexDirection="column"
+                        alignItems="center"
+                        mt={3}
+                        width="100%"
+                      >
+                        <button
+                          style={{ fontFamily: "Regular" }}
+                          // onClick={networkHandler}
+                          className="text-[#000000] text-lg bg-[#ffffff] hover:bg-[#ffffff] w-full  px-6 py-2 rounded-3xl  font-normal text-center"
+                        >
+                          ADD COGWISE (COGW)
+                        </button>
+                        <button
+                          style={{ fontFamily: "Regular" }}
                           onClick={() => {
                             setEnteredAmount("");
                             setreceivedTokens(0);
                             closeModal();
                             setComplete(false);
                           }}
-                        />
-                      </div>
-                      <CheckCircleIcon
-                        sx={{ color: "#57CA5C", fontSize: "150px" }}
-                      />
-
-                      <p className="text-xl text-[#fff] text-center font-medium pt-2">
-                        YOUR TRANSECTION HAS BEEN COMPLETED!
-                      </p>
+                          className="text-[#fff] text-lg bg-[#7900EE] hover:bg-[#3A165D] mt-2 w-full px-6 py-2 rounded-3xl font-normal text-center"
+                        >
+                          Done
+                        </button>
+                      </Box>
                     </div>
                   ) : (
                     <div className="w-full">
