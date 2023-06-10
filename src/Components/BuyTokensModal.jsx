@@ -313,7 +313,7 @@ export default function BuyTokensModal({ initProgress, init }) {
                         </div>
                         <p
                           style={{ fontFamily: "Regular" }}
-                          className="text-3xl font-normal  text-center md:text-left font-Rubik w-full "
+                          className="text-3xl font-normal  text-center md:text-left w-full "
                         >
                           Buy Cogwise $CGW
                         </p>

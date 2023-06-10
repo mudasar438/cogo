@@ -44,7 +44,7 @@ export const Banner = () => {
               });
             }}
           >
-            <div className="Rubik border-2 border-[#5C5C5C] cursor-pointer rounded-3xl px-3 py-2 flex space-x-4 items-center">
+            <div className=" border-2 border-[#5C5C5C] cursor-pointer rounded-3xl px-3 py-2 flex space-x-4 items-center">
               <p> COPY ADDR</p>
               <FiCopy />
             </div>

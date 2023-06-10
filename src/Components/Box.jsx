@@ -30,7 +30,7 @@ export const Box = () => {
         </video>
 
         <div className="absolute bshadow top-0 left-0 right-0 ml-auto mr-auto  w-full md:w-[100%] h-full mx-auto flex flex-col items-center pt-10 space-y-5 ">
-          <p className="Rubik text-[#848486] font-semibold text-center w-full md-[40%] ">
+          <p className=" text-[#848486] font-semibold text-center w-full md-[40%] ">
             [ OUR JOURNEY HAD BEGUN ]
           </p>
           <p

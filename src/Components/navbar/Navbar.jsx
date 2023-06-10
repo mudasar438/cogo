@@ -8,6 +8,7 @@ import { Solution } from "./NavbarHovers/Solution";
 import { CommunityHover } from "./NavbarHovers/CommunityHover";
 import { AppContext } from "../../utils";
 import { DocsHover } from "./NavbarHovers/DocsHover";
+import { LanguageHover } from "./NavbarHovers/languageHover";
 // import { GrLanguage } from "react-icons/gr";
 import { MdLanguage } from "react-icons/md";
 
@@ -36,11 +37,18 @@ export const Navbar = () => {
   const handleDocsfalse = () => {
     setDocs(false);
   };
+  const [language, setLanguage] = useState(false);
+  const handleLng = () => {
+    setLanguage(true);
+  };
+  const handleLngFalse = () => {
+    setLanguage(false);
+  };
 
   return (
     <>
       <nav className="w-full " style={{ fontFamily: "Regular" }}>
-        <div className="max-w-screen-2xl mx-auto justify-between px-4 md:items-center lg:flex   fixed left-0 right-0 z-10 ml-auto mr-auto top-0 w-full navbg">
+        <div className="max-w-screen-2xl mx-auto justify-between px-4 md:items-center lg:flex   fixed left-0 right-0 z-10 ml-auto mr-auto top-0 w-full navhover">
           <div>
             <div className="flex items-center justify-between py-3 md:py-3 lg:block">
               <a href="/">
@@ -90,18 +98,18 @@ export const Navbar = () => {
                 navbar ? "block" : "hidden"
               }`}
             >
-              <div className="flex-col md:flex-row items-start justify-center space-y-4 md:flex md:space-x-1 md:space-y-0 font-medium">
+              <div className="flex-col md:flex-row items-start justify-center space-y-4 md:flex md:space-x-1 md:space-y-0 font-[14px] ">
                 <button
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                   onClick={() => navigate("/")}
                   className="flex relative  space-x-2 items-center hover:bg-[#231414] px-5 p-2 rounded-3xl"
                 >
-                  <p> SOLUTIONS</p>{" "}
-                  <FiArrowDownRight className="text-[#8d7b7b] font-semibold" />
+                  <p className="tracking-[1.3px]"> SOLUTIONS</p>{" "}
+                  <FiArrowDownRight className="text-[#8d7b7b] font-normal" />
                   {isHovered ? <Solution /> : ""}
                 </button>
-                <button className="flex space-x-3 items-center hover:bg-[#231414] px-5 p-2 rounded-3xl ">
+                <button className="tracking-[1.3px] flex space-x-3 items-center hover:bg-[#231414] px-5 p-2 rounded-3xl ">
                   PRESALE{" "}
                   <p className=" border border-[#39E3BA] px-1 rounded-2xl text-[#000] text-[12px] ml-1 font-normal blob green">
                     LIVE
@@ -112,14 +120,14 @@ export const Navbar = () => {
                   onMouseLeave={handleDocsfalse}
                   className="flex space-x-2 items-center hover:bg-[#231414] px-5 p-2 rounded-3xl "
                 >
-                  <p>DOCS</p>
+                  <p className="tracking-[1.3px]">DOCS</p>
 
                   <FiArrowDownRight className="text-[#4240a6] font-semibold" />
                   {docs ? <DocsHover /> : ""}
                 </button>
                 <button
                   onClick={() => navigate("/dashboard")}
-                  className=" hover:bg-[#231414] px-5 p-2 rounded-3xl flex flex-col"
+                  className=" hover:bg-[#231414] px-5 p-2 rounded-3xl flex flex-col tracking-[1.3px]"
                 >
                   TEAM
                 </button>
@@ -129,11 +137,11 @@ export const Navbar = () => {
                   className="flex space-x-2 items-center  hover:bg-[#231414] px-3 p-2 rounded-3xl"
                 >
                   {" "}
-                  <p>COMMUNITY</p>{" "}
+                  <p className="tracking-[1.3px]">COMMUNITY</p>{" "}
                   <FiArrowDownRight className="text-[#4240a6] font-semibold" />
                   {community ? <CommunityHover /> : ""}
                 </button>
-                <button className=" hover:bg-[#231414] px-5 p-2 rounded-3xl">
+                <button className=" hover:bg-[#231414] px-5 p-2 rounded-3xl tracking-[1.3px]">
                   CONTACT
                 </button>{" "}
               </div>
@@ -145,9 +153,14 @@ export const Navbar = () => {
             }`}
           >
             <div className="flex gap-2 py-3">
-              <div className="bg-[ #272727] p-2 rounded-full">
+              <button
+                onMouseEnter={handleLng}
+                onMouseLeave={handleLngFalse}
+                className="bg-[ #272727] p-2 rounded-full"
+              >
                 <MdLanguage className="text-3xl" />
-              </div>
+                {language ? <LanguageHover /> : " "}
+              </button>
               {account ? (
                 <BasicButton
                   onClick={() => disconnect()}

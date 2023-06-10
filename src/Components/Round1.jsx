@@ -10,9 +10,7 @@ export const Round1 = () => {
       >
         <div className=" w-full md:w-[50%]  space-y-8 md:space-y-12">
           <div className="flex space-x-5  justify-center md:justify-start items-center">
-            <p className="Rubik text-[#545454] font-semibold">
-              [ROUND - 1 / 6]
-            </p>
+            <p className=" text-[#545454] font-semibold">[ROUND - 1 / 6]</p>
             <button className="bg-[#39E3BA] border border-[#39E3BA] px-3 py-1 rounded-2xl text-[#000] text-sm font-semibold">
               LIVE
             </button>
@@ -25,7 +23,7 @@ export const Round1 = () => {
           </p>
           <div className=" flex flex-col sm:flex-row gap-3  justify-center md:justify-start">
             <BasicButton text="connect wallet" />
-            <button className="bg-[#000] hover:bg-[#231414] rounded-3xl px-7 font-Rubik font-normal py-1  border-2 border-[#545454] ">
+            <button className="bg-[#000] hover:bg-[#231414] rounded-3xl px-7  font-normal py-1  border-2 border-[#545454] ">
               HOW TO BUY ?
             </button>
           </div>

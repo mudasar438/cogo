@@ -26,7 +26,7 @@ export const Baner2 = () => {
         </div>
         <div className="flex space-x-5 items-center justify-end">
           <button className=" border-2 border-[#5C5C5C] rounded-3xl px-3 py-2 flex space-x-4 items-center">
-            <p className="Rubik"> JOIN GROUP</p>
+            <p className=""> JOIN GROUP</p>
             <img src={join} alt="" srcSet="" />
           </button>
         </div>

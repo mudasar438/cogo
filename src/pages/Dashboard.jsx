@@ -15,11 +15,11 @@ export const Dashboard = () => {
               <p className="bg-[#232323] rounded-2xl p-3  w-[160px]  flex self-center ">
                 STAGE 6 [ $0.060 ]
               </p>
-              <button className="bg-[#E33962] px-3 p-1 h-8 rounded-2xl text-[#000] font-normal Rubik">
+              <button className="bg-[#E33962] px-3 p-1 h-8 rounded-2xl text-[#000] font-normal ">
                 SOLD OUT
               </button>
             </div>
-            <p className="text-4xl font-normal  text-center font-Rubik w-full ">
+            <p className="text-4xl font-normal  text-center  w-full ">
               Dashboard
             </p>
           </div>

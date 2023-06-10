@@ -231,7 +231,7 @@ export const LandingPage = () => {
             </ul>
             <p
               style={{ fontFamily: "Regular" }}
-              className=" text-3xl md:text-6xl font-normal text-center md:text-left font-Rubik w-full md:w-[90%]"
+              className=" text-3xl md:text-6xl font-normal text-center md:text-left  w-full md:w-[90%]"
             >
               Become a early investor
             </p>
@@ -242,7 +242,7 @@ export const LandingPage = () => {
             </p>
             <div className=" flex flex-col sm:flex-row gap-3  justify-center md:justify-start">
               <BasicButton text="INTRO" />
-              <button className=" Rubik bg-[#000] hover:bg-[#231414] rounded-3xl px-7 font-Rubik font-normal">
+              <button className="  bg-[#000] hover:bg-[#231414] rounded-3xl px-7  font-normal">
                 Explore Token
               </button>
             </div>
@@ -281,13 +281,13 @@ export const LandingPage = () => {
                     <p className="bg-[#3D3D3D] rounded-full px-4 py-3  flex self-center  ">
                       STAGE 6 [ ${1 / tokenPrice} ]
                     </p>
-                    <button className="bg-[#E33962] px-3 py-3 rounded-full text-[#000] font-normal Rubik">
+                    <button className="bg-[#E33962] px-3 py-3 rounded-full text-[#000] font-normal ">
                       SOLD OUT
                     </button>
                   </div>
                   <p
                     style={{ fontFamily: "Regular" }}
-                    className="text-4xl font-normal  text-center font-Rubik w-full "
+                    className="text-4xl font-normal  text-center  w-full "
                   >
                     {balanceTokenToCompaire > 0
                       ? "Dashboard"
@@ -523,7 +523,7 @@ export const LandingPage = () => {
                 </p>
                 <p
                   style={{ fontFamily: "Regular" }}
-                  className="text-4xl font-normal  text-center md:text-left font-Rubik w-full md:w-[80%]"
+                  className="text-4xl font-normal  text-center md:text-left  w-full md:w-[80%]"
                 >
                   Buy Cogwise $CGW
                 </p>
