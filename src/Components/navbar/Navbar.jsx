@@ -156,18 +156,25 @@ export const Navbar = () => {
               <button
                 onMouseEnter={handleLng}
                 onMouseLeave={handleLngFalse}
-                className="bg-[ #272727] p-2 rounded-full"
+                className="bg-[ #272727]  rounded-full"
               >
                 <MdLanguage className="text-3xl" />
                 {language ? <LanguageHover /> : " "}
               </button>
               {account ? (
-                <BasicButton
+                <button
                   onClick={() => disconnect()}
-                  text={`${account.slice(0, 8) + "..."}`}
-                />
+                  className="text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px]   px-4 py-2  rounded-[24px]"
+                >
+                  {`${account.slice(0, 8) + "..."}`}
+                </button>
               ) : (
-                <BasicButton onClick={() => connect()} text="connect" />
+                <button
+                  onClick={() => connect()}
+                  className="text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px]   px-4 py-2 rounded-[24px]"
+                >
+                  Connect
+                </button>
               )}
             </div>
           </div>

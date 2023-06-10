@@ -12,6 +12,7 @@ import { Footer } from "../Components/Footer";
 import BuyTokensModal from "../Components/BuyTokensModal";
 import RoundSwiper from "../Components/RoundSwiper";
 import { AppContext } from "../utils";
+import { BsPlayCircleFill } from "react-icons/bs";
 import {
   ToastNotify,
   usePresaleContract,
@@ -21,6 +22,7 @@ import {
 import { formatUnits } from "@ethersproject/units";
 import { ConnectWallect } from "../Components/SmallComponent/ConnectWallect";
 import { Container } from "@mui/material";
+import { FiArrowUpRight } from "react-icons/fi";
 const array = [{ img: m1 }, { img: m2 }, { img: m3 }];
 const array2 = [{ img: yahoo }, { img: ben }, { img: market }, { img: bit }];
 
@@ -242,9 +244,25 @@ export const LandingPage = () => {
               you are getting the best info and insights.
             </p>
             <div className=" flex flex-col sm:flex-row gap-3  justify-center md:justify-start">
-              <BasicButton text="INTRO" />
-              <button className="  bg-[#000] hover:bg-[#231414] rounded-3xl px-7  font-normal">
-                Explore Token
+              <button className=" text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px]   px-8 py-[15px] rounded-[24px] ">
+                <p className="text-center flex justify-center items-center  w-full">
+                  {" "}
+                  BUY $CGW{" "}
+                  <span>
+                    {" "}
+                    <FiArrowUpRight className=" ml-2 text-xl font-semibold" />
+                  </span>
+                </p>{" "}
+              </button>
+              <button className="border text-[14px]   bg-[#000] hover:bg-[#231414] min-w-[160px]  px-8 py-[15px] rounded-[24px] ">
+                <p className="text-center flex justify-center items-center  w-full tracking-[1.3px]">
+                  {" "}
+                  INTRO
+                  <span>
+                    {" "}
+                    <BsPlayCircleFill className=" ml-3 text-sm font-semibold text-[#7900EE]" />
+                  </span>
+                </p>{" "}
               </button>
             </div>
             <Marquee
