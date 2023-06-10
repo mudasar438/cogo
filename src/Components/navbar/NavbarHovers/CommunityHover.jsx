@@ -61,8 +61,10 @@ export const CommunityHover = () => {
                       {item.icon}
                     </div>
                     <div className="">
-                      <p className="font-medium text-[#5C5C5C] ">{item.name}</p>
-                      {item.heading}
+                      <p className="font-medium  text-lg ">{item.name}</p>
+                      <p className="text-[#5C5C5C] text-lg font-medium">
+                        {item.heading}
+                      </p>
                     </div>
                   </div>
                   {/* <FaArrowUpRightFromSquare /> */}
