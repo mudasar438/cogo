@@ -693,10 +693,10 @@ export const LandingPage = () => {
         <Baner2 />
       </div>
       <Box />
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <Marquee
           gradient={true}
-          gradientWidth={150}
+          gradientWidth={200}
           gradientColor={[0, 0, 0]}
           speed={100}
           pauseOnClick={true}
@@ -711,7 +711,7 @@ export const LandingPage = () => {
                   alt=""
                   srcSet=""
                   style={{
-                    width: "180px",
+                    width: "160px",
                     objectFit: "contain",
                     marginLeft: "100px",
                   }}
