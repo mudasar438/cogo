@@ -164,14 +164,14 @@ export const Navbar = () => {
               {account ? (
                 <button
                   onClick={() => disconnect()}
-                  className="text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px]   px-4   rounded-[24px]"
+                  className="text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px]   px-4  py-2  rounded-[24px]"
                 >
                   {`${account.slice(0, 8) + "..."}`}
                 </button>
               ) : (
                 <button
                   onClick={() => connect()}
-                  className="text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px]   px-4  rounded-[24px]"
+                  className="text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px]   px-4 py-2 rounded-[24px]"
                 >
                   Connect
                 </button>
