@@ -21,7 +21,7 @@ import {
 } from "../ConnectivityAssets/hooks";
 import { formatUnits } from "@ethersproject/units";
 import { ConnectWallect } from "../Components/SmallComponent/ConnectWallect";
-import { Container } from "@mui/material";
+import { Container, Skeleton } from "@mui/material";
 import { FiArrowUpRight } from "react-icons/fi";
 const array = [{ img: m1 }, { img: m2 }, { img: m3 }];
 const array2 = [{ img: yahoo }, { img: ben }, { img: market }, { img: bit }];
@@ -60,6 +60,7 @@ export const LandingPage = () => {
   const init = async () => {
     try {
       if (account) {
+        setloading(true);
         const { token_balance, native_balance, usdt_balance } =
           await presaleContract.users(account);
         setbalanceTokenToCompaire(
@@ -108,6 +109,7 @@ export const LandingPage = () => {
           let remaining = 750000 - +userTokensToShow;
           setremainingForNextLevel(toLocalFormat(remaining));
         }
+        setloading(false);
       }
     } catch (error) {
       console.log(error);
@@ -120,6 +122,7 @@ export const LandingPage = () => {
 
   const initProgress = async () => {
     try {
+      setloading(true);
       const isCalimOn = await presaleContract.enableClaim();
       setisClaimEnabled(isCalimOn);
       const dec = await tokenContract.decimals();
@@ -154,6 +157,7 @@ export const LandingPage = () => {
           +formatUnits(supply.toString(), +dec)) *
         100;
       setProgessBar(+prog);
+      setloading(false);
     } catch (error) {
       console.log(error, "DATA_INIT");
     }
@@ -221,9 +225,9 @@ export const LandingPage = () => {
   return (
     <>
       <ToastNotify alertState={alertState} setAlertState={setAlertState} />
-      <div style={{ fontFamily: "Regular" }} className="px-4 md:px-12 font-">
+      <div style={{ fontFamily: "Regular" }} className="px-4">
         <div className=" w-full lg:w-[100%] lg:justify-center space-y-10 mt-5 flex flex-col lg:flex-row justify-between py-10  ">
-          <div className=" w-full lg:w-[35%]  flex gap-10 flex-col md:p-3">
+          <div className=" w-full lg:w-[45%]  flex gap-10 flex-col md:p-3">
             <ul>
               <li>
                 <p className="text-sm text-[#858585]  text-center md:text-left">
@@ -297,21 +301,30 @@ export const LandingPage = () => {
               <div className="w-full lg:w-[75%] bg-[#222222] p-5 rounded-xl flex flex-col item-center justify-center  gap-8 border border-[#303030]">
                 <div className="space-y-3">
                   <div className="flex space-x-3 items-center justify-center">
-                    <p className="bg-[#3D3D3D] rounded-full px-4 py-3  flex self-center  ">
-                      STAGE 6 [ ${1 / tokenPrice} ]
-                    </p>
+                    {loading ? (
+                      <Skeleton variant="rounded" width={150} height={40} />
+                    ) : (
+                      <p className="bg-[#3D3D3D] rounded-full px-4 py-3  flex self-center  ">
+                        STAGE 6 [ ${1 / tokenPrice} ]
+                      </p>
+                    )}
+
                     <button className="bg-[#E33962] px-3 py-3 rounded-full text-[#000] font-normal ">
                       SOLD OUT
                     </button>
                   </div>
-                  <p
-                    style={{ fontFamily: "Regular" }}
-                    className="text-4xl font-normal  text-center  w-full "
-                  >
-                    {balanceTokenToCompaire > 0
-                      ? "Dashboard"
-                      : "We’re sold out!"}
-                  </p>
+                  {loading ? (
+                    <Skeleton variant="rounded" width={150} height={40} />
+                  ) : (
+                    <p
+                      style={{ fontFamily: "Regular" }}
+                      className="text-4xl font-normal  text-center  w-full "
+                    >
+                      {balanceTokenToCompaire > 0
+                        ? "Dashboard"
+                        : "We’re sold out!"}
+                    </p>
+                  )}
                 </div>
                 <div className="">
                   <p
@@ -347,12 +360,17 @@ export const LandingPage = () => {
                         >
                           VESTED AMOUNT:
                         </p>
-                        <p
-                          className="text-3xl py-2"
-                          style={{ fontFamily: "Regular" }}
-                        >
-                          {balanceTokenToShow}
-                        </p>
+                        {loading ? (
+                          <Skeleton variant="rounded" width={150} height={40} />
+                        ) : (
+                          <p
+                            className="text-3xl py-2"
+                            style={{ fontFamily: "Regular" }}
+                          >
+                            {balanceTokenToShow}
+                          </p>
+                        )}
+
                         <div className="text-[#545454] font-lg flex space-x-2 items-center">
                           <img
                             src={t}
@@ -364,9 +382,17 @@ export const LandingPage = () => {
                               objectFit: "contain",
                             }}
                           />
-                          <p style={{ fontFamily: "Regular" }}>
-                            {userTokensToUSD}
-                          </p>
+                          {loading ? (
+                            <Skeleton
+                              variant="rounded"
+                              width={100}
+                              height={30}
+                            />
+                          ) : (
+                            <p style={{ fontFamily: "Regular" }}>
+                              {userTokensToUSD}
+                            </p>
+                          )}
                         </div>
                       </div>
                       <div className=" w-[30%] flex flex-col items-center space-y-4">
@@ -393,12 +419,17 @@ export const LandingPage = () => {
                         >
                           BONUS UNLOCKED:
                         </p>
-                        <p
-                          className="text-3xl py-2"
-                          style={{ fontFamily: "Regular" }}
-                        >
-                          {totalBonusTokens}
-                        </p>
+                        {loading ? (
+                          <Skeleton variant="rounded" width={150} height={40} />
+                        ) : (
+                          <p
+                            className="text-3xl py-2"
+                            style={{ fontFamily: "Regular" }}
+                          >
+                            {totalBonusTokens}
+                          </p>
+                        )}
+
                         <div className="text-[#545454] font-lg flex space-x-2 items-center">
                           <img
                             src={t}
@@ -410,9 +441,17 @@ export const LandingPage = () => {
                               objectFit: "contain",
                             }}
                           />
-                          <p style={{ fontFamily: "Regular" }}>
-                            {userBonusInUSD}
-                          </p>
+                          {loading ? (
+                            <Skeleton
+                              variant="rounded"
+                              width={100}
+                              height={30}
+                            />
+                          ) : (
+                            <p style={{ fontFamily: "Regular" }}>
+                              {userBonusInUSD}
+                            </p>
+                          )}
                         </div>
                       </div>
                       <div className=" w-[30%] flex flex-col items-center space-y-4">
@@ -537,9 +576,14 @@ export const LandingPage = () => {
           ) : (
             <div className=" w-full lg:w-[50%] flex justify-end">
               <div className="w-full lg:w-[75%] bg-[#222222]  p-5 rounded-xl flex flex-col gap-8 border border-[#303030]">
-                <p className="bg-[#3D3D3D] rounded-full px-5 py-3 flex self-center md:self-start ">
-                  ROUND 1 [ ${1 / +tokenPrice} ]
-                </p>
+                {loading ? (
+                  <Skeleton variant="rounded" width={150} height={40} />
+                ) : (
+                  <p className="bg-[#3D3D3D] rounded-full px-5 py-3 flex self-center md:self-start ">
+                    ROUND 1 [ ${1 / +tokenPrice} ]
+                  </p>
+                )}
+
                 <p
                   style={{ fontFamily: "Regular" }}
                   className="text-4xl font-normal  text-center md:text-left  w-full md:w-[80%]"
@@ -549,7 +593,7 @@ export const LandingPage = () => {
 
                 <div className="w-full bg-[#3D3D3D] rounded-full dark:bg-[#3D3D3D]">
                   <div
-                    className=" bg-gradient-to-r from-[#292D2C] to-[#328D77] text-xl font-medium text-[#000] text-center px-0.5 py-2  leading-none rounded-full"
+                    className=" bg-gradient-to-r transition from-[#7900EE] to-[#328D77] text-xl font-medium text-[#000] text-center px-0.5 py-2  leading-none rounded-full"
                     style={{ width: `${progressBar}%` }}
                   >
                     {" "}
@@ -563,12 +607,17 @@ export const LandingPage = () => {
                         <p className="text-[#858585] text-lg font-medium">
                           YOUR BALANCE:
                         </p>
-                        <p
-                          className="text-4xl py-2"
-                          style={{ fontFamily: "Regular" }}
-                        >
-                          {balanceTokenToShow}
-                        </p>
+                        {loading ? (
+                          <Skeleton variant="rounded" width={150} height={40} />
+                        ) : (
+                          <p
+                            className="text-4xl py-2"
+                            style={{ fontFamily: "Regular" }}
+                          >
+                            {balanceTokenToShow}
+                          </p>
+                        )}
+
                         <p
                           style={{ fontFamily: "Regular" }}
                           className="text-[#545454] text-lg font-medium flex items-center"
@@ -582,7 +631,15 @@ export const LandingPage = () => {
                             src={t}
                             alt=""
                           />{" "}
-                          {userTokensToUSD}
+                          {loading ? (
+                            <Skeleton
+                              variant="rounded"
+                              width={100}
+                              height={30}
+                            />
+                          ) : (
+                            userTokensToUSD
+                          )}
                         </p>
                       </div>
                       {+balanceTokenToCompaire >= 100000 && (
@@ -590,12 +647,21 @@ export const LandingPage = () => {
                           <p className="text-[#858585] text-lg font-medium">
                             BONUS UNLOCKED:
                           </p>
-                          <p
-                            className="text-4xl py-2"
-                            style={{ fontFamily: "Regular" }}
-                          >
-                            {totalBonusTokens}
-                          </p>
+                          {loading ? (
+                            <Skeleton
+                              variant="rounded"
+                              width={150}
+                              height={40}
+                            />
+                          ) : (
+                            <p
+                              className="text-4xl py-2"
+                              style={{ fontFamily: "Regular" }}
+                            >
+                              {totalBonusTokens}
+                            </p>
+                          )}
+
                           <p className="text-[#525252] text-lg font-medium">
                             Level {bonusLevel}{" "}
                             <span className="bg-[#888888] rounded-2xl px-3 pb-1 text-[#fff] font-regular">
@@ -615,7 +681,7 @@ export const LandingPage = () => {
                     </div>
                     <div className="w-full bg-gray-200 rounded-full dark:bg-[#232323]">
                       <div
-                        className=" bg-gradient-to-r from-[#292D2C] to-[#328D77] text-xl font-medium text-[#fff] text-center p-0.5 leading-none rounded-full"
+                        className=" bg-gradient-to-r transition from-[#7900EE] to-[#328D77] text-xl font-medium text-[#fff] text-center p-0.5 leading-none rounded-full"
                         style={{ width: `${bonusProgressBar}%` }}
                       >
                         {" "}
@@ -640,10 +706,19 @@ export const LandingPage = () => {
                         style={{ fontFamily: "Regular" }}
                         className="text-4xl py-2"
                       >
-                        {totalSoldTokens}
+                        {loading ? (
+                          <Skeleton variant="rounded" width={150} height={50} />
+                        ) : (
+                          totalSoldTokens
+                        )}
                       </p>
                       <p className="text-[#545454] font-medium">
-                        / {totalSupply}
+                        /{" "}
+                        {loading ? (
+                          <Skeleton variant="rounded" width={150} height={30} />
+                        ) : (
+                          totalSupply
+                        )}
                       </p>
                     </div>
 
@@ -651,15 +726,29 @@ export const LandingPage = () => {
                       <p className="text-[#858585] font-medium">
                         RAISED (USDT)
                       </p>
-                      <p
-                        style={{ fontFamily: "Regular" }}
-                        className="text-4xl py-2"
-                      >
-                        ${totalRaised}
-                      </p>
-                      <p className="text-[#545454] font-medium">
-                        / ${hardCapPerPhase}
-                      </p>
+                      {loading ? (
+                        <Skeleton variant="rounded" width={150} height={50} />
+                      ) : (
+                        <p
+                          style={{ fontFamily: "Regular" }}
+                          className="text-4xl py-2"
+                        >
+                          $ {totalRaised}
+                        </p>
+                      )}
+
+                      {loading ? (
+                        <Skeleton
+                          sx={{ mt: 4 }}
+                          variant="rounded"
+                          width={150}
+                          height={30}
+                        />
+                      ) : (
+                        <p className="text-[#545454] font-medium">
+                          / $ {hardCapPerPhase}
+                        </p>
+                      )}
                     </div>
                   </div>
                 )}
