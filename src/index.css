@@ -34,38 +34,44 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.navbg{
+.navbg {
   animation-delay: 1s;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    animation-name: showBorder;
-    animation-timing-function: ease-out;
-    backdrop-filter: saturate(50%) blur(4px);
-    -webkit-backdrop-filter: saturate(50%) blur(4px);
-    background-color: #212129;
-    background-image: radial-gradient(circle at center,rgba(0,0,0,.278) 0.06rem,rgba(0,0,0,.749) 0.65rem);
-    background-repeat: round;
-  
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-name: showBorder;
+  animation-timing-function: ease-out;
+  backdrop-filter: saturate(50%) blur(4px);
+  -webkit-backdrop-filter: saturate(50%) blur(4px);
+  background-color: #212129;
+  background-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.278) 0.06rem,
+    rgba(0, 0, 0, 0.749) 0.65rem
+  );
+  background-repeat: round;
 }
-.navhover{
-
+.navhover {
   /* @apply tw-relative tw-top-0 tw-duration-300 tw-bg-black/20; */
-  
-      background-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.2784313725) 0.06rem, #000000bf 0.65rem);
-      background-size: 8px 8px;
-      background-repeat: round;
-  
-      backdrop-filter: saturate(50%) blur(4px);
-      -webkit-backdrop-filter: saturate(50%) blur(4px);
-  
-      animation-name: showBorder;
-      animation-duration: 1s;
-      animation-delay: 1s;
-      animation-timing-function: ease-out;
-      animation-fill-mode: forwards;
+
+  background-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.2784313725) 0.06rem,
+    #000000bf 0.65rem
+  );
+  background-size: 8px 8px;
+  background-repeat: round;
+
+  backdrop-filter: saturate(50%) blur(4px);
+  -webkit-backdrop-filter: saturate(50%) blur(4px);
+
+  animation-name: showBorder;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
 }
 
-    /* @keyframes showBorder {
+/* @keyframes showBorder {
       from {
         @apply tw-border-b tw-border-transparent;
       }
@@ -73,7 +79,6 @@ code {
         @apply tw-border-white/10;
       }
     } */
-
 
 .deepbg {
   background-image: url("./images/deepbg.png");
@@ -103,7 +108,9 @@ code {
   border-top: 2px solid #232323;
   border-bottom: 2px solid #232323;
 }
-
+.transition {
+  transition: 1s ease 0.3s;
+}
 .boderTop {
   border-top: 1px solid #333333;
 }
@@ -142,11 +149,17 @@ code {
   color: #ffffff;
 }
 .blob.green {
-  background: #86EFAC;
-  box-shadow: 0 0 0 0 #86EFAC;
+  background: #86efac;
+  box-shadow: 0 0 0 0 #86efac;
   animation: pulse-green 3s infinite;
 }
-.waves { position: absolute; left: 0; top: 0; right: 0; bottom: 0; }
+.waves {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
 
 @keyframes pulse-green {
   0% {

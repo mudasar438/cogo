@@ -52,7 +52,7 @@ export const Navbar = () => {
           <div>
             <div className="flex items-center justify-between py-3 md:py-3 lg:block">
               <a href="/">
-                <img src={logo} alt="" srcSet="" />
+                <img src={logo} width="140px" alt="" srcSet="" />
               </a>
               <div className="lg:hidden">
                 <button
@@ -98,18 +98,18 @@ export const Navbar = () => {
                 navbar ? "block" : "hidden"
               }`}
             >
-              <div className="flex-col md:flex-row items-start justify-center space-y-4 md:flex md:space-x-1 md:space-y-0 font-[14px] ">
+              <div className="flex-col md:flex-row items-start justify-center space-y-4 md:flex md:space-x-0 md:space-y-0 font-[14px] ">
                 <button
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                   onClick={() => navigate("/")}
                   className="flex relative  space-x-2 items-center hover:bg-[#231414] px-5 p-2 rounded-3xl"
                 >
-                  <p className="tracking-[1.3px]"> SOLUTIONS</p>{" "}
+                  <p className="tracking-[1.34px] text-[14px]"> SOLUTIONS</p>{" "}
                   <FiArrowDownRight className="text-[#8d7b7b] font-normal" />
                   {isHovered ? <Solution /> : ""}
                 </button>
-                <button className="tracking-[1.3px] flex space-x-3 items-center hover:bg-[#231414] px-5 p-2 rounded-3xl ">
+                <button className="tracking-[1.34px] text-[14px] flex space-x-3 items-center hover:bg-[#231414] px-5 p-2 rounded-3xl ">
                   PRESALE{" "}
                   <p className=" border border-[#39E3BA] px-1 rounded-2xl text-[#000] text-[12px] ml-1 font-normal blob green">
                     LIVE
@@ -120,14 +120,14 @@ export const Navbar = () => {
                   onMouseLeave={handleDocsfalse}
                   className="flex space-x-2 items-center hover:bg-[#231414] px-5 p-2 rounded-3xl "
                 >
-                  <p className="tracking-[1.3px]">DOCS</p>
+                  <p className="tracking-[1.34px] text-[14px]">DOCS</p>
 
                   <FiArrowDownRight className="text-[#4240a6] font-semibold" />
                   {docs ? <DocsHover /> : ""}
                 </button>
                 <button
                   onClick={() => navigate("/dashboard")}
-                  className=" hover:bg-[#231414] px-5 p-2 rounded-3xl flex flex-col tracking-[1.3px]"
+                  className=" hover:bg-[#231414] px-5 p-2 rounded-3xl flex flex-col tracking-[1.34px] text-[14px]"
                 >
                   TEAM
                 </button>
@@ -137,11 +137,13 @@ export const Navbar = () => {
                   className="flex space-x-2 items-center  hover:bg-[#231414] px-3 p-2 rounded-3xl"
                 >
                   {" "}
-                  <p className="tracking-[1.3px]">COMMUNITY</p>{" "}
+                  <p className="tracking-[1.34px] text-[14px]">
+                    COMMUNITY
+                  </p>{" "}
                   <FiArrowDownRight className="text-[#4240a6] font-semibold" />
                   {community ? <CommunityHover /> : ""}
                 </button>
-                <button className=" hover:bg-[#231414] px-5 p-2 rounded-3xl tracking-[1.3px]">
+                <button className=" hover:bg-[#231414] px-5 p-2 rounded-3xl tracking-[1.34px] text-[14px]">
                   CONTACT
                 </button>{" "}
               </div>
@@ -156,22 +158,22 @@ export const Navbar = () => {
               <button
                 onMouseEnter={handleLng}
                 onMouseLeave={handleLngFalse}
-                className="bg-[ #272727]  rounded-full"
+                className="bg-[ #272727] mr-3 rounded-full"
               >
-                <MdLanguage className="text-3xl" />
+                <MdLanguage className="text-2xl" />
                 {language ? <LanguageHover /> : " "}
               </button>
               {account ? (
                 <button
                   onClick={() => disconnect()}
-                  className="text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px]   px-4   rounded-[24px]"
+                  className="text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px]  py-2 px-4   rounded-[24px]"
                 >
                   {`${account.slice(0, 8) + "..."}`}
                 </button>
               ) : (
                 <button
                   onClick={() => connect()}
-                  className="text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px]   px-4  rounded-[24px]"
+                  className="text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px] py-2  px-4  rounded-[24px]"
                 >
                   Connect
                 </button>
