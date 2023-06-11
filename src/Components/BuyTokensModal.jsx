@@ -197,7 +197,7 @@ export default function BuyTokensModal({ initProgress, init }) {
             setToken("USDT");
             openModal();
           }}
-          className=" text-[#fff] text-sm md:text-lg bg-[#7900EE] hover:bg-[#203cc6] min-w-[130px] w-[48%] px-2 md:px-6 h-[58px] rounded-3xl font-medium text-center"
+          className=" text-[#fff] text-sm md:text-[14px] bg-[#7900EE] hover:bg-[#203cc6] min-w-[130px] w-[48%] px-2 md:px-6 py-[15px] rounded-[24px] font-[14px] text-center"
         >
           BUY WITH USDT
         </button>
@@ -207,7 +207,7 @@ export default function BuyTokensModal({ initProgress, init }) {
             setToken("ETH");
             openModal();
           }}
-          className=" text-[#fff] text-sm md:text-lg bg-[#7900EE] hover:bg-[#203cc6] min-w-[130px] w-[48%] px-2 md:px-6 h-[58px] rounded-3xl font-medium text-center"
+          className=" text-[#fff] text-sm md:text-[14px] bg-[#7900EE] hover:bg-[#203cc6] min-w-[130px] w-[48%] px-2 md:px-6 py-[15px] rounded-[24px] font-[14px] text-center"
         >
           BUY WITH ETH
         </button>

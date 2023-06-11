@@ -757,10 +757,7 @@ export const LandingPage = () => {
                   {account ? (
                     <BuyTokensModal initProgress={initProgress} init={init} />
                   ) : (
-                    <ConnectWallect
-                      onClickFun={connect}
-                      text="Connect Wallet "
-                    />
+                    <ConnectWallect onClickFun={connect} text="CONNECT " />
                   )}
                 </div>
                 <div className=" flex flex-col sm:flex-row space-y-8 sm:space-y-0  justify-center sm:justify-between items-center">

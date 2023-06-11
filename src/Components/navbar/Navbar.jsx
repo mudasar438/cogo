@@ -178,7 +178,7 @@ export const Navbar = () => {
                   onClick={() => connect()}
                   className="text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px] py-2  px-4  rounded-[24px]"
                 >
-                  Connect
+                  CONNECT
                 </button>
               )}
             </div>
