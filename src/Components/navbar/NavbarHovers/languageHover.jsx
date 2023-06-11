@@ -2,8 +2,24 @@ import { TbPdf } from "react-icons/tb";
 import { FiBook } from "react-icons/fi";
 const array = [
   {
-    name: " EN",
+    name: " English",
   },
+  {
+    name: " Korean",
+  },
+  {
+    name: " Chinese",
+  },
+  {
+    name: " German",
+  },
+  {
+    name: " Turkish",
+  },
+  {
+    name: " Italian",
+  },
+  { name: "French" },
 ];
 
 export const LanguageHover = () => {
@@ -21,8 +37,8 @@ export const LanguageHover = () => {
                 className="  border-r-[#303030] hover:bg-[#212129] rounded-lg p-2 "
               >
                 <div className="w-full flex  justify-center  items-center lg:items-start   lg:justify-start  space-x-3    ">
-                  <div className=" flex flex-col justify-center py-2 lg:items-start ">
-                    <p className="font-semibold">{item.name}</p>
+                  <div className=" flex flex-col justify-center py-[2px] lg:items-start ">
+                    <p className="font-normal">{item.name}</p>
                   </div>
                 </div>
               </div>
