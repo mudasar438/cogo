@@ -47,8 +47,8 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full " style={{ fontFamily: "Regular" }}>
-        <div className="max-w-screen-2xl mx-auto justify-between px-4 md:items-center lg:flex   fixed left-0 right-0 z-10 ml-auto mr-auto top-0 w-full navhover">
+      <nav className="w-full  " style={{ fontFamily: "Regular" }}>
+        <div className="max-w-screen-2xl mx-auto border border-[rgba(255,255,255,0.12)] justify-between px-4 md:items-center lg:flex   fixed left-0 right-0 z-10 ml-auto mr-auto top-0 w-full navhover">
           <div>
             <div className="flex items-center justify-between py-3 md:py-3 lg:block">
               <a href="/">
@@ -98,50 +98,55 @@ export const Navbar = () => {
                 navbar ? "block" : "hidden"
               }`}
             >
-              <div className="flex-col md:flex-row items-start justify-center space-y-4 md:flex md:space-x-1 md:space-y-0 font-[14px] ">
+              <div className="flex-col md:flex-row items-start justify-center space-y-4 md:flex md:space-x-4 md:space-y-0 font-[14px] py-2 ">
                 <button
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                   onClick={() => navigate("/")}
-                  className="flex relative  space-x-2 items-center hover:bg-[#231414] px-5 p-2 rounded-3xl"
+                  className="flex relative  space-x-2 items-center hover:text-[#7900ee] hover:bg-[#140c30] py-[1px] px-[0.5rem] rounded-[0.25rem]"
                 >
-                  <p className="tracking-[1.3px]"> SOLUTIONS</p>{" "}
-                  <FiArrowDownRight className="text-[#8d7b7b] font-normal" />
+                  <p className="tracking-[1.34px] text-[14px] hover:font-extralight ">
+                    {" "}
+                    SOLUTIONS
+                  </p>{" "}
+                  <FiArrowDownRight className="text-[#7900ee] font-bold]" />
                   {isHovered ? <Solution /> : ""}
                 </button>
-                <button className="tracking-[1.3px] flex space-x-3 items-center hover:bg-[#231414] px-5 p-2 rounded-3xl ">
+                <button className="tracking-[1.34px] text-[14px] flex px-[0.5rem]  space-x-3 items-center hover:text-[#7900ee]  ">
                   PRESALE{" "}
-                  <p className=" border border-[#39E3BA] px-1 rounded-2xl text-[#000] text-[12px] ml-1 font-normal blob green">
+                  <p className=" border border-[#39E3BA] px-1 rounded-2xl text-[#000] text-[12px] ml-1  font-normal blob green">
                     LIVE
                   </p>
                 </button>
                 <button
                   onMouseEnter={handleDocs}
                   onMouseLeave={handleDocsfalse}
-                  className="flex space-x-2 items-center hover:bg-[#231414] px-5 p-2 rounded-3xl "
+                  className="flex space-x-2 items-center hover:text-[#7900ee] hover:bg-[#140c30] py-[1px] px-[0.5rem] rounded-[0.25rem] "
                 >
-                  <p className="tracking-[1.3px]">DOCS</p>
+                  <p className="tracking-[1.34px] text-[14px]">DOCS</p>
 
-                  <FiArrowDownRight className="text-[#4240a6] font-semibold" />
+                  <FiArrowDownRight className="text-[#7900ee]  font-semibold" />
                   {docs ? <DocsHover /> : ""}
                 </button>
                 <button
                   onClick={() => navigate("/dashboard")}
-                  className=" hover:bg-[#231414] px-5 p-2 rounded-3xl flex flex-col tracking-[1.3px]"
+                  className="hover:text-[#7900ee] px-[0.5rem]  flex flex-col tracking-[1.34px] text-[14px]"
                 >
                   TEAM
                 </button>
                 <button
                   onMouseEnter={handlecomunityHover}
                   onMouseLeave={handlecommunity}
-                  className="flex space-x-2 items-center  hover:bg-[#231414] px-3 p-2 rounded-3xl"
+                  className="flex space-x-2 items-center hover:text-[#7900ee] hover:bg-[#140c30] py-[1px] px-[0.5rem] rounded-[0.25rem]"
                 >
                   {" "}
-                  <p className="tracking-[1.3px]">COMMUNITY</p>{" "}
-                  <FiArrowDownRight className="text-[#4240a6] font-semibold" />
+                  <p className="tracking-[1.34px] text-[14px]">
+                    COMMUNITY
+                  </p>{" "}
+                  <FiArrowDownRight className="text-[#7900ee]  font-semibold" />
                   {community ? <CommunityHover /> : ""}
                 </button>
-                <button className=" hover:bg-[#231414] px-5 p-2 rounded-3xl tracking-[1.3px]">
+                <button className=" hover:text-[#7900ee] px-[0.5rem]  tracking-[1.34px] text-[14px]">
                   CONTACT
                 </button>{" "}
               </div>
@@ -156,22 +161,22 @@ export const Navbar = () => {
               <button
                 onMouseEnter={handleLng}
                 onMouseLeave={handleLngFalse}
-                className="bg-[ #272727]  rounded-full"
+                className="bg-[ #272727] mr-3 rounded-full"
               >
-                <MdLanguage className="text-3xl" />
+                <MdLanguage className="text-2xl" />
                 {language ? <LanguageHover /> : " "}
               </button>
               {account ? (
                 <button
                   onClick={() => disconnect()}
-                  className="text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px]   px-4  py-2  rounded-[24px]"
+                  className="text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px]  py-2 px-4   rounded-[24px]"
                 >
                   {`${account.slice(0, 8) + "..."}`}
                 </button>
               ) : (
                 <button
                   onClick={() => connect()}
-                  className="text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px]   px-4 py-2 rounded-[24px]"
+                  className="text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px] py-2  px-4  rounded-[24px]"
                 >
                   Connect
                 </button>

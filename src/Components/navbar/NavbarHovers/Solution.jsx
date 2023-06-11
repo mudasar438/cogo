@@ -48,7 +48,7 @@ export const Solution = () => {
   return (
     <div
       style={{ fontFamily: "Regular" }}
-      className="absolute  bg-[#030304] py-3 px-1  top-10  border border-[#303030] rounded-xl w-[300px]  md:w-[800px] none flex flex-col justify-start md:flex-row md:justify-between  items-start "
+      className="absolute text-[#fff]  bg-[#030304] py-3 px-1 top-[18px]  md:top-5  border border-[#303030] rounded-xl w-[300px]  md:w-[800px] none flex flex-col justify-start md:flex-row md:justify-between  items-start "
     >
       <div className=" w-full md:w-[60%] space-y-3 text-left">
         {array.map((item, i) => {

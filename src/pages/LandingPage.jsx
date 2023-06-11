@@ -759,7 +759,7 @@ export const LandingPage = () => {
                   ) : (
                     <ConnectWallect
                       onClickFun={connect}
-                      text="Connect Wallet"
+                      text="Connect Wallet "
                     />
                   )}
                 </div>
