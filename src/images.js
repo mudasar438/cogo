@@ -2,6 +2,8 @@ import logo from "./images/logo.png";
 import m1 from "./images/m1.png";
 import m2 from "./images/m2.png";
 import m3 from "./images/m3.png";
+import m4 from "./images/m4.png";
+import m5 from "./images/m5.png";
 import eth from "./images/eth.png";
 import t from "./images/t.png";
 import cwg from "./images/cgw.png";
@@ -23,11 +25,14 @@ import southkorea from "./images/south-korea.png";
 import usa from "./images/usa.png";
 import germany from "./images/germany.png";
 import italy from "./images/italy.png";
+
 export {
   logo,
   m1,
   m2,
   m3,
+  m4,
+  m5,
   eth,
   t,
   cwg,

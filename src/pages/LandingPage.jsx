@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import BasicButton from "../Components/SmallComponent/Basicbutton";
-import { m2, m1, m3, eth, t, yahoo, ben, market, bit } from "../images";
+import { m2, m1, m3, eth, t, yahoo, ben, market, bit, m5, m4 } from "../images";
 import { Banner } from "../Components/Banner";
 import { Deepdiv } from "../Components/Deepdiv";
 import Marquee from "react-fast-marquee";
@@ -23,7 +23,7 @@ import { formatUnits } from "@ethersproject/units";
 import { ConnectWallect } from "../Components/SmallComponent/ConnectWallect";
 import { Container, Skeleton } from "@mui/material";
 import { FiArrowUpRight } from "react-icons/fi";
-const array = [{ img: m1 }, { img: m2 }, { img: m3 }];
+const array = [{ img: m1 }, { img: m2 }, { img: m3 }, { img: m4 }, { img: m5 }];
 const array2 = [{ img: yahoo }, { img: ben }, { img: market }, { img: bit }];
 
 export const LandingPage = () => {
@@ -286,6 +286,7 @@ export const LandingPage = () => {
                       alt=""
                       srcSet=""
                       style={{
+                        height: "60px",
                         width: "170px",
                         objectFit: "contain",
                         marginLeft: "70px",
