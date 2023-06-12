@@ -16,6 +16,13 @@ import yahoo from "./images/yahoo.png";
 import market from "./images/market.png";
 import ben from "./images/ben.png";
 import error from "./images/error.png";
+import china from "./images/china.png";
+import turkey from "./images/turkey.png";
+import france from "./images/france.png";
+import southkorea from "./images/south-korea.png";
+import usa from "./images/usa.png";
+import germany from "./images/germany.png";
+import italy from "./images/italy.png";
 export {
   logo,
   m1,
@@ -35,4 +42,11 @@ export {
   market,
   ben,
   error,
+  china,
+  turkey,
+  france,
+  southkorea,
+  usa,
+  germany,
+  italy,
 };

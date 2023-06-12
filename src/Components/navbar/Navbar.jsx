@@ -48,139 +48,141 @@ export const Navbar = () => {
   return (
     <>
       <nav className="w-full  " style={{ fontFamily: "Regular" }}>
-        <div className="max-w-screen-2xl mx-auto border border-[rgba(255,255,255,0.12)] justify-between px-4 md:items-center lg:flex   fixed left-0 right-0 z-10 ml-auto mr-auto top-0 w-full navhover">
-          <div>
-            <div className="flex items-center justify-between py-3 md:py-3 lg:block">
-              <a href="/">
-                <img src={logo} alt="" srcSet="" />
-              </a>
-              <div className="lg:hidden">
-                <button
-                  className="p-2 text-[#fff] rounded-md outline-none focus:border-[#fff] focus:border"
-                  onClick={() => setNavbar(!navbar)}
-                >
-                  {navbar ? (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  ) : (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4 6h16M4 12h16M4 18h16"
-                      />
-                    </svg>
-                  )}
-                </button>
+        <div className="w-full mx-auto border border-[rgba(255,255,255,0.12)]  fixed left-0 right-0 z-10 ml-auto mr-auto top-0  navhover ">
+          <div className="max-w-screen-2xl mx-auto  justify-between px-4 md:items-center lg:flex  w-full ">
+            <div>
+              <div className="flex items-center justify-between py-3 md:py-3 lg:block">
+                <a href="/">
+                  <img src={logo} alt="" srcSet="" />
+                </a>
+                <div className="lg:hidden">
+                  <button
+                    className="p-2 text-[#fff] rounded-md outline-none focus:border-[#fff] focus:border"
+                    onClick={() => setNavbar(!navbar)}
+                  >
+                    {navbar ? (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-6 h-6"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    ) : (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-6 h-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M4 6h16M4 12h16M4 18h16"
+                        />
+                      </svg>
+                    )}
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-          <div>
+            <div>
+              <div
+                className={`flex justify-self-center md:justify-between pb-1 mt-8 lg:block md:pb-0 md:mt-0  ${
+                  navbar ? "block" : "hidden"
+                }`}
+              >
+                <div className="flex-col md:flex-row items-start justify-center space-y-4 md:flex md:space-x-4 md:space-y-0 font-[14px] py-2 ">
+                  <button
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    onClick={() => navigate("/")}
+                    className="flex relative  space-x-2 items-center hover:text-[#7900ee] hover:bg-[#140c30] py-[1px] px-[0.5rem] rounded-[0.25rem]"
+                  >
+                    <p className="tracking-[1.34px] text-[14px] hover:font-extralight ">
+                      {" "}
+                      SOLUTIONS
+                    </p>{" "}
+                    <FiArrowDownRight className="text-[#7900ee] font-bold]" />
+                    {isHovered ? <Solution /> : ""}
+                  </button>
+                  <button className="tracking-[1.34px] text-[14px] flex px-[0.5rem]  space-x-3 items-center hover:text-[#7900ee]  ">
+                    PRESALE{" "}
+                    <p className=" border border-[#39E3BA] px-1 rounded-2xl text-[#000] text-[12px] ml-1  font-normal blob green">
+                      LIVE
+                    </p>
+                  </button>
+                  <button
+                    onMouseEnter={handleDocs}
+                    onMouseLeave={handleDocsfalse}
+                    className="flex space-x-2 items-center hover:text-[#7900ee] hover:bg-[#140c30] py-[1px] px-[0.5rem] rounded-[0.25rem] "
+                  >
+                    <p className="tracking-[1.34px] text-[14px]">DOCS</p>
+
+                    <FiArrowDownRight className="text-[#7900ee]  font-semibold" />
+                    {docs ? <DocsHover /> : ""}
+                  </button>
+                  <button
+                    onClick={() => navigate("/dashboard")}
+                    className="hover:text-[#7900ee] px-[0.5rem]  flex flex-col tracking-[1.34px] text-[14px]"
+                  >
+                    TEAM
+                  </button>
+                  <button
+                    onMouseEnter={handlecomunityHover}
+                    onMouseLeave={handlecommunity}
+                    className="flex space-x-2 items-center hover:text-[#7900ee] hover:bg-[#140c30] py-[1px] px-[0.5rem] rounded-[0.25rem]"
+                  >
+                    {" "}
+                    <p className="tracking-[1.34px] text-[14px]">
+                      COMMUNITY
+                    </p>{" "}
+                    <FiArrowDownRight className="text-[#7900ee]  font-semibold" />
+                    {community ? <CommunityHover /> : ""}
+                  </button>
+                  <button className=" hover:text-[#7900ee] px-[0.5rem]  tracking-[1.34px] text-[14px]">
+                    CONTACT
+                  </button>{" "}
+                </div>
+              </div>
+            </div>
             <div
-              className={`flex justify-self-center md:justify-between pb-1 mt-8 lg:block md:pb-0 md:mt-0  ${
-                navbar ? "block" : "hidden"
+              className={`flex items-center flex-row  justify-center lg:block ${
+                navbar ? "flex" : "hidden"
               }`}
             >
-              <div className="flex-col md:flex-row items-start justify-center space-y-4 md:flex md:space-x-4 md:space-y-0 font-[14px] py-2 ">
+              <div className="flex gap-2 py-3">
                 <button
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                  onClick={() => navigate("/")}
-                  className="flex relative  space-x-2 items-center hover:text-[#7900ee] hover:bg-[#140c30] py-[1px] px-[0.5rem] rounded-[0.25rem]"
+                  onMouseEnter={handleLng}
+                  onMouseLeave={handleLngFalse}
+                  className="bg-[ #272727] mr-3 rounded-full"
                 >
-                  <p className="tracking-[1.34px] text-[14px] hover:font-extralight ">
-                    {" "}
-                    SOLUTIONS
-                  </p>{" "}
-                  <FiArrowDownRight className="text-[#7900ee] font-bold]" />
-                  {isHovered ? <Solution /> : ""}
+                  <MdLanguage className="text-2xl relative" />
+                  {language ? <LanguageHover /> : " "}
                 </button>
-                <button className="tracking-[1.34px] text-[14px] flex px-[0.5rem]  space-x-3 items-center hover:text-[#7900ee]  ">
-                  PRESALE{" "}
-                  <p className=" border border-[#39E3BA] px-1 rounded-2xl text-[#000] text-[12px] ml-1  font-normal blob green">
-                    LIVE
-                  </p>
-                </button>
-                <button
-                  onMouseEnter={handleDocs}
-                  onMouseLeave={handleDocsfalse}
-                  className="flex space-x-2 items-center hover:text-[#7900ee] hover:bg-[#140c30] py-[1px] px-[0.5rem] rounded-[0.25rem] "
-                >
-                  <p className="tracking-[1.34px] text-[14px]">DOCS</p>
-
-                  <FiArrowDownRight className="text-[#7900ee]  font-semibold" />
-                  {docs ? <DocsHover /> : ""}
-                </button>
-                <button
-                  onClick={() => navigate("/dashboard")}
-                  className="hover:text-[#7900ee] px-[0.5rem]  flex flex-col tracking-[1.34px] text-[14px]"
-                >
-                  TEAM
-                </button>
-                <button
-                  onMouseEnter={handlecomunityHover}
-                  onMouseLeave={handlecommunity}
-                  className="flex space-x-2 items-center hover:text-[#7900ee] hover:bg-[#140c30] py-[1px] px-[0.5rem] rounded-[0.25rem]"
-                >
-                  {" "}
-                  <p className="tracking-[1.34px] text-[14px]">
-                    COMMUNITY
-                  </p>{" "}
-                  <FiArrowDownRight className="text-[#7900ee]  font-semibold" />
-                  {community ? <CommunityHover /> : ""}
-                </button>
-                <button className=" hover:text-[#7900ee] px-[0.5rem]  tracking-[1.34px] text-[14px]">
-                  CONTACT
-                </button>{" "}
+                {account ? (
+                  <button
+                    onClick={() => disconnect()}
+                    className="text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px]  py-2 px-4   rounded-[24px]"
+                  >
+                    {`${account.slice(0, 8) + "..."}`}
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => connect()}
+                    className="text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px] py-2  px-4  rounded-[24px]"
+                  >
+                    CONNECT
+                  </button>
+                )}
               </div>
-            </div>
-          </div>
-          <div
-            className={`flex items-center flex-row  justify-center lg:block ${
-              navbar ? "flex" : "hidden"
-            }`}
-          >
-            <div className="flex gap-2 py-3">
-              <button
-                onMouseEnter={handleLng}
-                onMouseLeave={handleLngFalse}
-                className="bg-[ #272727] mr-3 rounded-full"
-              >
-                <MdLanguage className="text-2xl" />
-                {language ? <LanguageHover /> : " "}
-              </button>
-              {account ? (
-                <button
-                  onClick={() => disconnect()}
-                  className="text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px]  py-2 px-4   rounded-[24px]"
-                >
-                  {`${account.slice(0, 8) + "..."}`}
-                </button>
-              ) : (
-                <button
-                  onClick={() => connect()}
-                  className="text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px] py-2  px-4  rounded-[24px]"
-                >
-                  CONNECT
-                </button>
-              )}
             </div>
           </div>
         </div>
