@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { logo } from "../../images";
 import BasicButton from "../SmallComponent/Basicbutton";
+import { GrFormClose } from "react-icons/gr";
+import { AiOutlineMenu } from "react-icons/ai";
 // import { FaTelegramPlane } from "react-icons/fa";
 import { FiArrowDownRight } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
@@ -57,37 +59,17 @@ export const Navbar = () => {
                 </a>
                 <div className="lg:hidden">
                   <button
-                    className="p-2 text-[#fff] rounded-md outline-none focus:border-[#fff] focus:border"
+                    className={`p-2 ${
+                      navbar
+                        ? "rounded-full bg-[#fff] text-[#000]"
+                        : "rounded-md bg-black text-[#fff]"
+                    } outline-none focus:border-[#fff] focus:border`}
                     onClick={() => setNavbar(!navbar)}
                   >
                     {navbar ? (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-6 h-6"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
+                      <GrFormClose className="text-2xl" />
                     ) : (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-6 h-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M4 6h16M4 12h16M4 18h16"
-                        />
-                      </svg>
+                      <AiOutlineMenu />
                     )}
                   </button>
                 </div>
@@ -99,7 +81,7 @@ export const Navbar = () => {
                   navbar ? "block" : "hidden"
                 }`}
               >
-                <div className="flex-col md:flex-row items-start justify-center space-y-4 md:flex md:space-x-4 md:space-y-0 font-[14px] py-2 ">
+                <div className="flex-col lg:flex-row items-start justify-center space-y-4 lg:flex lg:space-x-4 lg:space-y-0 font-[14px] py-2 ">
                   <button
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
@@ -122,7 +104,7 @@ export const Navbar = () => {
                   <button
                     onMouseEnter={handleDocs}
                     onMouseLeave={handleDocsfalse}
-                    className="flex space-x-2 items-center hover:text-[#7900ee] hover:bg-[#140c30] py-[1px] px-[0.5rem] rounded-[0.25rem] "
+                    className="relative flex space-x-2 items-center hover:text-[#7900ee] hover:bg-[#140c30] py-[1px] px-[0.5rem] rounded-[0.25rem] "
                   >
                     <p className="tracking-[1.34px] text-[14px]">DOCS</p>
 
@@ -138,7 +120,7 @@ export const Navbar = () => {
                   <button
                     onMouseEnter={handlecomunityHover}
                     onMouseLeave={handlecommunity}
-                    className="flex space-x-2 items-center hover:text-[#7900ee] hover:bg-[#140c30] py-[1px] px-[0.5rem] rounded-[0.25rem]"
+                    className="relative flex space-x-2 items-center hover:text-[#7900ee] hover:bg-[#140c30] py-[1px] px-[0.5rem] rounded-[0.25rem]"
                   >
                     {" "}
                     <p className="tracking-[1.34px] text-[14px]">
@@ -158,11 +140,11 @@ export const Navbar = () => {
                 navbar ? "flex" : "hidden"
               }`}
             >
-              <div className="flex gap-2 py-3">
+              <div className="flex gap-2 py-3 w-full">
                 <button
                   onMouseEnter={handleLng}
                   onMouseLeave={handleLngFalse}
-                  className="bg-[ #272727] mr-3 rounded-full"
+                  className="bg-[ #272727] mr-3 rounded-full hidden lg:flex"
                 >
                   <MdLanguage className="text-2xl relative" />
                   {language ? <LanguageHover /> : " "}
@@ -177,7 +159,7 @@ export const Navbar = () => {
                 ) : (
                   <button
                     onClick={() => connect()}
-                    className="text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px] py-2  px-4  rounded-[24px]"
+                    className=" blob blue text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px] py-2  px-4  rounded-[24px] "
                   >
                     CONNECT
                   </button>

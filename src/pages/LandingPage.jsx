@@ -23,6 +23,7 @@ import { formatUnits } from "@ethersproject/units";
 import { ConnectWallect } from "../Components/SmallComponent/ConnectWallect";
 import { Container, Skeleton } from "@mui/material";
 import { FiArrowUpRight } from "react-icons/fi";
+import FullScreenModal from "../Components/FullScreenModal";
 const array = [{ img: m1 }, { img: m2 }, { img: m3 }, { img: m4 }, { img: m5 }];
 const array2 = [{ img: yahoo }, { img: ben }, { img: market }, { img: bit }];
 
@@ -45,6 +46,11 @@ export const LandingPage = () => {
   const [progressBar, setProgessBar] = useState(0);
   const [bonusProgressBar, setbonusProgressBar] = useState(0);
   const [remainingForNextLevel, setremainingForNextLevel] = useState(0);
+
+  const [QrOpen, setQrOpen] = useState(false);
+  const QrToogle = () => {
+    setQrOpen(!QrOpen);
+  };
   const [alertState, setAlertState] = useState({
     open: false,
     message: "",
@@ -225,6 +231,12 @@ export const LandingPage = () => {
   return (
     <>
       <ToastNotify alertState={alertState} setAlertState={setAlertState} />
+      <FullScreenModal
+        open={QrOpen}
+        setOpen={setQrOpen}
+        toggelModel={QrToogle}
+      />
+
       <div style={{ fontFamily: "Regular" }} className="px-4">
         <div className=" w-full lg:w-[100%] lg:justify-center space-y-10 mt-5 flex flex-col lg:flex-row justify-between py-10  ">
           <div className=" w-full lg:w-[45%]  flex gap-10 flex-col md:p-3">
@@ -248,7 +260,7 @@ export const LandingPage = () => {
               you are getting the best info and insights.
             </p>
             <div className=" flex flex-col sm:flex-row gap-3  justify-center md:justify-start">
-              <button className=" text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px]   px-8 py-[15px] rounded-[24px] ">
+              <button className=" text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px]   px-8 py-[15px] rounded-[24px]  blob blue ">
                 <p className="text-center flex justify-center items-center  w-full">
                   {" "}
                   BUY $CGW{" "}
@@ -258,7 +270,10 @@ export const LandingPage = () => {
                   </span>
                 </p>{" "}
               </button>
-              <button className="border text-[14px]   bg-[#000] hover:bg-[#231414] min-w-[160px]  px-8 py-[15px] rounded-[24px] ">
+              <button
+                onClick={QrToogle}
+                className="border text-[14px] text-[#fff] hover:text-[#000]  bg-[#000] hover:bg-[#fff] min-w-[160px]  px-8 py-[15px] rounded-[24px] "
+              >
                 <p className="text-center flex justify-center items-center  w-full tracking-[1.3px]">
                   {" "}
                   INTRO
@@ -286,10 +301,10 @@ export const LandingPage = () => {
                       alt=""
                       srcSet=""
                       style={{
-                        height: "60px",
-                        width: "170px",
+                        height: "30px",
+                        width: "140px",
                         objectFit: "contain",
-                        marginLeft: "70px",
+                        marginLeft: "30px",
                       }}
                     />
                   );

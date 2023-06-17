@@ -150,6 +150,13 @@ code {
   box-shadow: 0 0 0 0 #86EFAC;
   animation: pulse-green 3s infinite;
 }
+.blob.blue {
+  background: #7900EE;
+  box-shadow: 30px 30px 30px 30px #7900EE;
+  animation: pulse-blue 2s infinite;
+
+   
+}
 .waves { position: absolute; left: 0; top: 0; right: 0; bottom: 0; }
 
 @keyframes pulse-green {
@@ -168,3 +175,22 @@ code {
     box-shadow: 0 0 0 0 rgba(51, 217, 178, 0);
   }
 }
+
+@keyframes pulse-blue {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 #7900EE;
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 18px rgba(51, 217, 178, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(51, 217, 178, 0);
+  }
+}
+
+

@@ -27,7 +27,7 @@ export const Round1 = () => {
               HOW TO BUY ?
             </button> */}
 
-            <button className="border text-[14px]  bg-[#000] hover:bg-[#231414] min-w-[160px]  px-8 py-[15px] rounded-[24px] ">
+            <button className="border text-[14px]  text-[#fff] hover:text-[#000]  bg-[#000] hover:bg-[#fff] min-w-[160px]  px-8 py-[15px] rounded-[24px] ">
               <p className="text-center flex justify-center items-center  w-full tracking-[1.3px]">
                 {" "}
                 HOW TO BUY ?

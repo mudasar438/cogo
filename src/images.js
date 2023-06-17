@@ -25,6 +25,9 @@ import southkorea from "./images/south-korea.png";
 import usa from "./images/usa.png";
 import germany from "./images/germany.png";
 import italy from "./images/italy.png";
+import cogo2 from "./images/cogo2.png";
+import cogo3 from "./images/cogo3.png";
+import cogo4 from "./images/cogo4.png";
 
 export {
   logo,
@@ -54,4 +57,7 @@ export {
   usa,
   germany,
   italy,
+  cogo2,
+  cogo3,
+  cogo4,
 };

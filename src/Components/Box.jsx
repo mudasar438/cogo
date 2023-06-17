@@ -44,7 +44,7 @@ export const Box = () => {
             and overwhelming, but with blockGPT,
           </p>
           <div className=" flex flex-col sm:flex-row gap-3  justify-center md:justify-start">
-            <button className=" text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px]   px-8 py-[15px] rounded-[24px] ">
+            <button className=" text-[#fff] text-[14px] bg-[#7900EE] blob blue min-w-[130px]   px-8 py-[15px] rounded-[24px] ">
               <p className="text-center flex justify-center items-center  w-full">
                 {" "}
                 BUY $CGW{" "}
@@ -54,7 +54,7 @@ export const Box = () => {
                 </span>
               </p>{" "}
             </button>
-            <button className="border text-[14px]  bg-[#000] hover:bg-[#231414] min-w-[160px]  px-8 py-[15px] rounded-[24px] ">
+            <button className="border text-[14px]  text-[#fff] hover:text-[#000]  bg-[#000] hover:bg-[#fff] min-w-[160px]  px-8 py-[15px] rounded-[24px] ">
               <p className="text-center flex justify-center items-center  w-full tracking-[1.3px]">
                 {" "}
                 HOW TO BUY ?

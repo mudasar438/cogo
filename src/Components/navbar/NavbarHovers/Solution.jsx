@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { cwg } from "../../../images";
+import { cogo2, cogo3, cogo4, cwg } from "../../../images";
 const array = [
   {
     name: " CogwiseAI Bot",
@@ -11,7 +11,7 @@ const array = [
   },
   {
     name: " CogwiseAI Alerts",
-    icon: cwg,
+    icon: cogo2,
     heading: "Hyper-charged NLP language",
     text: "Explore our Bot through native language  ",
     description:
@@ -19,7 +19,7 @@ const array = [
   },
   {
     name: " CogwiseAI Real-time Trading",
-    icon: cwg,
+    icon: cogo3,
     heading: "Hyper-charged NLP language",
     text: "Explore our Bot through native language  ",
     description:
@@ -27,7 +27,7 @@ const array = [
   },
   {
     name: "CogwiseAI Wallet Tracke",
-    icon: cwg,
+    icon: cogo4,
     heading: "Hyper-charged NLP language",
     text: "Explore our Bot through native language  ",
     description:
@@ -48,7 +48,7 @@ export const Solution = () => {
   return (
     <div
       style={{ fontFamily: "Regular" }}
-      className="absolute text-[#fff]  bg-[#030304] py-3 px-1 top-[18px]  md:top-5  border border-[#303030] rounded-xl w-[300px]  md:w-[800px] none flex flex-col justify-start md:flex-row md:justify-between  items-start "
+      className="absolute text-[#fff] z-10  bg-[#030304] py-3 px-1 top-[18px]  md:top-5  border border-[#303030] rounded-xl w-[280px] sm:w-[500px] -left-3  md:w-[800px] none  max-h-[450px] overflow-y-scroll sm:overflow-y-hidden flex flex-col justify-start md:flex-row md:justify-between  items-start "
     >
       <div className=" w-full md:w-[60%] space-y-3 text-left">
         {array.map((item, i) => {
@@ -59,7 +59,7 @@ export const Solution = () => {
               className="  border-r-[#303030] hover:bg-[#212129] rounded-lg p-1 md:p-2 "
             >
               <div className="w-full flex justify-between  items-center   space-x-3    ">
-                <div className="flex space-x-3 items-center">
+                <div className="flex space-x-4 items-center">
                   <img
                     src={item.icon}
                     alt=""
@@ -70,13 +70,13 @@ export const Solution = () => {
                     <p className="font-medium text-left text-[12px] md:text-lg">
                       {item.name}
                     </p>
-                    <p className="text-[#5C5C5C]  text-[12px] md:text-lg ">
+                    <p className="text-[#5C5C5C]  text-[12px] md:text-[14px] ">
                       {item.text}
                     </p>
                   </div>
                 </div>
                 {hover.name === item.name ? (
-                  <button className="bg-[#7E0AEF] px-2 py-[2px] rounded-3xl text-sm">
+                  <button className="bg-[#7E0AEF] px-2 py-[1px] md:py-[2px] rounded-3xl  text-[10px] md:text-sm">
                     SOON
                   </button>
                 ) : (

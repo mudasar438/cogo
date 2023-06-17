@@ -19,11 +19,11 @@ export const Footer = () => {
                 className="space-y-5 text-2xl "
               >
                 {" "}
-                <li className="hover:text-[blue]">Presale</li>
-                <li className="hover:text-[blue]">About us</li>
-                <li className="hover:text-[blue]">Whitepaper</li>
-                <li className="hover:text-[blue]">How to buy?</li>
-                <li className="hover:text-[blue]">Contact</li>
+                <li className="hover:text-[#7900ee]">Presale</li>
+                <li className="hover:text-[#7900ee]">About us</li>
+                <li className="hover:text-[#7900ee]">Whitepaper</li>
+                <li className="hover:text-[#7900ee]">How to buy?</li>
+                <li className="hover:text-[#7900ee]">Contact</li>
               </ul>
               <div className="w-[100%] md:w-[55%] space-y-10  flex flex-col item-center">
                 <p
@@ -35,7 +35,7 @@ export const Footer = () => {
                 </p>
                 <button className="flex space-x-3 text-2xl justify-center md:justify-start items-center">
                   <p>Send your CV </p>
-                  <FiArrowUpRight className="text-[#fff] bg-[#292929] p-4 text-5xl rounded-full" />
+                  <FiArrowUpRight className="text-[#000] bg-[#fff] hover:text-[#fff] hover:bg-[#7900EE] p-4 text-5xl rounded-full" />
                 </button>
               </div>
             </div>
@@ -60,13 +60,13 @@ export const Footer = () => {
               700 Main St Cambridge, MA 02139United States
             </p>
             <div className=" flex justify-center space-x-5">
-              <div className="bg-[#292929] p-4 rounded-[20px] text-2xl">
+              <div className="bg-[#292929] hover:bg-[#7900EE] p-4 rounded-[20px] text-2xl">
                 <AiOutlineTwitter />
               </div>
-              <div className="bg-[#292929] p-4 rounded-[20px] text-2xl">
+              <div className="bg-[#292929] hover:bg-[#7900EE] p-4 rounded-[20px] text-2xl">
                 <AiOutlineInstagram />
               </div>
-              <div className="bg-[#292929] p-4 rounded-[20px] text-2xl">
+              <div className="bg-[#292929] hover:bg-[#7900EE] p-4 rounded-[20px] text-2xl">
                 <AiOutlineYoutube />
               </div>
             </div>
