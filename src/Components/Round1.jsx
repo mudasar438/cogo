@@ -11,7 +11,7 @@ export const Round1 = () => {
         <div className=" w-full md:w-[50%]  space-y-8 md:space-y-12">
           <div className="flex space-x-5  justify-center md:justify-start items-center">
             <p className=" text-[#545454] font-semibold">[ROUND - 1 / 6]</p>
-            <button className="bg-[#39E3BA] border border-[#39E3BA] px-3 py-1 rounded-2xl text-[#000] text-sm font-semibold">
+            <button className="blob green bg-[#39E3BA] border border-[#39E3BA] px-3 py-1 rounded-2xl text-[#000] text-sm font-semibold">
               LIVE
             </button>
           </div>
