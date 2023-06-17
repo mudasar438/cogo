@@ -43,7 +43,7 @@ export const LanguageHover = () => {
       <div className="relative">
         <div
           style={{ fontFamily: "Regular" }}
-          className="absolute  bg-[#16161b] py-3 px-1  left-0  -top-[100px] md:top-[5px]  border border-[#303030] rounded-xl w-[150px]  md:w-[180px] none flex flex-col md:flex-row justify-between  items-start "
+          className="absolute z-20  bg-[#16161b] py-3 px-1  left-0  -top-[100px] md:top-[5px]  border border-[#303030] rounded-xl w-[150px]  md:w-[180px] none flex flex-col md:flex-row justify-between  items-start "
         >
           <div className=" w-full space-y-3 text-left">
             {array.map((item, i) => {

@@ -47,7 +47,7 @@ export const CommunityHover = () => {
     <>
       <div
         style={{ fontFamily: "Regular" }}
-        className="absolute z-10 text-[#fff] bg-[#16161b] py-3 px-1  top-[150px] md:top-[25px]  border border-[#303030] rounded-xl w-[280px] left-0  md:w-[400px] none flex flex-col md:flex-row justify-between  items-start "
+        className="absolute z-10 text-[#fff] bg-[#16161b] py-3 px-1  top-[10px] md:top-[25px]  border border-[#303030] rounded-xl w-[280px] left-0  md:w-[400px] none flex flex-col md:flex-row justify-between  items-start "
       >
         <div className="flex flex-col items-start  w-full space-y-3 text-left">
           {array.map((item, i) => {
