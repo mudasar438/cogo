@@ -324,7 +324,7 @@ export default function BuyTokensModal({ initProgress, init }) {
                             ROUND 1 [ ${1 / +tokenPrice} ]
                           </p>
 
-                          <button className="bg-[#39E3BA] border border-[#39E3BA] px-4 -py-2 h-8 rounded-2xl text-[#000] text-[12px] ml-1 font-semibold">
+                          <button className="blob green bg-[#39E3BA] border border-[#39E3BA] px-4 -py-2 h-8 rounded-2xl text-[#000] text-[12px] ml-1 font-semibold">
                             LIVE
                           </button>
                         </div>
