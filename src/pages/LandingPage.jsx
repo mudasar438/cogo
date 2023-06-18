@@ -636,7 +636,7 @@ export const LandingPage = () => {
 
                         <p
                           style={{ fontFamily: "Regular" }}
-                          className="text-[#545454] text-lg font-medium flex items-center"
+                          className="text-[#858585] text-lg font-medium flex items-center"
                         >
                           <img
                             style={{
@@ -678,7 +678,7 @@ export const LandingPage = () => {
                             </p>
                           )}
 
-                          <p className="text-[#525252] text-lg font-medium">
+                          <p className="text-[#858585] text-lg font-medium">
                             Level {bonusLevel}{" "}
                             <span className="bg-[#888888] rounded-2xl px-3 pb-1 text-[#fff] font-regular">
                               +15 %
@@ -687,11 +687,11 @@ export const LandingPage = () => {
                         </div>
                       )}
                     </div>
-                    <div className="text-[#858585] flex items-center justify-between mt-5">
-                      <p className="text-sm md:text-lg font-medium ">
+                    <div className=" flex items-center justify-between mt-5">
+                      <p className="text-sm text-[#ffffff] md:text-lg font-medium ">
                         Level {bonusLevel}
                       </p>
-                      <p className="text-sm md:text-lg font-medium">
+                      <p className="text-sm text-[#858585] md:text-lg font-medium">
                         Level {bonusLevel + 1}
                       </p>
                     </div>

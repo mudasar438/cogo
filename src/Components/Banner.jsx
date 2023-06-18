@@ -33,13 +33,18 @@ export const Banner = () => {
           <p className="text-xl">Ethereum ERC-20</p>
         </div>
         <div className="flex space-x-5 items-center justify-end">
-          <img
-            src={g1}
-            alt=""
-            srcSet=""
-            height="30px"
-            className="bg-[#272727] hover:bg-[#7900EE] rounded-full p-3"
-          />
+          <a
+            href="https://goerli.etherscan.io/address/0x5f647d52D948B997AEd9b0272F80D3dA394CDCdc#code"
+            target="_blank"
+          >
+            <img
+              src={g1}
+              alt=""
+              srcSet=""
+              height="30px"
+              className="bg-[#272727] hover:bg-[#7900EE] rounded-full p-3"
+            />
+          </a>
           <CopyToClipboard
             text={"0x5f647d52D948B997AEd9b0272F80D3dA394CDCdc"}
             onCopy={() => {

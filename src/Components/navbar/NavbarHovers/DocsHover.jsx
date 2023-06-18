@@ -1,13 +1,13 @@
-import { TbPdf } from "react-icons/tb";
-import { FiBook } from "react-icons/fi";
+import Icon from "@mdi/react";
+import { mdiFilePdfBox, mdiBook } from "@mdi/js";
 const array = [
   {
     name: " Whitepaper",
-    icon: <TbPdf />,
+    icon: <Icon path={mdiFilePdfBox} size={1.2} color="lightGray" />,
   },
   {
     name: " View on GitBook",
-    icon: <FiBook />,
+    icon: <Icon path={mdiBook} size={1.2} color="lightGray" />,
   },
 ];
 
@@ -30,7 +30,7 @@ export const DocsHover = () => {
                   <div className="w-[40px] h-[40px] rounded-md p-1 text-xl">
                     {item.icon}
                   </div>
-                  <div className=" flex flex-col justify-center  lg:items-start ">
+                  <div className=" flex flex-col justify-center  lg:items-start mt-1">
                     <p className="font-medium">{item.name}</p>
                   </div>
                 </div>

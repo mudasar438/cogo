@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { logo } from "../../images";
-import BasicButton from "../SmallComponent/Basicbutton";
 import { GrFormClose } from "react-icons/gr";
 import { AiOutlineMenu } from "react-icons/ai";
 // import { FaTelegramPlane } from "react-icons/fa";
@@ -144,7 +143,7 @@ export const Navbar = () => {
                 <button
                   onMouseEnter={handleLng}
                   onMouseLeave={handleLngFalse}
-                  className="bg-[ #272727] mr-3 rounded-full hidden lg:flex"
+                  className="bg-[ #272727] mr-3 mt-2 rounded-full hidden lg:flex"
                 >
                   <MdLanguage className="text-2xl relative" />
                   {language ? <LanguageHover /> : " "}
