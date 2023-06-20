@@ -292,7 +292,7 @@ export const LandingPage = () => {
               pauseOnClick={true}
               pauseOnHover={true}
             >
-              <div className="flex item-center mx-auto sm:mx-0 space-y-8 sm:space-y-0 py-5 px:1 shadow-sm">
+              <div className="flex item-center mx-auto sm:mx-0 space-y-0 sm:space-y-0 py-5 px:1 shadow-sm ">
                 {array.map((item, i) => {
                   return (
                     <img

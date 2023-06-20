@@ -35,7 +35,7 @@ export const Token = () => {
           Token distribution
         </p>
         <div className="w-full flex flex-col md:flex-row justify-between items-center py-10 ">
-          <div className="w-full md:w-[25%]">
+          <div className="order-2 md:order-1  w-full md:w-[25%]">
             {array.map((item, i) => {
               return (
                 <div
@@ -64,7 +64,7 @@ export const Token = () => {
               );
             })}
           </div>
-          <div className=" w-full md:w-[40%]">
+          <div className="order-1 md:order-2  w-full md:w-[40%]">
             <video
               autoPlay
               crossOrigin="anonymous"
@@ -85,7 +85,7 @@ export const Token = () => {
               <source src="/cwgvideo.mp4" />
             </video>
           </div>
-          <div className=" w-full md:w-[25%]">
+          <div className="order-3 md:order-3  w-full md:w-[25%]">
             {array2.map((item, i) => {
               return (
                 <div

@@ -35,7 +35,7 @@ export const Box = () => {
           </p>
           <p
             style={{ fontFamily: "Regular" }}
-            className="text-center text-3xl  md:text-7xl  w-full  md:w-[30%] "
+            className="text-center w-[40%] sm:w-[80%] text-3xl  md:text-7xl   md:w-[30%] "
           >
             Participate in Presale
           </p>

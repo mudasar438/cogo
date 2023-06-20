@@ -16,7 +16,7 @@ export const DocsHover = () => {
     <>
       <div
         style={{ fontFamily: "Regular" }}
-        className="absolute z-10 left-0  text-[#fff]  bg-[#16161b] py-3 px-1   top-[150px] md:top-[25px]  border border-[#303030] rounded-xl w-[280px] none flex flex-col md:flex-row justify-between  items-start "
+        className="absolute z-10 left-0  text-[#fff]  bg-[#16161b] py-3 px-1   top-[150px] md:top-[25yarpx]  border border-[#303030] rounded-xl w-[280px] none flex flex-col md:flex-row justify-between  items-start "
       >
         <div className=" w-full space-y-3 text-left">
           {array.map((item, i) => {

@@ -48,7 +48,10 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full  " style={{ fontFamily: "Regular" }}>
+      <nav
+        className="hidden lg:block w-full  "
+        style={{ fontFamily: "Regular" }}
+      >
         <div className="w-full mx-auto border border-[rgba(255,255,255,0.12)]  fixed left-0 right-0 z-10 ml-auto mr-auto top-0  navhover ">
           <div className="max-w-screen-2xl mx-auto  justify-between px-4 md:items-center lg:flex  w-full ">
             <div>

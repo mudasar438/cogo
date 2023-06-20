@@ -12,7 +12,7 @@ export const Footer = () => {
         className="h-[700px] md:h-[800px] w-full px-5  py-5 "
       >
         <div className="boderTop w-full md:w-[90%] mx-0 md:mx-auto flex flex-col md:flex-row md:justify-between items-start py:10 md:py-20 mt-10 ">
-          <div className="w-full md:w-[60%]">
+          <div className="order-2 md:order-1 w-full md:w-[60%] my-20 md:my-0">
             <div className=" flex flex-col md:flex-row  items-center md:items-start space-y-5 md:space-y-0 space-x-0 md:space-x-8  md:justify-between">
               <ul
                 style={{ fontFamily: "Regular" }}
@@ -40,7 +40,7 @@ export const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="w-full md:w-[20%] space-y-10 mt-5 md:0 flex items-center flex-col md:justify-start">
+          <div className="order-1 md:order-2 w-full md:w-[20%] space-y-10 mt-5 md:mt-0 flex items-center flex-col md:justify-start">
             <div className="mx-auto md:w-full  ">
               <img
                 src={logo}
