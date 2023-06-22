@@ -33,16 +33,13 @@ export default function RoundSwiper() {
     <>
       <div className=" w-full px-3 h-[5cd00px] md:h-[400px]">
         <Swiper
-          // pagination={{
-          //   clickable: true,
-          // }}
-          // style={{
-          //   "--swiper-navigation-color": "#fff",
-          //   "--swiper-navigation-size": "12px",
-          // }}
-          // navigation={true}
-          // modules={[Pagination, Navigation]}
           className="mySwiper"
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          speed={3000}
+          loop={true}
           spaceBetween={50}
           onSwiper={(swiper) => setSwiperRef(swiper)}
         >

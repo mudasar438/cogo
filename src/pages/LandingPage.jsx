@@ -21,13 +21,14 @@ import {
 } from "../ConnectivityAssets/hooks";
 import { formatUnits } from "@ethersproject/units";
 import { ConnectWallect } from "../Components/SmallComponent/ConnectWallect";
-import { Container, Skeleton } from "@mui/material";
+import { Container, Skeleton, useMediaQuery } from "@mui/material";
 import { FiArrowUpRight } from "react-icons/fi";
 import FullScreenModal from "../Components/FullScreenModal";
 const array = [{ img: m1 }, { img: m2 }, { img: m3 }, { img: m4 }, { img: m5 }];
 const array2 = [{ img: yahoo }, { img: ben }, { img: market }, { img: bit }];
 
 export const LandingPage = () => {
+  const matches = useMediaQuery("(max-width:700px)");
   const { account, connect, disconnect, signer } = useContext(AppContext);
   const [balanceTokenToShow, setbalanceTokenToShow] = useState(0);
   const [balanceTokenToCompaire, setbalanceTokenToCompaire] = useState(0);
@@ -238,80 +239,91 @@ export const LandingPage = () => {
       />
 
       <div style={{ fontFamily: "Regular" }} className="px-4">
-        <div className=" w-full lg:w-[100%] lg:justify-center space-y-10 mt-5 flex flex-col lg:flex-row justify-between py-10  ">
-          <div className=" w-full lg:w-[45%]  flex gap-10 flex-col md:p-3">
-            <ul>
-              <li>
-                <p className="text-sm text-[#858585]  text-center md:text-left">
-                  {/* WE'RE LIVE! */}
-                </p>
-              </li>
-            </ul>
+        <div className=" w-full lg:w-[100%] lg:justify-center space-y-10 md:mt-5 flex flex-col lg:flex-row justify-between pt-0 md:pt-10 md:pb-10 ">
+          {!matches && (
+            <div className=" w-full lg:w-[45%]  flex gap-10 flex-col md:p-3">
+              <ul>
+                <li>
+                  <p className="text-sm text-[#858585]  text-center md:text-left">
+                    {/* WE'RE LIVE! */}
+                  </p>
+                </li>
+              </ul>
+              <p
+                style={{ fontFamily: "Regular" }}
+                className=" text-3xl md:text-6xl font-normal text-center md:text-left  w-full md:w-[90%]"
+              >
+                Become an
+                <br /> early investor
+              </p>
+              <p className=" text-[#858585] text-center md:text-left font-semibold">
+                We understand that the world of crypto & blockchain can be
+                confusing and overwhelming, but with Cogwise, you can trust that
+                you are getting the best info and insights.
+              </p>
+              <div className=" flex flex-col sm:flex-row gap-3  justify-center md:justify-start">
+                <button className=" text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px]   px-8 py-[15px] rounded-[24px]  blob blue ">
+                  <p className="text-center flex justify-center items-center  w-full">
+                    {" "}
+                    BUY $CGW{" "}
+                    <span>
+                      {" "}
+                      <FiArrowUpRight className=" ml-2 text-xl font-semibold" />
+                    </span>
+                  </p>{" "}
+                </button>
+                <button
+                  onClick={QrToogle}
+                  className="border text-[14px] text-[#fff] hover:text-[#000]  bg-[#000] hover:bg-[#fff] min-w-[160px]  px-8 py-[15px] rounded-[24px] "
+                >
+                  <p className="text-center flex justify-center items-center  w-full tracking-[1.3px]">
+                    {" "}
+                    INTRO
+                    <span>
+                      {" "}
+                      <BsPlayCircleFill className=" ml-3 text-sm font-semibold text-[#7900EE]" />
+                    </span>
+                  </p>{" "}
+                </button>
+              </div>
+              <Marquee
+                gradient={true}
+                gradientWidth={100}
+                gradientColor={[0, 0, 0]}
+                speed={40}
+                pauseOnClick={true}
+                pauseOnHover={true}
+              >
+                <div className="flex item-center mx-auto sm:mx-0 space-y-0 sm:space-y-0 py-5 px:1 shadow-sm ">
+                  {array.map((item, i) => {
+                    return (
+                      <img
+                        key={i}
+                        src={item.img}
+                        alt=""
+                        srcSet=""
+                        style={{
+                          height: "30px",
+                          width: "140px",
+                          objectFit: "contain",
+                          marginLeft: "30px",
+                        }}
+                      />
+                    );
+                  })}
+                </div>
+              </Marquee>
+            </div>
+          )}
+          {matches && (
             <p
               style={{ fontFamily: "Regular" }}
-              className=" text-3xl md:text-6xl font-normal text-center md:text-left  w-full md:w-[90%]"
+              className=" text-3xl font-normal text-center w-full"
             >
               Become an
               <br /> early investor
             </p>
-            <p className=" text-[#858585] text-center md:text-left font-semibold">
-              We understand that the world of crypto & blockchain can be
-              confusing and overwhelming, but with Cogwise, you can trust that
-              you are getting the best info and insights.
-            </p>
-            <div className=" flex flex-col sm:flex-row gap-3  justify-center md:justify-start">
-              <button className=" text-[#fff] text-[14px] bg-[#7900EE] hover:bg-[#4940cf] min-w-[130px]   px-8 py-[15px] rounded-[24px]  blob blue ">
-                <p className="text-center flex justify-center items-center  w-full">
-                  {" "}
-                  BUY $CGW{" "}
-                  <span>
-                    {" "}
-                    <FiArrowUpRight className=" ml-2 text-xl font-semibold" />
-                  </span>
-                </p>{" "}
-              </button>
-              <button
-                onClick={QrToogle}
-                className="border text-[14px] text-[#fff] hover:text-[#000]  bg-[#000] hover:bg-[#fff] min-w-[160px]  px-8 py-[15px] rounded-[24px] "
-              >
-                <p className="text-center flex justify-center items-center  w-full tracking-[1.3px]">
-                  {" "}
-                  INTRO
-                  <span>
-                    {" "}
-                    <BsPlayCircleFill className=" ml-3 text-sm font-semibold text-[#7900EE]" />
-                  </span>
-                </p>{" "}
-              </button>
-            </div>
-            <Marquee
-              gradient={true}
-              gradientWidth={100}
-              gradientColor={[0, 0, 0]}
-              speed={40}
-              pauseOnClick={true}
-              pauseOnHover={true}
-            >
-              <div className="flex item-center mx-auto sm:mx-0 space-y-0 sm:space-y-0 py-5 px:1 shadow-sm ">
-                {array.map((item, i) => {
-                  return (
-                    <img
-                      key={i}
-                      src={item.img}
-                      alt=""
-                      srcSet=""
-                      style={{
-                        height: "30px",
-                        width: "140px",
-                        objectFit: "contain",
-                        marginLeft: "30px",
-                      }}
-                    />
-                  );
-                })}
-              </div>
-            </Marquee>
-          </div>
+          )}
           {isClaimEnabled ? (
             <div className=" w-full lg:w-[50%] flex justify-end">
               <div className="w-full lg:w-[75%] bg-[#222222] p-5 rounded-xl flex flex-col item-center justify-center  gap-8 border border-[#303030]">
@@ -715,12 +727,12 @@ export const LandingPage = () => {
                     </div>
                   </div>
                 ) : (
-                  <div className="flex bg-[#3D3D3D] p-5 rounded-2xl flex-col sm:flex-row space-y-12 sm:space-y-0 sm:space-x-12 shadow-xl w-full items-center justify-center md:justify-start">
+                  <div className="flex bg-[#3D3D3D] p-2 md:p-5 rounded-2xl space-y-6 sm:space-y-0 sm:space-x-12 shadow-xl w-full items-center justify-start">
                     <div className="">
                       <p className="text-[#858585] font-medium">SOLD (BGPT)</p>
                       <p
                         style={{ fontFamily: "Regular" }}
-                        className="text-4xl py-2"
+                        className="md:text-4xl text-2xl py-2"
                       >
                         {loading ? (
                           <Skeleton variant="rounded" width={150} height={50} />
@@ -747,7 +759,7 @@ export const LandingPage = () => {
                       ) : (
                         <p
                           style={{ fontFamily: "Regular" }}
-                          className="text-4xl py-2"
+                          className="md:text-4xl text-2xl py-2"
                         >
                           $ {totalRaised}
                         </p>
@@ -791,7 +803,51 @@ export const LandingPage = () => {
             </div>
           )}
         </div>
+        {matches && (
+          <Marquee
+            gradient={true}
+            gradientWidth={100}
+            gradientColor={[0, 0, 0]}
+            speed={40}
+            pauseOnClick={true}
+            pauseOnHover={true}
+          >
+            <div className="flex item-center mx-auto sm:mx-0 space-y-0 sm:space-y-0 py-7 px:1 shadow-sm ">
+              {array.map((item, i) => {
+                return (
+                  <img
+                    key={i}
+                    src={item.img}
+                    alt=""
+                    srcSet=""
+                    style={{
+                      height: "40px",
+                      width: "160px",
+                      objectFit: "contain",
+                      marginLeft: "30px",
+                    }}
+                  />
+                );
+              })}
+            </div>
+          </Marquee>
+        )}
         <Banner />
+        {matches && (
+          <button
+            onClick={QrToogle}
+            className="border text-[14px] text-[#fff] hover:text-[#000] mt-4 bg-[#000] hover:bg-[#fff] min-w-[100%]  px-8 py-[15px] rounded-[24px] "
+          >
+            <p className="text-center flex justify-between items-center w-full tracking-[1.3px]">
+              {" "}
+              INTRO
+              <span>
+                {" "}
+                <BsPlayCircleFill className=" ml-3 text-sm font-semibold text-[#7900EE]" />
+              </span>
+            </p>{" "}
+          </button>
+        )}
       </div>
       <Deepdiv />
       <div className="px-4 md:px-12 mt-[100px] ">
