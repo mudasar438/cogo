@@ -371,7 +371,7 @@ export const LandingPage = () => {
 
                 <div className="w-full bg-gray-200 rounded-full dark:bg-[#232323]">
                   <div
-                    className=" bg-gradient-to-r from-[#0e100f] to-[#47ac93] text-xl font-medium  text-center p-0.5 leading-none rounded-full"
+                    className=" bg-gradient-to-r transition from-[#7900EE] to-[#328D77] text-xl font-medium text-[#000] text-center px-0.5 py-2  leading-none rounded-full"
                     style={{ width: "100.00%" }}
                   >
                     {" "}
@@ -611,10 +611,9 @@ export const LandingPage = () => {
                     ROUND 1 [ ${1 / +tokenPrice} ]
                   </p>
                 )}
-
                 <p
                   style={{ fontFamily: "Regular" }}
-                  className="text-4xl font-normal  text-center md:text-left  w-full md:w-[80%]"
+                  className="md:text-4xl text-2xl font-normal text-center md:text-left mb-[-20px] w-full md:w-[80%]"
                 >
                   Buy Cogwise $CGW
                 </p>
@@ -630,16 +629,16 @@ export const LandingPage = () => {
                 </div>
                 {+balanceTokenToCompaire > 0 ? (
                   <div className="bg-[#3D3D3D] p-5 rounded-2xl shadow-xl">
-                    <div className="flex  flex-col sm:flex-row space-y-5 sm:space-y-0 sm:space-x-20  w-full items-center justify-center md:justify-start">
+                    <div className="flex  bg-[#3D3D3D] rounded-2xl  sm:space-x-12 w-full items-center justify-between md:justify-start">
                       <div className="">
-                        <p className="text-[#858585] text-lg font-medium">
+                        <p className="text-[#858585] text-sm md:font-medium">
                           YOUR BALANCE:
                         </p>
                         {loading ? (
-                          <Skeleton variant="rounded" width={150} height={40} />
+                          <Skeleton variant="rounded" width={120} height={30} />
                         ) : (
                           <p
-                            className="text-4xl py-2"
+                            className="text-xl md:text-4xl sm:text-2xl py-2"
                             style={{ fontFamily: "Regular" }}
                           >
                             {balanceTokenToShow}
@@ -648,7 +647,7 @@ export const LandingPage = () => {
 
                         <p
                           style={{ fontFamily: "Regular" }}
-                          className="text-[#858585] text-lg font-medium flex items-center"
+                          className="text-[#858585] text-sm md:font-medium flex items-center"
                         >
                           <img
                             style={{
@@ -672,27 +671,27 @@ export const LandingPage = () => {
                       </div>
                       {+balanceTokenToCompaire >= 100000 && (
                         <div className="">
-                          <p className="text-[#858585] text-lg font-medium">
+                          <p className="text-[#858585] text-sm md:font-medium">
                             BONUS UNLOCKED:
                           </p>
                           {loading ? (
                             <Skeleton
                               variant="rounded"
-                              width={150}
-                              height={40}
+                              width={120}
+                              height={30}
                             />
                           ) : (
                             <p
-                              className="text-4xl py-2"
+                              className="text-xl md:text-4xl sm:text-2xl py-2"
                               style={{ fontFamily: "Regular" }}
                             >
                               {totalBonusTokens}
                             </p>
                           )}
 
-                          <p className="text-[#858585] text-lg font-medium">
+                          <p className="text-[#858585] text-sm md:font-medium">
                             Level {bonusLevel}{" "}
-                            <span className="bg-[#888888] rounded-2xl px-3 pb-1 text-[#fff] font-regular">
+                            <span className="bg-[#888888] rounded-2xl px-3 py-1 text-[#fff] font-sm">
                               +15 %
                             </span>
                           </p>
@@ -727,36 +726,13 @@ export const LandingPage = () => {
                     </div>
                   </div>
                 ) : (
-                  <div className="flex  bg-[#3D3D3D] p-2 md:p-5 rounded-2xl  sm:space-x-12 shadow-xl w-full items-center  justify-between md:justify-start">
-                    {/* <div className="">
-                      <p className="text-[#858585] text-sm md:font-medium">
-                        SOLD (BGPT)
-                      </p>
-                      <p
-                        style={{ fontFamily: "Regular" }}
-                        className="text-xl md:text-4xl sm:text-2xl py-2"
-                      >
-                        {loading ? (
-                          <Skeleton variant="rounded" width={150} height={50} />
-                        ) : (
-                          totalSoldTokens
-                        )}
-                      </p>
-                      <p className="text-lg md:text-4xl sm:text-2xl py-2">
-                        /{" "}
-                        {loading ? (
-                          <Skeleton variant="rounded" width={150} height={30} />
-                        ) : (
-                          totalSupply
-                        )}
-                      </p>
-                    </div> */}
+                  <div className="flex  bg-[#3D3D3D] p-5 rounded-2xl  sm:space-x-12 shadow-xl w-full items-center  justify-between md:justify-start">
                     <div className="">
                       <p className="text-[#858585] text-sm md:font-medium">
-                        SOLD (BGPT)
+                        SOLD ($CGW)
                       </p>
                       {loading ? (
-                        <Skeleton variant="rounded" width={150} height={50} />
+                        <Skeleton variant="rounded" width={120} height={50} />
                       ) : (
                         <p
                           style={{ fontFamily: "Regular" }}
@@ -770,11 +746,11 @@ export const LandingPage = () => {
                         <Skeleton
                           sx={{ mt: 4 }}
                           variant="rounded"
-                          width={150}
+                          width={120}
                           height={30}
                         />
                       ) : (
-                        <p className="text-[#545454] text-sm md:font-medium">
+                        <p className="text-[#858585] text-sm md:font-medium">
                           / $ {totalSupply}
                         </p>
                       )}
@@ -785,7 +761,7 @@ export const LandingPage = () => {
                         RAISED (USDT)
                       </p>
                       {loading ? (
-                        <Skeleton variant="rounded" width={150} height={50} />
+                        <Skeleton variant="rounded" width={120} height={50} />
                       ) : (
                         <p
                           style={{ fontFamily: "Regular" }}
@@ -799,11 +775,11 @@ export const LandingPage = () => {
                         <Skeleton
                           sx={{ mt: 4 }}
                           variant="rounded"
-                          width={150}
+                          width={120}
                           height={30}
                         />
                       ) : (
-                        <p className="text-[#545454] text-sm md:font-medium">
+                        <p className="text-[#858585] text-sm md:font-medium">
                           / $ {hardCapPerPhase}
                         </p>
                       )}
