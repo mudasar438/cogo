@@ -525,17 +525,7 @@ export default function Header({ children }) {
             <Hidden lgUp>
               {["left"].map((anchor) => (
                 <React.Fragment key={anchor}>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      width: "100%",
-                      borderRadius: "5px",
-                      boxShadow: 2,
-                      p: 1,
-                    }}
-                  >
+                  <div className=" px-[10px] w-full flex justify-between items-center mx-auto border border-[rgba(255,255,255,0.12)]  fixed left-0 right-0 z-10 ml-auto mr-auto top-0  navhover">
                     <img src={logo} alt="" srcSet="" />
                     <IconButton onClick={toggleDrawer(anchor, true)}>
                       {icon ? (
@@ -562,7 +552,7 @@ export default function Header({ children }) {
                         />
                       )}
                     </IconButton>
-                  </Box>
+                  </div>
                   <Paper>
                     <SwipeableDrawer
                       // classes={{ paper: classes.paper }}
