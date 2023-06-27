@@ -10,7 +10,7 @@ export const Parent = () => {
         <div>
           <Navbar />
         </div>
-        <Hidden mdUp>
+        <Hidden lgUp>
           <Header />
         </Hidden>
 

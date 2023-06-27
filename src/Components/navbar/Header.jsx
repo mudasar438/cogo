@@ -9,12 +9,22 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import CloseIcon from "@mui/icons-material/Close";
-
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import clsx from "clsx";
 import { Button, IconButton, Paper, Typography } from "@mui/material";
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import { cogo2, cogo3, cogo4, cwg, logo } from "../../images";
+
+import {
+  china,
+  cogo2,
+  cogo3,
+  cogo4,
+  cwg,
+  france,
+  germany,
+  italy,
+  logo,
+  southkorea,
+  turkey,
+  usa,
+} from "../../images";
 import { useState } from "react";
 import { mdiBook, mdiFilePdfBox } from "@mdi/js";
 import Icon from "@mdi/react";
@@ -24,6 +34,9 @@ import { AiFillGithub, AiOutlineTwitter } from "react-icons/ai";
 import { SiMedium } from "react-icons/si";
 import { useContext } from "react";
 import { AppContext } from "../../utils";
+import { FiArrowDownRight } from "react-icons/fi";
+import { MdLanguage } from "react-icons/md";
+import { LanguageHover } from "./NavbarHovers/languageHover";
 
 const array = [
   {
@@ -88,13 +101,40 @@ const array3 = [
     heading: "https://github.com/cogwise-io",
   },
 ];
+const array4 = [
+  {
+    name: " English",
+    icon: usa,
+  },
+  {
+    name: " Korean",
+    icon: southkorea,
+  },
+  {
+    name: " Chinese",
+    icon: china,
+  },
+  {
+    name: " German",
+    icon: germany,
+  },
+  {
+    name: " Turkish",
+    icon: turkey,
+  },
+  {
+    name: " Italian",
+    icon: italy,
+  },
+  { name: "French", icon: france },
+];
 
 const useStyles = makeStyles({
   list: {
-    width: 300,
+    width: " 70%",
   },
   fullList: {
-    width: "auto",
+    width: "70%",
     alignItems: "center",
   },
   paper: {
@@ -111,6 +151,9 @@ const useStyles = makeStyles({
 // eslint-disable-next-line react/prop-types
 export default function Header({ children }) {
   const { connect, account, disconnect } = useContext(AppContext);
+  const [language, setLanguage] = useState(false);
+  const [icon, setIcon] = useState(false);
+
   const [hover, setHover] = useState({
     name: " CogwiseAI Bot",
     icon: cwg,
@@ -125,24 +168,6 @@ export default function Header({ children }) {
   const classes = useStyles();
   const [state, setState] = React.useState({ left: false });
 
-  const navigate = useNavigate();
-
-  const styledactivelink = ({ isActive }) => {
-    return {
-      textDecoration: "none",
-      textTransform: "capitalize",
-      padding: "10px",
-      borderRadius: "5px",
-      fontSize: "20px",
-      color: isActive ? "#000" : "#fff ",
-      fontFamily: "Poppins",
-      display: "flex",
-      gap: "20px",
-      alignItems: "center",
-      background: isActive ? "#fff" : "",
-    };
-  };
-
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event &&
@@ -152,6 +177,7 @@ export default function Header({ children }) {
       return;
     }
     setState({ ...state, [anchor]: open });
+    setIcon(!icon);
   };
   const list = (anchor) => (
     <div
@@ -163,8 +189,8 @@ export default function Header({ children }) {
       <Box
         className="scroolbox"
         sx={{
-          py: 5,
-          background: "#292929",
+          py: 1,
+          background: "#000000",
 
           "&::-webkit-scrollbar": {
             width: "0 !important",
@@ -185,26 +211,66 @@ export default function Header({ children }) {
         <Box
           sx={{
             display: "flex",
-            width: "150px",
+            width: "100%",
             height: "70px",
+            justifyContent: "space-between",
+            alignItems: "center",
             mx: "auto",
 
             color: "#fff",
-            //   mt: "50px",
           }}
         >
           <img
             src={logo}
             alt=""
             srcSet=""
-            style={{ height: "100%", width: "100%", objectFit: "contain" }}
+            style={{ height: "100%", width: "50%", objectFit: "contain" }}
           />
+          <div className="flex justify-end  items-center">
+            <p className="text-[#fff] text-sm ">EN</p>
+            <Button onClick={() => setLanguage(!language)}>
+              <MdLanguage className="text-2xl  text-[#fff]" />
+            </Button>
+          </div>
         </Box>
         <List sx={{ mt: 0, color: "#fff" }}>
-          <Typography sx={{ fontSize: "20px ", ml: 2, my: 1.5 }}>
+          {language ? (
+            <>
+              <div className="ml-2 w-full space-y-3 text-left">
+                {array4.map((item, i) => {
+                  return (
+                    <div
+                      key={i}
+                      className="  border-r-[#303030] hover:bg-[#212129] rounded-lg p-2 "
+                    >
+                      <div className="w-full flex  justify-between  items-center lg:items-start   lg:justify-start  space-x-3    ">
+                        <div className=" flex space-x-3 justify-center py-[2px] lg:items-start ">
+                          <img
+                            src={item.icon}
+                            alt=""
+                            srcSet=""
+                            style={{
+                              width: "25px",
+                              height: "25px",
+                              objectFit: "cover",
+                            }}
+                          />
+                          <p className="font-normal">{item.name}</p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </>
+          ) : (
+            ""
+          )}
+
+          <Typography sx={{ fontSize: "24px ", ml: 2, my: 1.5 }}>
             HomePage
           </Typography>
-          <Typography sx={{ fontSize: "20px ", ml: 2 }}>
+          <Typography sx={{ fontSize: "24px ", ml: 2 }}>
             Presale{" "}
             <span className=" border border-[#39E3BA] px-1 rounded-2xl text-[#000] text-[12px] ml-1  font-normal blob green">
               LIVE
@@ -215,25 +281,35 @@ export default function Header({ children }) {
               borderBottom: "none",
               borderTop: "none",
               boxShadow: "none",
+
               "&.MuiAccordion-root:before ": {
                 height: "0px !important",
               },
               width: "100%",
-              background: "#292929",
+              background: "#000",
               // my: 1,
             }}
           >
             <AccordionSummary
-              // expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography sx={{ fontSize: "20px", color: "#fff" }}>
+              <Typography
+                sx={{
+                  fontSize: "24px",
+                  color: "#fff",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  width: "100%",
+                }}
+              >
                 Solutions
+                <FiArrowDownRight className="text-[#7900ee] font-bold]" />
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <div className=" w-full md:w-[60%] space-y-3 text-left">
+              <div className=" w-full  space-y-3 text-left bg-[#000000]">
                 {array.map((item, i) => {
                   return (
                     <div
@@ -250,7 +326,7 @@ export default function Header({ children }) {
                             style={{ width: "20px", height: "20px" }}
                           />
                           <div className=" flex flex-col items-start ">
-                            <p className="font-medium text-left text-[12px] md:text-lg text-[#fff]">
+                            <p className="font-medium text-left text-[12px] md:text-sm text-[#fff]">
                               {item.name}
                             </p>
                             <p className="text-[#5C5C5C]  text-[12px] md:text-[14px] ">
@@ -259,7 +335,7 @@ export default function Header({ children }) {
                           </div>
                         </div>
                         {hover.name === item.name ? (
-                          <button className="bg-[#7E0AEF] px-2 py-[1px] md:py-[2px] rounded-3xl  text-[10px] md:text-sm">
+                          <button className="bg-[#7E0AEF] px-2 py-[1px] md:py-[2px] rounded-3xl  text-[10px] md:text-[12px]">
                             SOON
                           </button>
                         ) : (
@@ -272,17 +348,19 @@ export default function Header({ children }) {
               </div>
             </AccordionDetails>
           </Accordion>
-          <Typography sx={{ fontSize: "20px ", ml: 2 }}>Team</Typography>
+
+          <Typography sx={{ fontSize: "24px ", ml: 2 }}>Team</Typography>
           <Accordion
             sx={{
               borderBottom: "none",
               borderTop: "none",
               boxShadow: "none",
+
               "&.MuiAccordion-root:before ": {
                 height: "0px !important",
               },
               width: "100%",
-              background: "#292929",
+              background: "#000",
               // my: 1,
             }}
           >
@@ -291,8 +369,18 @@ export default function Header({ children }) {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography sx={{ fontSize: "20px", color: "#fff" }}>
+              <Typography
+                sx={{
+                  fontSize: "24px",
+                  color: "#fff",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  width: "100%",
+                }}
+              >
                 Docs
+                <FiArrowDownRight className="text-[#7900ee] font-bold]" />
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
@@ -327,7 +415,7 @@ export default function Header({ children }) {
                 height: "0px !important",
               },
               width: "100%",
-              background: "#292929",
+              background: "#000",
               // my: 1,
             }}
           >
@@ -336,8 +424,19 @@ export default function Header({ children }) {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography sx={{ fontSize: "20px", color: "#fff", mt: -1 }}>
+              <Typography
+                sx={{
+                  fontSize: "24px",
+                  color: "#fff",
+                  mt: -1,
+                  width: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
                 Community
+                <FiArrowDownRight className="text-[#7900ee] font-bold]" />
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
@@ -382,7 +481,7 @@ export default function Header({ children }) {
               </div>
             </AccordionDetails>
           </Accordion>
-          <Typography sx={{ fontSize: "20px ", ml: 2 }}>Contact</Typography>
+          <Typography sx={{ fontSize: "24px ", ml: 2 }}>Contact</Typography>
 
           <div className="flex gap-2 px-3 mt-16 w-full">
             {account ? (
@@ -439,20 +538,35 @@ export default function Header({ children }) {
                   >
                     <img src={logo} alt="" srcSet="" />
                     <IconButton onClick={toggleDrawer(anchor, true)}>
-                      if(true){<CloseIcon />}
-                      <MenuIcon
-                        sx={{
-                          fontSize: "25px",
-                          cursor: "pointer",
-
-                          color: "#fff",
-                        }}
-                      />
+                      {icon ? (
+                        <CloseIcon
+                          sx={{
+                            background: "#fff",
+                            fontSize: "40px",
+                            cursor: "pointer",
+                            borderRadius: "50%",
+                            p: 1,
+                            color: "#000",
+                          }}
+                        />
+                      ) : (
+                        <MenuIcon
+                          sx={{
+                            background: "#fff",
+                            fontSize: "40px",
+                            cursor: "pointer",
+                            borderRadius: "50%",
+                            p: 1,
+                            color: "#000",
+                          }}
+                        />
+                      )}
                     </IconButton>
                   </Box>
                   <Paper>
                     <SwipeableDrawer
-                      classes={{ paper: classes.paper }}
+                      // classes={{ paper: classes.paper }}
+                      sx={{ width: "100%" }}
                       anchor={anchor}
                       open={state[anchor]}
                       onClose={toggleDrawer(anchor, false)}
@@ -462,7 +576,8 @@ export default function Header({ children }) {
                         sx={{
                           height: "100vh",
                           width: "100%",
-                          background: "#292929",
+
+                          background: "#000",
                         }}
                       >
                         {list(anchor)}
